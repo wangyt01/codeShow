@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue@2.5.6/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div v-for="el in item">
+			{{el}}
+		</div>
+	</div>
+</body>
+<script>
+	var vm = new Vue({
+		el:"#app",
+		data:{
+			item:[1,2,3,4]
+		}
+	})
+	</script>
+</html>
