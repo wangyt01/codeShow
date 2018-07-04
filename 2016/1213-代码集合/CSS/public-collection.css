@@ -1,0 +1,19 @@
+a{text-decoration:none;color:#333;}
+ul{margin:0 auto;list-style:none;height:50px;
+	border-bottom:5px solid #f60;}
+.nav li{float:left;position:relative;margin-top:20px;
+	margin-left: 6px;}
+.nav li a{width:110px;height:30px;line-height:30px;
+	display: block;font-size: 14px;
+background-color:#ccc;text-align:center;}
+.nav a.on,.nav a:hover{background-color:#f60;color:#fff;}
+.subNav{ position:absolute; top:50;left:-46px;
+ width:120px; height:0;display: none;
+}
+.subNav li{
+ 	margin-top:0px;
+
+ }
+.subNav li a{ background:#f60; color:#fff;}
+.subNav li a:hover{ background:#ccc;color:#000;}
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单的平方根计算器</title>
+</head>
+<body>
+<h1>简单的平方根计算器</h1>
+	<script>
+	window.onload=initAll;
+	function initAll(){
+		var ans = prompt("Enter a number","");
+		//这是一个普通的提示，我们把它存储在ans变量中供以后使用。
+		try{
+			if (!ans || isNaN(ans)||ans<0){
+				//根本没有输入；用户输入了某些内容，但不是数字；输入的是数字，但它是负数；内置的isNaN()方法检查传递给他的参数是否“不是数字”（NaN=Not a Number）；
+				throw new Error("Not a valid number");
+			}
+			alert("The square root of "+ans +"is" +Math.sqrt(ans));
+			//如果输入了有效的内容，就显示平方根。
+		}
+		catch (errMsg){
+			alert(errMsg.message);
+		}//这里出现错误时要使用catch语句。error作为参数传递给他，他显示错误的message部分。如果没有抛出错误，catch中的代码就不会执行。
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>A Simple Rollove</title>
+	<link rel="stylesheet" href="style-1.css">
+</head>
+<body>
+	<a href="next.html" onmouseover="document.images['arrow'].src='images/arrow_on.png'" onmouseout="document.images['arrow'].src='images/arrow_off.png'">
+		<img src="images/arrow_off.png" alt="arrow" id="arrow">
+	</a>
+</body>
+</html>
+<!-- 1.onmouseover="document.images['arrow'].src='images/arrow_on.png'"
+    当用户将鼠标移动到图像上时(id为arrow的src)，images目录中的替换图像arrow_
+    on.png被写到文档窗口中。
+     2.onmouseout="document.images['arrow'].src='images/arrow_off.png'"
+     当鼠标移走时，arrow_off.png图像重新显示。
+     3.<img src="images/arrow_off.png" alt="arrow" id="arrow">
+     图像链接为页面定义原始图像的来源。
+     -->

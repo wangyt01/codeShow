@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <button id="bth1">按钮</button>
+<script>
+    var bth1 = document.getElementById("bth1");
+    bth1.onclick = function(){alert("hello dom0级事件处理程序1")};//被覆盖掉
+    bth1.onclick = function(){alert("hello dom0级事件处理程序2")};
+//    bth1.onclick = null;
+</script>
+</body>
+</html>

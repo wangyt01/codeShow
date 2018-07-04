@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Email Validation</title>
+	<script src="app-7.1.js"></script>
+	<style>
+    body{
+    	color: #000;
+    	background-color: #fff;
+    }
+    input.invalid{
+    	background-color: #ff9;
+    	border:2px red inset;
+    }
+    label.invalid{
+    	color:#f00;
+    	font-weight: bold;
+    }
+    .centered{
+    	text-align: center;
+    }
+	</style>
+</head>
+<body>
+	<h2 class="centered">Email Validation</h2>
+	<form action="someAction.cgi">
+		<p><label for="emailAddr">Email Address:<input id="emailAddr" type="text" size="30" class="email"></label></p>
+        <p><input type="submit" value="Submit">&nbsp;<input type="reset" value="Reset"></p>
+	</form>
+</body>
+</html>

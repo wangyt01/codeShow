@@ -1,0 +1,31 @@
+/**
+ * Created by Window Hello on 2016/6/27.
+ */
+angular.module("app",[])
+    .value('realname','xiyangyang')
+    .value('realname','huitailang')//可以改变的
+    .constant('http',"www.baidu.com")
+    .constant('http','lol.qq.com')
+    .factory('Data',function(){
+        return{
+            mag:'你好啊',
+            setMsg:function(){
+                this.msg="还好";
+            }
+        }
+    })
+    .service('User',function(){
+        this.firstname="上官";
+        this.lastname="飞燕";
+        this.getName=function(){
+            return this.firstname+this.lastname;
+        }
+    })
+.controller("MyCtrl",function($scope,realname,http,Data,User){
+    $scope.msg="1";
+    $scope.realname=realname;
+    $scope.http=http;
+    $scope.data=Data;
+    Data.setMsg();
+    $scope.uname=User.getName();
+});

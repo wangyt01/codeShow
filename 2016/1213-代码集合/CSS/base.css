@@ -1,0 +1,43 @@
+body,div,dl,dt,h1,h2,h3,h4,h5,h6,input,a,p,textarea{
+	padding:0;
+	margin:0;
+	font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+}
+body{
+	background-color: #f5f5d5;
+}
+a,a:hover{
+	text-decoration:none;
+	display: block;
+	
+}
+/*注释：在 CSS 定义中，a:hover 必须位于 a:link 和 a:visited 之后，
+这样才能生效！
+注释：在 CSS 定义中，a:active 必须位于 a:hover 之后，这样才能生效！
+a:link {color: #000}
+a:visited {color: #000}
+a:hover {color: #FF00FF}
+a:active {color: #0000FF}*/
+/*a:link{
+	color:#000;
+}
+a:visited{
+    color:#000;
+}
+a:hover{
+	color:#ff0000;
+}
+a:active{
+	color:#0000ff;
+}*/
+
+.clearfloat{
+	zoom:1;
+}
+.clearfloat{
+	display: block;
+	clear: both;
+	content:"";
+	visibility:hidden;
+	height: 0;
+}

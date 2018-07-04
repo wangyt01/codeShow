@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .main{width:800px;position:relative;height:500px;top:50%;left:50%;margin-top:200px;}
+        .main div{width:80px;height:400px;position:absolute;top:0;left:0;border-radius:10px;
+            -webkit-transform-origin:25px 360px;}
+        #main1{background:#DB3535;-webkit-transform: rotate(0deg);z-index:1;}
+        #main2{background:#F16729;-webkit-transform: rotate(0deg);z-index:2;}
+        #main3{background:#F89424;-webkit-transform: rotate(0deg);z-index:3;}
+        #main4{background:#FFCF13;-webkit-transform: rotate(0deg);z-index:4;}
+        #main5{background:#FFEA0D;-webkit-transform: rotate(0deg);z-index:5;}
+        #main6{background:#87B11F;-webkit-transform: rotate(0deg);z-index:6;}
+        #main7{background:#008254;-webkit-transform: rotate(0deg);z-index:7;}
+        #main8{background:#3377B6;-webkit-transform: rotate(0deg);z-index:8;}
+        #main9{background:#4C549F;-webkit-transform: rotate(0deg);z-index:9;}
+        #main10{background:#774395;-webkit-transform: rotate(0deg);z-index:10;}
+        #main11{background:#CA0C86;-webkit-transform: rotate(0deg);z-index:11;}
+        #main12{background:#FCF27E;-webkit-transform: rotate(0deg);z-index:12;}
+        #main13{background:#FFEA0D;-webkit-transform: rotate(0deg);z-index:13;}
+        #main14{background:#FFCF13;-webkit-transform: rotate(0deg);z-index:14;}
+        #main15{background:#F89424;-webkit-transform: rotate(0deg);z-index:15;}
+        #main16{background:#F16729;-webkit-transform: rotate(0deg);z-index:16;}
+        #main17{background:#DB3535;-webkit-transform: rotate(0deg);z-index:17;
+            -webkit-text-transform: rotate(80deg);text-align:center;line-height:400px;}
+        #main18{display:block;position:absolute;top:355px;left:0;width:20px;height:20px;
+            background:#ccc;border-radius:10px;z-index:18;}
+    </style>
+    <script>
+        window.onload=function() {
+            var flag=1;
+            var main18 = document.getElementById('main18');
+            main18.onclick = function () {
+                if (flag == 1) {
+                    main17.style.transition = '-webkit-transform 3s';
+                    main17.style.transform = 'rotate(80deg)';
+                    main16.style.transition = '-webkit-transform 3s';
+                    main16.style.transform = 'rotate(70deg)';
+                    main15.style.transition = '-webkit-transform 3s';
+                    main15.style.transform = 'rotate(60deg)';
+                    main14.style.transition = '-webkit-transform 3s';
+                    main14.style.transform = 'rotate(50deg)';
+                    main13.style.transition = '-webkit-transform 3s';
+                    main13.style.transform = 'rotate(40deg)';
+                    main12.style.transition = '-webkit-transform 3s';
+                    main12.style.transform = 'rotate(30deg)';
+                    main11.style.transition = '-webkit-transform 3s';
+                    main11.style.transform = 'rotate(20deg)';
+                    main10.style.transition = '-webkit-transform 3s';
+                    main10.style.transform = 'rotate(10deg)';
+                    main9.style.transition = '-webkit-transform 3s';
+                    main9.style.transform = 'rotate(0deg)';
+                    main8.style.transition = '-webkit-transform 3s';
+                    main8.style.transform = 'rotate(-10deg)';
+                    main7.style.transition = '-webkit-transform 3s';
+                    main7.style.transform = 'rotate(-20deg)';
+                    main6.style.transition = '-webkit-transform 3s';
+                    main6.style.transform = 'rotate(-30deg)';
+                    main5.style.transition = '-webkit-transform 3s';
+                    main5.style.transform = 'rotate(-40deg)';
+                    main4.style.transition = '-webkit-transform 3s';
+                    main4.style.transform = 'rotate(-50deg)';
+                    main3.style.transition = '-webkit-transform 3s';
+                    main3.style.transform = 'rotate(-60deg)';
+                    main2.style.transition = '-webkit-transform 3s';
+                    main2.style.transform = 'rotate(-70deg)';
+                    main1.style.transition = '-webkit-transform 3s';
+                    main1.style.transform = 'rotate(-80deg)';
+                    flag=0;
+                }else if(flag==0){
+                    main17.style.transition = '-webkit-transform 3s';
+                    main17.style.transform = 'rotate(0deg)';
+                    main16.style.transition = '-webkit-transform 3s';
+                    main16.style.transform = 'rotate(0deg)';
+                    main15.style.transition = '-webkit-transform 3s';
+                    main15.style.transform = 'rotate(0deg)';
+                    main14.style.transition = '-webkit-transform 3s';
+                    main14.style.transform = 'rotate(0deg)';
+                    main13.style.transition = '-webkit-transform 3s';
+                    main13.style.transform = 'rotate(0deg)';
+                    main12.style.transition = '-webkit-transform 3s';
+                    main12.style.transform = 'rotate(0deg)';
+                    main11.style.transition = '-webkit-transform 3s';
+                    main11.style.transform = 'rotate(0deg)';
+                    main10.style.transition = '-webkit-transform 3s';
+                    main10.style.transform = 'rotate(0deg)';
+                    main9.style.transition = '-webkit-transform 3s';
+                    main9.style.transform = 'rotate(0deg)';
+                    main8.style.transition = '-webkit-transform 3s';
+                    main8.style.transform = 'rotate(0deg)';
+                    main7.style.transition = '-webkit-transform 3s';
+                    main7.style.transform = 'rotate(0deg)';
+                    main6.style.transition = '-webkit-transform 3s';
+                    main6.style.transform = 'rotate(0deg)';
+                    main5.style.transition = '-webkit-transform 3s';
+                    main5.style.transform = 'rotate(0deg)';
+                    main4.style.transition = '-webkit-transform 3s';
+                    main4.style.transform = 'rotate(0deg)';
+                    main3.style.transition = '-webkit-transform 3s';
+                    main3.style.transform = 'rotate(0deg)';
+                    main2.style.transition = '-webkit-transform 3s';
+                    main2.style.transform = 'rotate(0deg)';
+                    main1.style.transition = '-webkit-transform 3s';
+                    main1.style.transform = 'rotate(0deg)';
+                    flag=1;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="main">
+    <div id="main1"></div>
+    <div id="main2"></div>
+    <div id="main3"></div>
+    <div id="main4"></div>
+    <div id="main5"></div>
+    <div id="main6"></div>
+    <div id="main7"></div>
+    <div id="main8"></div>
+    <div id="main9"></div>
+    <div id="main10"></div>
+    <div id="main11"></div>
+    <div id="main12"></div>
+    <div id="main13"></div>
+    <div id="main14"></div>
+    <div id="main15"></div>
+    <div id="main16"></div>
+    <div id="main17"></div>
+    <span id="main18"></span>
+</div>
+</body>
+</html>

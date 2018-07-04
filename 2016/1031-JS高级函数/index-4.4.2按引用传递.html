@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function test(obj){
+		//当前obj对内存的这个地址指向同一个
+		obj.age="20";
+		console.log('inner',obj);
+	}
+	var obj = {
+    name:"xiaoming"
+	}
+	test(obj);
+	console.log('outer',obj);
+//输出inner Object {name: "xiaoming", age: "20"}
+//    outer Object {name: "xiaoming", age: "20"}
+</script>
+
+</html>

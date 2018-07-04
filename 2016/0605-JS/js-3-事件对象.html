@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div">
+    <button id="bth">
+        按钮
+    </button>
+    <a id="aid" href="http://www.baidu.com">百度</a>
+    <script>
+        document.getElementById("bth").addEventListener("click",showType);
+        document.getElementById("div").addEventListener("click",showDiv);
+        document.getElementById("aid").addEventListener("click",showA);
+        function showType(event){
+//            alert(event.type);//事件类型
+            alert(event.target);
+            event.stopPropagation();//阻止事件冒泡
+        }
+        function showDiv(){
+            alert("div");
+        }
+        function showA(event){
+           event.stopPropagation();
+            event.preventDefault();
+        }
+    </script>
+</div>
+</body>
+</html>

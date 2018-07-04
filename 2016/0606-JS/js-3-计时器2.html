@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <button onclick="myWin()">按钮</button>
+     <script>
+         var win;
+         function myWin(){
+             alert("hello")
+             win = setTimeout(function(){myWin()},3000);
+         }
+     </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+	window.onload = function(){
+		var btn_1 = document.getElementById("btn1");
+		 btn_1.onclick = function(){ 
+		 demo(); alert("11")
+		  }
+	}
+	
+    function demo(){
+    	var i=10;
+    	var j=20;
+    	var sum=i+j;
+    	alert(sum);
+    }
+   
+    
+</script>
+<button onclick="demo()">按钮</button>
+<!-- 用id调用 -->
+<button id="btn1">按钮1</button>
+</body>
+</html>

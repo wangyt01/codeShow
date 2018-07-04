@@ -1,0 +1,38 @@
+
+body{
+	background-color: #ec9;
+}
+img{
+	border-width:0;
+}
+#captionDiv{
+	float:right;
+	width:210px;
+	margin: auto 50px;
+	padding: 20px;
+}
+#captionField{
+	/*margin-right: 200px;*/
+	margin-left: -160px;
+	width: 430px;
+	height:420px;
+}
+#inventionDiv {
+position:relative;
+float:right;
+}
+.captionField{
+	display: block;
+	padding: 5px;
+}
+.captionField img{
+	width:220px;
+	height: auto;
+}
+/*上面3行代码代表图片垂直分布*/
+#heading{
+	margin-top:10px;
+	margin-bottom: 10px;
+	width: 240px;
+	height:26px;
+}

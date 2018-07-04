@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Viewer</title>
+	<script src="app-7.2.js"></script>
+	<style>
+	 body{
+    	color: #000;
+    	background-color: #fff;
+    }
+    input.invalid{
+    	background-color: #ff9;
+    	border:2px red inset;
+    }
+    label.invalid{
+    	color:#f00;
+    	font-weight: bold;
+    }
+    .centered{
+    	text-align: center;
+    }
+	</style>
+</head>
+<body>
+	<h2 class="centered">Image Viewer</h2>
+	<form action="#">
+		<p><label for="">Image URL:<input class="imgURL" type="text" size="50"></label></p>
+		<p><input type="submit" value="Submit">&nbsp;<input type="reset" value="Reset"></p>
+	</form>
+	<img src="spacer.gif" alt="Your image here" id="chgImg">
+</body>
+
+</html>

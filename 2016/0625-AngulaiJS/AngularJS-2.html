@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="foundation.css" >
+</head>
+<body style="padding: 10px;" ng-app="app">
+<div ng-controller="MyCtrl">
+    <input type="text" ng-model="msg">
+    <h1>{{msg}}</h1>
+</div>
+</body>
+<script src="angular.min.js"></script>
+<script>
+    angular.module('app',[])
+        .controller('MyCtrl',function($scope){
+             $scope.msg="angular";
+        });
+</script>
+</html>
