@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            position:absolute;
+            background-color:#91b817;
+            top:100px;
+            width:500px;
+        }
+        @-webkit-keyframes mycolor{
+            0%{
+                background-color:red;
+                transform:rotate(0deg);
+
+            }
+            30%{
+                background-color: aqua;
+                transform:rotate(30deg);
+            }
+            60%{
+                background-color: #31b0d5;
+                transform: rotate(-30deg);
+            }
+            100%{
+                background-color: #1b6d85;
+                transform: rotate(0deg);
+            }
+
+        }
+        div:hover{
+            -webkit-animation-name:mycolor;
+            -webkit-animation-duration:5s ;
+            -webkit-animation-timing-function:linear;
+        }
+    </style>
+</head>
+<body>
+<div>示例文字</div>
+</body>
+</html>

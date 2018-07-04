@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function moveContent(){
+        var srcDiv = document.getElementById("srcDiv");
+        var distDiv = document.getElementById("distDiv");
+        var rangeObj = document.createRange();
+        rangeObj.selectNodeContents(srcDiv);
+        var docFragment = rangeObj.extractContents();
+        distDiv.appendChild(docFragment);
+
+    }
+</script>
+<div id="srcDiv" style="background-color: fuchsia;width:300px;height:50px;">你好么</div>
+<div id="distDiv" style="background-color: blueviolet; width:300px;height:50px;"></div>
+<button onclick="moveContent()">移动元素</button>
+</body>
+</html>

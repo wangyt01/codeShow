@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频播放</title>
+</head>
+<body>
+<!--<video src="1.mp4" controls="controls" width="50%" height="50%">您的浏览器不支持</video>-->
+<br/>
+<button onclick="clickV()">播放/暂停</button>
+<button onclick="clickBig()">放大</button>
+<button onclick="clickSmall()">缩小</button>
+<br>
+<video id="video">
+    <source src="audio/1.mp4">
+    <source src="audio/1.ogg"> 您的浏览器不支持
+    </video>
+    <script>
+        var v = document.getElementById("video");
+    function clickV(){
+        if(v.paused){
+            v.play();
+        }else {
+            v.pause();
+        }
+    }
+        function clickBig(){
+            v.width = 1000;
+            v.heigh = 1000;
+        }
+        function clickSmall(){
+            v.width = 300;
+            viheight = 300;
+        }
+    </script>
+
+</body>
+</html>
