@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<HTML>
+    <HEAD>
+        <TITLE> ZTREE DEMO - awesome 风格</TITLE>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <!-- Include font-awesome here, CDN is ok, or locally installed by bower to your project -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="../../../css/demo.css" type="text/css">
+        <link rel="stylesheet" href="../../../css/awesomeStyle/awesome.css" type="text/css">
+        <script type="text/javascript" src="../../../js/jquery-1.4.4.min.js"></script>
+        <script type="text/javascript" src="../../../js/jquery.ztree.core.js"></script>
+        <script type="text/javascript" src="../../../js/jquery.ztree.excheck.js"></script>
+        <script type="text/javascript" src="../../../js/jquery.ztree.exedit.js"></script>
+        <SCRIPT type="text/javascript">
+         
+    </SCRIPT>
+</HEAD>
+<style>
+ul,li{
+    padding: 0;
+    margin:0;
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+#tree{
+    background-color: #000;
+}
+#tree_1{
+    border:1px solid red;
+}
+#tree_1_a{
+    display: block;
+    width: 500px;
+    color: #000;
+    border:1px solid blue;
+    background-color: #fff;
+}
+#tree_2{
+
+}
+  #tree_2_a{
+
+    display: block;
+    width: 300px;
+    color: #fff;
+    background: #ddd;
+  }
+  #tree_3_a{
+    display: block;
+    width: 100px;
+    color: #7e7e7e;
+  }
+  #tree_3_span:hover{
+    color: #1a5ac7;
+  }
+</style>
+<BODY>
+    <div class="border1" id="left" ms-controller="bstree" style="">
+        <!-- <div class="leftTop fontW">数字标本</div> -->
+        <ul id="tree" class="ztree" style="width:240;height:700px;overflow:auto;">
+            <li id="tree_1">
+             <span id="tree_1_switch"></span>
+             <a href="" id="tree_1_a">
+                 <span id="tree_1_ico">1</span>
+                 <span id="tree_1_span">系统标本</span>
+                 <i>11</i>
+             </a> 
+             <ul id="tree_2_ul">
+                 <li id="tree_2">
+                    <span id="tree_2_switch"></span>
+                    <a href="" id="tree_2_a">
+                 <span id="tree_2_ico">22</span>
+                 <span id="tree_2_span">运动系统</span>
+                 <i>22</i>
+                </a>
+                 <ul id="tree_3_ul">
+                 <li id="tree_3">
+                     <span id="tree_3_switch"></span>
+                    <a href="" id="tree_3_a">
+                 <span id="tree_3_ico"></span>
+                 <span id="tree_3_span">骨骼</span>
+                </a> 
+                 </li>
+             </ul> 
+                 </li>
+             </ul>
+         </li>
+     </ul>
+ </div>
+
+</BODY>
+</HTML>
+
+
