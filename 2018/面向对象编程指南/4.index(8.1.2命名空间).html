@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//global namespace
+	var MYAPP = MYAPP || {};
+
+	//sub-object
+	MYAPP.event = {};
+
+	//object together with the method declarations
+	MYAPP.event = {
+		addListener: function(el , type ,fn){
+			//..do the thing
+		},
+		removeListener: function(el, type,fn){
+			//..
+		},
+		getEvent:function(e){
+			//..
+		}
+		//... other methods or properties
+	};
+
+	MYAPP.dom = {};
+	MYAPP.dom.Element = function(type , prop){
+		var tmp = document.createElement(type);
+		for(var i in prop){
+			tmp.setAttribute(i,prop[i]);
+		}
+		return tmp;
+	}
+
+	MYAPP.dom.Text = function(txt){
+		return document.createTextNode(txt);
+	}
+
+	var el1 = new MYAPP.dom.Element(
+		'a',
+		{href:"https://www.baidu.com/"}
+		);
+	var el2 = new MYAPP.dom.Text('click me');
+	el1.appendChild(el2);
+	document.body.appendChild(el1);
+
+	//a constructor that creates buttons
+	var MYAPP = {};
+	MYAPP.dom = {};
+	MYAPP.dom.Button = function(text, type){
+		var b = document.createElement('input');
+		b.type = type || 'submit';
+		b.value = text;
+		return b;
+	}
+
+	document.body.appendChild(new MYAPP.dom.Button('puuush'));
+
+	MYAPP.dom.Button = function(text, type,color,border,font){
+		//...
+	}
+
+	MYAPP.dom.Button = function(text,conf){
+		var type = conf.type || 'submit';
+		var font = conf.font || 'Verdana';
+		// ...
+	}
+
+	var config = {
+		font: 'Arial, Verdana,sans-serif',
+		color: 'white'
+	};
+
+	new MYAPP.dom.Button('puuush', config);
+
+	document.body.appendChild(
+		new MYAPP.dom.Button('dude',{color: 'red'})
+		);
+
+	var MYAPP = {};
+	MYAPP.dom = {};
+	MYAPP.dom.Button = function(text,conf){
+		var styles = {
+			font: 'Verdana',
+			border:'1px solid black',
+			color: 'black',
+			background: 'grey'
+		};
+		function setStyles(){
+			for(var i in styles){
+				b.style[i] = conf[i] || styles[i];
+			}
+		}
+		conf = conf || {};
+		var b = document.createElement('input');
+		b.type = conf['type'] || 'submit';
+		b.value = text;
+		setStyles();
+		return b;
+	};
+
+	var MYAPP = {};
+	MYAPP.dom = (function(){
+		var _setStyle = function(el, prop,value){
+			console.log('setStyle');
+		};
+		var _getStyle = function(el, prop){
+			console.log('getStyle');
+		};
+		return {
+			setStyle: _setStyle,
+			getStyle: _getStyle,
+			yetAnother: _setStyle
+		};
+	})()
+	MYAPP.dom.setStyle = function(){
+		alert('b');
+	}
+
+	var MYAPP = {};
+	MYAPP.dom = {};
+	MYAPP.dom.Text = function(){
+		this.insert = function(where){
+			var txt = document.createTextNode(this.url);
+			where.appendChild(txt);
+		}
+	};
+	MYAPP.dom.Link = function(){
+		this.insert = function(where){
+			var link = document.createElement('a');
+			link.href = this.url;
+			link.appendChild(document.createTextNode(this.url));
+			where.appendChild(link);
+		}
+	};
+	MYAPP.dom.Image = function(){
+		this.insert = function(where){
+			var im = document.createElement('img');
+			im.src = this.url;
+			where.appendChild(im);
+		}
+	};
+	var o = new MYAPP.dom.Image();
+	o.url = "https://baidu.com";
+	o.insert(document.body);
+	var o = new MYAPP.dom.Text();
+	o.url = "https://baidu.com";
+	o.insert(document.body);
+	var o = new MYAPP.dom.Link();
+	o.url = "https://baidu.com";
+	o.insert(document.body);
+
+	var o;
+	if(type ==="Image"){
+		o = new MYAPP.dom.Image();
+	}
+	if(type ==="Link"){
+		o = new MYAPP.dom.Link();
+	}
+	if(type ==="Text"){
+		o = new MYAPP.dom.Text();
+	}
+		o.url = "http://..."
+		o.insert();
+
+		//工厂方法
+		MYAPP.dom.factory = function(type){
+			return new MYAPP.dom[type];
+		}
+
+		//把上面3个if替换掉了
+		var o = MYAPP.dom.factory(type);
+		o.url = 'http://...'
+		o.insert();
+
+		
+</script>
+</html>

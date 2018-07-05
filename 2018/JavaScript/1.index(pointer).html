@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+body {
+    cursor: url("img/timg.gif"), auto;
+}
+
+.div1 {
+    width: 500px;
+    height: 200px;
+    border: 1px solid red;
+}
+</style>
+
+<body>
+    <div class="div1" id="div1">
+    </div>
+    <img src="img/avatar.jpg" alt="" id="img">
+    <button id="btn">ffff</button>
+    <img src="img/timg.gif" height="350" width="350" alt="">
+</body>
+<script>
+var img = document.getElementById('img');
+var btn = document.getElementById("btn");
+var div1 = document.getElementById('div1');
+// 	div1.onmouseover = function(){
+// 		this.style.cursor = "pointer";
+// 		this.style.cursor = 'url(img/mouse.jpg),auto';
+// 	}
+// 	// (function(){
+// img.onmouseover = function(){
+// 		// img.style.cursor = "url(img/timg.gif),auto";
+// 		// img.style.cursor = "pointer"
+// 		console.log("fff");
+// 	}
+// 	img.onclick = function(){
+// 		console.log("aaa")
+// 	}
+var show = true;
+btn.onclick = function() {
+    if (show) {
+        console.log("bbb")
+        document.body
+
+        .style.cursor = 'url(img/mouse.jpg),auto';
+        show = false;
+    } else {
+        console.log("bbb")
+        this.style.cursor = ' ';
+    }
+
+}
+
+// })()
+</script>
+
+</html>
+

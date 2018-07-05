@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>addEventListener和onclick区别</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+	.div1{
+		width: 200px;
+		height: 200px;
+		border: 1px solid red;
+	}
+	.div2{
+		width: 100px;
+		height: 100px;
+		border: 1px solid green;
+	}
+</style>
+<body>
+	
+	<button id="addEvent" type="button" class="btn btn-info">addEvent</button> 
+	<button id="on_click" type="button" class="btn btn-info">onclick</button>
+	<button id="mouseUp" type="button" class="btn btn-info">mouseUp--mouseDown</button>
+	<button id="dblclick" type="button" class="btn btn-info">ondblclick</button>
+	<br>
+	<br>
+	<div id="mouseMove" class="div1"></div>
+	<br>
+	<br>
+	<div id="Drag" class="div2">drag</div>
+	<br>
+	<br>
+	<p><a href="http://www.runoob.com/jsref/met-element-addeventlistener.html" target="_blank">addEventListener说明</a></p>
+	<p><a href="https://blog.csdn.net/rudy24/article/details/52586257" target="_blank">addEventListener和onclick的区别</a></p>
+	<script>
+	// http://www.runoob.com/jsref/met-element-addeventlistener.html
+	// https://blog.csdn.net/rudy24/article/details/52586257
+	(function(){
+		//获取id
+		var addEvent = document.getElementById("addEvent");
+		//注册点击事件
+		addEvent.addEventListener("click",function(){
+			alert("我是addEvent--1")
+		},false);
+		addEvent.addEventListener("click",function(){
+			alert("我是addEvent--2");
+		},false);
+
+		var on_click = document.getElementById("on_click");
+		//点击事件
+		on_click.onclick = function(){
+			alert("我是onclick--1");
+		}
+		on_click.onclick = function(){
+			alert("我是onclick--2");
+		}
+
+		var mouseUp = document.getElementById("mouseUp");
+		//注册按下事件
+
+		mouseUp.addEventListener("mousedown",function(){
+			// alert("this is onmousedown thing! \n 按下");
+			console.log("This is onmousedown event! \n 按下");
+		})
+		//注册抬起事件
+		mouseUp.addEventListener("mouseup",function(){
+			// alert("this is onmouseup thing! \n 抬起");
+			console.log("This is onmouseup event! \n 抬起");
+		});
+		//注册双击事件
+		var dblClick = document.getElementById("dblclick");
+		dblClick.addEventListener("dblclick",function(){
+			alert("This is ondblclick event! \n 双击事件 ")
+		})
+		//
+		var mouseMove = document.getElementById("mouseMove");
+		//注册鼠标移动事件
+		mouseMove.addEventListener("mousemove",function(){
+			console.log("移入");
+		})
+		//注册鼠标移出事件
+		mouseMove.addEventListener("mouseout",function(){
+			console.log("移出");
+		})
+
+		var Drag = document.getElementById("Drag");
+
+	})();
+	</script>
+</body>
+</html>

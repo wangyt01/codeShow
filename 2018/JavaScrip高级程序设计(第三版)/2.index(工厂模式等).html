@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>工厂模式等</title>
+</head>
+<body>
+	
+	<script>
+	function log(e){
+		return console.log(e);
+
+	}
+	//工厂模式
+	function createPerson(name,age,job){
+		var o = new Object();
+		o.name = name;
+		o.age = age;
+		o.job = job;
+		o.sayName = function(){
+			alert(this.name);
+		};
+		return o;
+	}
+
+	var person1 = createPerson('Nicholas',29,'sofeware Engineer');
+	var person2 = createPerson('Greg',27,'Doctor');
+
+	/******
+	*构造函数模式
+	*和工厂模式比较
+	*1.没有显式地创建对象;
+	*2.直接将属性和方法赋予给了this对象
+	*3.没有return语句
+	*/
+	function Person(name,age,job){
+		this.name = name;
+		this.age = age;
+		this.job = job;
+		this.sayName = function(){
+			alert(this.name);
+		}
+	}
+
+	var person1 = new Person('Nicholas',29,'sofeware Engineer');
+	var person2 = new Person("Greg",27,'Doctor');
+
+	//person1和person2分别保存着Person的一个不同的实例,这两个对象都有一个constructor(构造函数)属性,该属性指向Person
+	log(person1.constructor == Person); //true
+	log("--------------")
+	log(person2.constructor == Person); //true
+	</script>
+</body>
+</html>

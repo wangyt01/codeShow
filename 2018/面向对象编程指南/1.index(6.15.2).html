@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>案例学习:图形绘制</title>
+
+</head>
+
+<body>
+    <canvas height="600" width="800" id="canvas"></canvas>
+</body>
+<script src="js/index(图形绘制).js"></script>
+<script>
+	//辅助构造器
+function Point(x, y) {
+    this.x = x;
+    this.y = y;
+}
+//勾股定理计算两点之间的距离
+function Line(p1, p2) {
+    this.p1 = p1;
+    this.p2 = p2;
+    this.length = Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+}
+//
+function Shape() {
+    this.points = [];
+    this.lines = [];
+    this.init();
+}
+
+Shape.prototype = {
+    //reset pointer to constructor
+    constructor: Shape,
+    //initialization,sets this.context to point
+    //to the context of the canvas object
+    init: function() {
+        if (typeof this.context === 'undefined') {
+            //获取id
+            var canvas = document.getElementById('canvas');
+            //添加原型context  创建 context 对象
+            Shape.prototype.context = canvas.getContext('2d');
+        }
+    },
+    //method that draws a shape by looping through this.points
+    draw: function() {
+        var ctx = this.context;
+        //strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式
+        ctx.strokeStyle = this.getColor();
+        // console.log(this.getColor())
+        //beginPath() 方法开始一条路径，或重置当前的路径。
+        ctx.beginPath();
+
+        ctx.moveTo(this.points[0].x, this.points[0].y);
+
+        for (var i = 1; i < this.points.length; i++) {
+            ctx.lineTo(this.points[i].x, this.points[i].y);
+        }
+        ctx.closePath();
+        //stroke() 方法会实际地绘制出通过 moveTo() 和 lineTo() 方法定义的路径。默认颜色是黑色。
+        ctx.stroke();
+    },
+    //method that generates a randow color
+    getColor: function() {
+        var rgb = [];
+        for (var i = 0; i < 3; i++) {
+            rgb[i] = Math.round(255 * Math.random());
+        }
+        return 'rgb(' + rgb.join(',') + ')';
+    },
+    //method that loops through the points array,
+    //creates Line instances and adds them to this.lines
+    getLines: function() {
+        if (this.lines.length > 0) {
+            return this.lines;
+        }
+        var lines = [];
+        for (var i = 0; i < this.points.length; i++) {
+            lines[i] = new Line(this.points[i], (this.points[i + 1]) ? this.points[i + 1] : this.points[0]);
+        }
+        this.lines = lines;
+        return lines;
+    },
+    //shell method ,to be implemented by children
+    getArea: function() {},
+    //sums the lengths of all lines
+    getPerimeter: function() {
+        var lines = this.getLines();
+        var perim = 0;
+        for (var i = 0; i < lines.length; i++) {
+            perim += lines[i].length;
+        }
+        return perim;
+    }
+}
+
+//子对象构造器 Triangle
+/**
+ *海伦公式 Area = s(s-a)(s-b)(s-c)
+ *s为半周长(即周长除以2)
+ */
+function Triangle(a, b, c) {
+    this.points = [a, b, c];
+    this.getArea = function() {
+        var p = this.getPerimeter();
+        var s = p / 2;
+        return Math.sqrt(
+            s *
+            (s - this.lines[0].length) *
+            (s - this.lines[1].length) *
+            (s - this.lines[2].length)
+        );
+    };
+}
+//Rectangle构造器
+/**
+ *该对象所接受的参数是一个point对象(即左上角位置)
+ *和两边的长度.然后再以该point起点,
+ *自行填充其points数组
+ */
+function Rectangle(p, side_a, side_b) {
+    this.points = [
+        p,
+        new Point(p.x + side_a, p.y), //top right
+        new Point(p.x + side_a, p.y + side_b), //bottom right
+        new Point(p.x, p.y + side_b) //bottom left
+    ];
+    this.getArea = function() {
+        return side_a * side_b;
+    }
+}
+
+//构造器 Square
+function Square(p, side) {
+    Rectangle.call(this, p, side, side);
+}
+(function() {
+    var s = new Shape();
+    Triangle.prototype = s;
+    Rectangle.prototype = s;
+    Square.prototype = s;
+})()
+var p1 = new Point(100, 100);
+var p2 = new Point(300, 100);
+var p3 = new Point(200, 0);
+var t = new Triangle(p1, p2, p3);
+t.draw();
+t.getPerimeter();
+console.log(t.getPerimeter());
+t.getArea();
+console.log(t.getArea())
+
+var r = new Rectangle(new Point(200, 200), 50, 100);
+r.draw();
+r.getArea();
+console.log(r.getArea());
+r.getPerimeter();
+console.log(r.getPerimeter());
+
+var s = new Square(new Point(130, 130), 50);
+s.draw();
+s.getArea();
+console.log(s.getArea());
+s.getPerimeter();
+console.log(s.getPerimeter());
+
+new Square(p1, 200).draw();
+</script>
+
+</html>

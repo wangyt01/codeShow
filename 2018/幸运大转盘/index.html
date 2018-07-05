@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>幸运大转盘</title>
+    <style>
+    div {
+        display: block;
+    }
+	/*转盘后面背景*/
+    .main-bg {
+        width: 100%;
+        /*border: 1px solid red;*/
+        height: 1300px;
+        margin: 0 auto;
+        position: relative;
+        background-size: 100%;
+        overflow: hidden;
+        background-image: url(image/main_bg.jpg);
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+	/*转盘*/
+    .img-1 {
+        width: 700px;
+        height: 700px;
+        position: absolute;
+        margin-top: 366px;
+        margin-left: 130px;
+    }
+	/*按钮*/
+    .img-2 {
+        width: 250px;
+        height: 250px;
+        position: relative;
+    }
+	/*按钮周边方块*/
+    .pointer {
+        /*border: 1px solid red;*/
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        margin-top: 590px;
+        margin-left: 353px;
+    }
+
+    .ttt {
+        transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+        /* IE 9 */
+        -webkit-transform: rotate(30deg);
+        /* Safari and Chrome */
+        -o-transform: rotate(30deg);
+        /* Opera */
+        -moz-transform: rotate(30deg);
+        /* Firefox */
+    }
+    .light-show{
+    	border: 1px solid red;
+    	width: 100%;
+    	height: 1200px;
+    	position: absolute;
+    }
+	.light-show img{
+		border:1px solid green;
+		width: 100%;
+		height: 78%;
+		position: relative;
+		margin-top: 164px;
+	}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header></header>
+        <div class="main-bg">
+        	<div class="light-show">
+        		<img src="image/light_slow.gif" height="" width="" alt="">
+        	</div>
+        	
+            <img id="turntable" class="img-1" src="image/turntable.png" alt="">
+            <div id="pointer" class="pointer">
+                <img class="img-2" src="image/pointer.png" height="250" width="250" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+window.onload = function() {
+    var pointer = document.getElementById("pointer");
+    var turntable = document.getElementById("turntable");
+    pointer.onclick = function() {
+    	//Math.round() 四舍五入  Maht.random 随机数
+        var number = Math.round((Math.random() * 360) / 45);
+        console.log(number);
+
+        //
+        var angle = 0;
+        //设置无限循环定时器 转轮旋转
+        var time1 = setInterval(function() {
+            angle = angle + 10
+            turntable.style.transform = "rotate(" + angle + "deg)";
+        }, 10);
+        //清除旋转
+        var clear1 = setTimeout(function() {
+            clearTimeout(time1);
+
+            //0-45 
+            rotatePinter(number);
+        }, 1600);
+        // turntable.style.transform = "rotate(30deg)";
+    }
+    var angleArr = [22.5, 67.5, 112.5, 157.5, 202.5, 247.5, 292.5, 337.5]
+    //旋转指针指向
+    function rotatePinter(e) {
+        var i = e;
+        switch (i) {
+            case 0:
+                console.log("500M")
+                turntable.style.transform = "rotate(22.5deg)";
+                break;
+            case 1:
+                console.log("Thank you")
+                turntable.style.transform = "rotate(67.5deg)";
+                break;
+            case 2:
+                console.log("再来一次")
+                turntable.style.transform = "rotate(112.5deg)";
+                break;
+            case 3:
+                console.log("100M")
+                turntable.style.transform = "rotate(157.5deg)";
+                break;
+            case 4:
+                console.log("10M")
+                turntable.style.transfoHm = "rotate(202.5deg)";
+                break;
+            case 5:
+                console.log("谢谢参与")
+                turntable.style.transform = "rotate(247.5deg)";
+                break;
+            case 6:
+                console.log("5M")
+                turntable.style.transform = "rotate(292.5deg)";
+                break;
+            case 7:
+                console.log("50M");
+                turntable.style.transform = "rotate(337.5deg)";
+                break;
+        }
+
+        // if (i >= 0 && i < 45) {
+        //     console.log("500M")
+        //     turntable.style.transform = "rotate(22.5deg)";
+        // } else if (i >= 45 && i < 90) {
+        //     console.log("Thank you")
+        //     turntable.style.transform = "rotate(67.5deg)";
+        // } else if (i >= 90 && i < 135) {
+        //     console.log("再来一次")
+        //     turntable.style.transform = "rotate(112.5deg)";
+        // } else if (i >= 135 && i < 180) {
+        //     console.log("100M")
+        //     turntable.style.transform = "rotate(157.5deg)";
+        // } else if (i >= 180 && i < 225) {
+        //     console.log("10M")
+        //     turntable.style.transform = "rotate(202.5deg)";
+        // } else if (i >= 225 && i < 270) {
+        //     console.log("谢谢参与")
+        //     turntable.style.transform = "rotate(247.5deg)";
+        // } else if (i >= 270 && i < 315) {
+        //     console.log("5M")
+        //     turntable.style.transform = "rotate(292.5deg)";
+        // } else if (i >= 315 && i < 360) {
+        //     console.log("50M");
+        //     turntable.style.transform = "rotate(337.5deg)";
+        // }
+    }
+}
+</script>
+
+</html>

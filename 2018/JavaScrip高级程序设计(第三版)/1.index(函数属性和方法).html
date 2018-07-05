@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>函数属性和方法</title>
+</head>
+<style>
+.div1 {
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+}
+</style>
+
+<body>
+    <h4>点击变色</h4>
+    <div class="div1" id="div1"></div>
+</body>
+<script>
+function log(name) {
+    return console.log(name);
+}
+
+function sayName(name) {
+    log(name);
+}
+
+function sum(num1, num2) {
+    return num1 + num2;
+}
+
+function sayHi() {
+    log("hi");
+}
+
+log(sayName.length);
+log(sum.length);
+log(sayHi.length);
+
+function callSum1(num1, num2) {
+    return sum.apply(this, arguments); //穿入arguments对象
+}
+
+function callSum2(num1, num2) {
+    return sum.apply(this, [num1, num2]); //穿入数组
+}
+log(callSum1(10, 10)); //20
+log(callSum2(10, 10)); //20
+
+//计算可能值的总数和第一个可能的值
+function selectFrom(lowerValue, upperValue) {
+    var choices = upperValue - lowerValue + 1;
+    return Math.floor(Math.random() * choices + lowerValue);
+}
+//介于2和10之间
+var num = selectFrom(2, 10);
+log(num);
+//介于10和100之间
+var num = selectFrom(10, 100);
+log(num);
+
+
+//打印随机颜色
+var colors = ['red', 'green', 'blue', 'yellow', 'black', 'purple', 'brown'];
+var div1 = document.getElementById("div1");
+
+(function() {
+    div1.addEventListener("click", function() {
+
+        var color = colors[selectFrom(0, colors.length - 1)];
+        div1.style.backgroundColor = color;
+        log(color);
+
+    }, false)
+})();
+</script>
+<script>
+</script>
+
+</html>

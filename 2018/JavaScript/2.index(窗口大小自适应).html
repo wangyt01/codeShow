@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    width: 220px;
+    /*height: 500px;*/
+    background-color: red;
+    border: 1px solid red;
+    position: absolute;
+    opacity: 0.4;
+}
+
+.right {
+    float: left;
+    /*width: 100%;*/
+    margin-left: 220px;
+    border: 1px solid green;
+    background: #000;
+}
+</style>
+
+<body>
+    <div id="left" class="left"></div>
+    <div id="right" class="right"></div>
+</body>
+<script>
+var left = document.getElementById("left");
+var right = document.getElementById("right");
+var html_width = window.innerWidth;
+var html_height = window.innerHeight;
+window.onload = function() {
+    left.style.height = html_height - 2 + "px";
+    right.style.height = html_height - 2 + "px";
+    right.style.width = html_width - 220 - 2 + "px";
+    window.onresize = function() {
+        right.style.width = html_width - 220 - 2 + "px"
+    }
+}
+</script>
+
+</html>

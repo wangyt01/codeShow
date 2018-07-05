@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+li {
+    width: 50px;
+    height: 30px;
+    border: 1px solid #ddd;
+}
+.active	{
+	background: blue;
+}
+</style>
+
+<body>
+	<p>css实现</p>
+    <div id="bg">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <p>	class实现</p>
+    <div id="bg1">
+    	 <ul>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <div id="bg-3">
+    	<ul>
+    		<li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+    	</ul>
+    </div>
+    <div id="bg-4">
+    	<ul>
+    		<li>1</li>
+    		<li>2</li>
+    		<li>3</li>
+    	</ul>
+    </div>
+    <script>
+    //div-0
+    var divId = document.getElementById("bg");
+    var li = divId.getElementsByTagName("li");
+    li[0].style.background = "red";
+    for (let i = 0; i < li.length; i++) {
+            li[i].onclick = function(argument) {
+            	for(let i =0;i<li.length;i++){
+            		li[i].style.background = "#fff";
+            	}
+            	li[i].style.background = "red";
+            }
+
+    }
+    //div1
+    var divId1 = document.getElementById("bg1");
+    var li1 = divId1.getElementsByTagName("li");
+    for(let i = 0;i<li1.length;i++){
+    	li1[i].onclick = function(){
+    		for(let i = 0;i<li1.length;i++){
+    			li1[i].className = ""
+    		}
+    		li1[i].className = "active";
+    	}
+    }
+    //div3
+    var divId3 = document.getElementById("bg-3");
+    var li3 = divId3.getElementsByTagName("li");
+    for(let i = 0;i<li3.length;i++){
+    	//偶数
+    	if(i % 2 ==0){
+    		li3[i].style.background = "#ddd";
+    	}
+    	//奇数
+    	if(i % 2 == 1){
+    		li3[i].style.background = "#00ff00"
+    	}
+    }
+    //div-4
+    var divId4 = document.getElementById('bg-4');
+    var li4 = divId4.getElementsByTagName('li');
+    //移动上
+    li4[0].onmouseover = function(e){
+    	console.log("1");
+    }
+    //移动开
+    li4[0].onmouseout = function(e){
+    	console.log(e)
+    }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue.js</title>
+    <link rel="stylesheet" href="">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!--
+Velocity works very much like jQuery.animate and is
+a great option for JavaScript animations
+-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/color-js@1.0.3"></script>
+</head>
+<style>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active below version 2.1.8 */
+
+{
+    opacity: 0;
+}
+
+]
+/* 可以设置不同的进入和离开动画 */
+
+
+/* 设置持续时间和动画函数 */
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */
+
+{
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.component-fade-enter-active,
+.component-fade-leave-active {
+    transition: opacity .3s ease;
+}
+
+.component-fade-enter,
+.component-fade-leave-to
+/* .component-fade-leave-active for below version 2.1.8 */
+
+{
+    opacity: 0;
+}
+
+
+/*example-7*/
+
+.example-7-color-preview {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+</style>
+
+<body>
+    <ul id="vue_ul">
+        <li v-for="item in items">
+            {{item.message}}
+        </li>
+        <li v-for="(item,index) in items" v-bind:style="liStyle">
+            <span v-bind:style="spanStyle">{{index}}</span>-{{item.message}}
+        </li>
+        <li v-for="(value,key) in object">
+            {{key}}:{{value}}
+        </li>
+        <p>{{numbers}}</p>
+        <p>偶数选择器</p>
+        <li v-for="n in evenNumbers">
+            {{n}}
+        </li>
+        <p>奇数选择器</p>
+        <li v-for="n in oddNumbers">
+            {{n}}
+        </li>
+        <br>
+        <span v-for="n in 10">{{n}}   </span>
+    </ul>
+    <ul id="vue_ul_1">
+    </ul>
+    <div id="vue_div">
+        <div v-once>
+            {{seen}}-----{{message}}
+        </div>
+        <div style="width:100px;height:50px;border:1px solid green;">
+            <div v-if="seen">{{message+"________"}}</div>
+        </div>
+        <button v-on:click="showHide">显示/隐藏</button>
+        <div style="width:auto;height:200px;border:1px solid green;overflow:hidden;">
+            <p v-once><span v-bind:style="spanStyle">不改变内容</span>:{{i_message}}</p>
+            <p><span v-bind:style="spanStyle">改变内容</span>:{{i_message}}</p>
+            <p><span v-bind:style="spanStyle">反转内容</span>:{{reversedMessage}}</p>
+        </div>
+        请输入内容:
+        <input type="text" v-model="i_message">
+        <button v-on:click="clearInput">清空输入</button>
+        <div v-if="Math.random() > 0.5">
+            Now you see me {{Math.random().toFixed(3)}}
+        </div>
+        <div v-else>
+            Now you don't {{Math.random().toFixed(3)}}
+        </div>
+        <button v-on:click="counter +=1">Add 1</button>
+        <p>The button above has been clicked {{counter}}</p>
+        <button v-on:click="greet">greet</button>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{checked}}</label>
+        <br>
+        <input type="checkbox" id="jack" value="Jack" v-model="checkNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Check names: {{checkNames}}</span>
+        <br>
+        <input type="radio" id="one" value="One" v-model="picked">
+        <label for="one">One</label>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="two">Two</label>
+        <br>
+        <span>Picked:{{picked}}</span>
+        <br>
+        <select name="" id="" v-model="selected">
+            <option value="" disabled>请选择</option>
+            <option value="选择A">A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>Selected: {{selected}}</span>
+        <br>
+        <select name="" id="" v-model="selected_1">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{option.text}}
+            </option>
+        </select>
+        <span>Selected: {{selected_1}}</span>
+        <br>
+        <!--当选中时,`picked` 为字符串'a'-->
+        <input type="radio" v-model="picked" value="a">
+        <p>picked:{{picked}}</p>
+        <!-- `toggle` 为 true 或 false -->
+        <input type="checkbox" v-model="toggle">
+        <p>{{toggle}}</p>
+        <!-- 当选中第一个选项时，`selected` 为字符串 "abc" -->
+        <select v-model="selected">
+            <option value="abc">ABC</option>
+        </select>
+        <br>
+        <input type="checkbox" v-model="toggle_1" true-value="yes" false-value="no">
+        <p>{{toggle_1}}</p>
+    </div>
+    <div id="example">
+        <my-component></my-component>
+        {{msg}}
+    </div>
+    <div id="counter-event-example">
+        <p>{{ total }}</p>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+    </div>
+    <div id="demo">
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition name="fade">
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
+    <div id="example-1">
+        <button @click="show = !show">
+            Toggle render
+        </button>
+        <transition name="slide-fade">
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
+    <div id="example-4">
+        <button @click="show = !show">Toggle</button>
+        <transition v-on:before-enter="beforeEnter" v-on:enter="enter" v-on:leave="leave" v-bind:css="false">
+            <p v-if="show">Animation</p>
+        </transition>
+    </div>
+    <div id="transition-components-demo">
+        <transition name="component-fade" mode="out-in">
+            <component v-bind:is="view"></component>
+        </transition>
+    </div>
+    <!-- example-7 -->
+    <div id="example-7">
+        <input v-model="colorQuery" v-on:keyup.enter="updateColor" placeholder="Enter a color">
+        <button v-on:click="updateColor">Update</button>
+        <p>Preview:</p>
+        <span v-bind:style="{ backgroundColor: tweenedCSSColor }" class="example-7-color-preview"></span>
+        <p>{{ tweenedCSSColor }}</p>
+    </div>
+    <!-- example-8 -->
+   <div id="example-8">
+  <input v-model.number="firstNumber" type="number" step="20"> +
+  <input v-model.number="secondNumber" type="number" step="20"> =
+  {{ result }}
+  <p>
+    <animated-integer v-bind:value="firstNumber"></animated-integer> +
+    <animated-integer v-bind:value="secondNumber"></animated-integer> =
+    <animated-integer v-bind:value="result"></animated-integer>
+  </p>
+</div>
+</body>
+<script>
+new Vue({
+    el: '#example-1',
+    data: {
+        show: true
+    }
+})
+new Vue({
+    el: '#demo',
+    data: {
+        show: true
+    }
+})
+
+new Vue({
+    el: "#example-4",
+    data: {
+        show: true
+    },
+    methods: {
+        beforeEnter: function(el) {
+            el.style.opacity = 0;
+            el.style.transformOrigin = 'left';
+        },
+        enter: function(el, done) {
+            Velocity(el, { opacity: 1, fontSize: '1.4em' }, { duration: 300 });
+            Velocity(el, { fontSize: '1em' }, { complete: done })
+        },
+        leave: function(el, done) {
+            Velocity(el, { translateX: '15px', rotateZ: '50deg' }, { duration: 600 });
+            Velocity(el, { rotateZ: '100deg' }, { loop: 2 });
+            Velocity(el, {
+                rotateZ: '45deg',
+                translateY: '30px',
+                translateX: '30px',
+                opacity: 0
+            }, { complete: done })
+        }
+    }
+})
+new Vue({
+    el: '#transition-components-demo',
+    data: {
+        view: 'v-a'
+    },
+    components: {
+        'v-a': {
+            template: '<div>Component A</div>'
+        },
+        'v-b': {
+            template: '<div>Component B</div>'
+        }
+    }
+})
+// 注册
+Vue.component('my-component', {
+    template: '<div>A custom component!</div>'
+})
+
+// 创建根实例
+new Vue({
+    el: '#example',
+    data: {
+        msg: "这是创建根实例"
+    }
+})
+Vue.component('button-counter', {
+    template: '<button v-on:click="incrementCounter">{{ counter }}</button>',
+    data: function() {
+        return {
+            counter: 0
+        }
+    },
+    methods: {
+        incrementCounter: function() {
+            this.counter += 1
+            this.$emit('increment')
+        }
+    },
+})
+
+new Vue({
+    el: '#counter-event-example',
+    data: {
+        total: 0
+    },
+    methods: {
+        incrementTotal: function() {
+            this.total += 1
+        }
+    }
+})
+//example-7
+var Color = net.brehaut.Color;
+
+new Vue({
+  el: '#example-7',
+  data: {
+    colorQuery: '',
+    color: {
+      red: 0,
+      green: 0,
+      blue: 0,
+      alpha: 1
+    },
+    tweenedColor: {}
+  },
+  created: function () {
+    this.tweenedColor = Object.assign({}, this.color)
+  },
+  watch: {
+    color: function () {
+      function animate () {
+        if (TWEEN.update()) {
+          requestAnimationFrame(animate)
+        }
+      }
+
+      new TWEEN.Tween(this.tweenedColor)
+        .to(this.color, 750)
+        .start()
+
+      animate()
+    }
+  },
+  computed: {
+    tweenedCSSColor: function () {
+      return new Color({
+        red: this.tweenedColor.red,
+        green: this.tweenedColor.green,
+        blue: this.tweenedColor.blue,
+        alpha: this.tweenedColor.alpha
+      }).toCSS()
+    }
+  },
+  methods: {
+    updateColor: function () {
+      this.color = new Color(this.colorQuery).toRGB()
+      this.colorQuery = ''
+    }
+  }
+})
+
+// example-8
+// 这种复杂的补间动画逻辑可以被复用
+// 任何整数都可以执行动画
+// 组件化使我们的界面十分清晰
+// 可以支持更多更复杂的动态过渡
+// 策略。
+Vue.component('animated-integer', {
+  template: '<span>{{ tweeningValue }}</span>',
+  props: {
+    value: {
+      type: Number,
+      required: true
+    }
+  },
+  data: function () {
+    return {
+      tweeningValue: 0
+    }
+  },
+  watch: {
+    value: function (newValue, oldValue) {
+      this.tween(oldValue, newValue)
+    }
+  },
+  mounted: function () {
+    this.tween(0, this.value)
+  },
+  methods: {
+    tween: function (startValue, endValue) {
+      var vm = this
+      function animate () {
+        if (TWEEN.update()) {
+          requestAnimationFrame(animate)
+        }
+      }
+
+      new TWEEN.Tween({ tweeningValue: startValue })
+        .to({ tweeningValue: endValue }, 500)
+        .onUpdate(function (object) {
+          vm.tweeningValue = object.tweeningValue.toFixed(0)
+        })
+        .start()
+
+      animate()
+    }
+  }
+})
+
+// // 所有的复杂度都已经从 Vue 的主实例中移除！
+// new Vue({
+//   el: '#example-8',
+//   data: {
+//     firstNumber: 20,
+//     secondNumber: 40
+//   },
+//   computed: {
+//     result: function () {
+//       return this.firstNumber + this.secondNumber
+//     }
+//   }
+// })
+var vm_1 = new Vue({
+    el: "#vue_ul",
+    data: {
+        items: [{ message: 1 }, { message: 2 }, { message: 3 }],
+        liStyle: {
+            listStyleType: "none"
+        },
+        spanStyle: {
+            color: "#3CB8EC",
+            fontSize: "16px"
+        },
+        object: {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 30
+        },
+        numbers: [1, 2, 3, 4, 5, 6]
+    },
+    computed: {
+        //偶数选择器
+        evenNumbers: function() {
+            return this.numbers.filter(function(number) {
+                return number % 2 === 0;
+            })
+        },
+        //奇数选择器
+        oddNumbers: function() {
+            return this.numbers.filter(function(number) {
+                return number % 2 === 1;
+            })
+        }
+
+    }
+})
+
+
+// var data = { "items": [{ message: "标签1" }, { message: "标签2" }, { message: "标签3" },{message:"标签4"}], "test": [{ mm: 1 }, { mm: 3 }] };
+// own("vue_ul_1", data);
+
+var vm_2 = new Vue({
+    el: "#vue_div",
+    data: {
+        seen: true,
+        message: "内容",
+        show: "显示内容",
+        hide: "隐藏内容",
+        i_message: "输入内容",
+        spanStyle: {
+            color: "#3CB8EC",
+            fontSize: "16px"
+        },
+        counter: 0,
+        checked: false,
+        checkNames: [],
+        picked: '',
+        selected: '',
+        selected_1: "A",
+        toggle: "",
+        toggle_1: true,
+        options: [
+            { text: "One", value: 'A' }, { text: 'Two', value: 'B' }, { text: 'Three', value: "C" }
+        ]
+    },
+    methods: {
+        showHide: function() {
+            if (this.seen) {
+                this.seen = false;
+            } else {
+                this.seen = true;
+            }
+
+        },
+        clearInput: function() {
+            this.i_message = "";
+        },
+        greet: function(event) {
+            console.log(event);
+            //`event` 是原生DOM事件
+            if (event) {
+                alert(event.target.tagName);
+            }
+        }
+    },
+    computed: {
+        //计算属性的getter
+        reversedMessage: function() {
+            //`this`指向vm实例
+            return this.i_message.split('').reverse().join('');
+        }
+    }
+
+})
+
+
+/**
+ *获取对象第一个的键名和属性名
+ */
+// function getObj(obj) {
+//     var n = 0
+//     for (key in obj) {
+//         n++
+//         if(n=1){
+//              return obj[key];
+//         }
+//     }
+// }
+
+function own(id, data) {
+    var arr = [];
+    for (i in data) {
+        arr.push(i)
+    }
+    console.log(arr)
+    console.log(data[arr[0]])
+    // var items = getObj(data);
+    // var ul = document.getElementById(id);
+    // for (var i = 0, len =items.length; i < len; i++) {
+    //     var li_node = document.createElement("li");
+    //     var li_text = document.createTextNode(items[i].message);
+    //     ul.appendChild(li_node);
+    //     li_node.appendChild(li_text);
+    // }
+}
+</script>
+
+</html>
