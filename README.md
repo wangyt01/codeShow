@@ -1,6 +1,6 @@
 ## Welcome to my page
 
-###项目主页 [GO!GO!](http://wyong.xyz/codeShow/)
+### 项目主页 [GO!GO!](http://wyong.xyz/codeShow/)
 
 You can use the [editor on GitHub](https://github.com/wangyongtan/vue/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
