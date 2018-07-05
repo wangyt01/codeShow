@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组比较大小</title>
+</head>
+<body>
+	
+</body>
+<script>
+//往一个数组中添加随机数
+var arr1 = [];
+var arr2 = [];
+for (var i = 0; i < 99; i++) {
+    //随机数
+    var num = Math.random();
+    // console.log(Math.round(num*10))
+    //放入数组 round()四舍五入
+    arr1.push(Math.round(num * 100-1))
+    var num2 = Math.random();
+    arr2.push(Math.round(num2*100))
+}
+console.log(arr1);
+console.log(arr2);
+	//找出数组1中的比数组2中的最大值大的数值
+	//[3,5,6,1,8,10]  []
+	// var arr1 = [4,21,66,40,42,61,76,76,64,41];
+	// var arr2 = [60,20,39,64,70,5,14,15,91,86];
+	var maxArr = [];
+	//es6取数组最大值
+	var maxnum = Math.max(...arr1);
+
+	console.log(maxnum)
+	//把数组2中比数组1最大值大的放入数组maxArr中
+	for(var i=0;i<arr2.length;i++){
+		if(arr2[i] >= maxnum){
+			maxArr.push(arr2[i]);
+		}
+	}
+	console.log(maxArr)
+
+</script>
+</html>

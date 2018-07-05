@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">  
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+	<meta name="HandheldFriendly" content="true">  
+	<title>number</title>
+	<link rel="stylesheet" href="css/test.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<script src="js/number.js">
+		
+	</script>
+	<style>
+		#demo1{
+			display: none;
+		}
+		/*#demo2{
+			display: none;
+		}*/
+	</style>
+</head>
+<body>
+	<ul onclick="loadDoc()">
+		<li id="test">11111</li>
+	</ul>
+	<ul style="margin-left:50px;">
+		<li>
+			<ul id="demo1" style="border:1px solid red;"></ul>
+		</li>
+		
+	</ul>
+</body>
+<script>
+	
+	//AJAX引入xml数据
+	function loadDoc() {
+		var xhttp = new XMLHttpRequest();
+		 {// code for IE7+, Firefox, Chrome, Opera, Safari
+		 	xmlhttp=new XMLHttpRequest();
+		 }
+		 xhttp.onreadystatechange = function() {
+		 	if (this.readyState == 4 && this.status == 200) {
+		 		myFunction(this);
+		 	}
+		 };
+		 xhttp.open("GET", "test.xml", true);
+		 xhttp.send();
+		}
+		function myFunction(xml) {
+			var i;
+			var xmlDoc = xml.responseXML;
+			var table="";
+			var x = xmlDoc.getElementsByTagName("CD");
+			for (i = 0; i <x.length; i++) {
+				table += "<li><a class='a"+i+"' href='#'>" +
+				x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+				"</a></li>";
+			}
+			document.getElementById("demo1").innerHTML = table;
+		}
+	</script>
+	<script>
+
+	//AJAX引入xml数据
+	// function loadDoc1() {
+	// 	var xhttp = new XMLHttpRequest();
+	// 	 {// code for IE7+, Firefox, Chrome, Opera, Safari
+	// 	 	xmlhttp=new XMLHttpRequest();
+	// 	 }
+	// 	 xhttp.onreadystatechange = function() {
+	// 	 	if (this.readyState == 4 && this.status == 200) {
+	// 	 		myFunction(this);
+	// 	 	}
+	// 	 };
+	// 	 xhttp.open("GET", "test.xml", true);
+	// 	 xhttp.send();
+	// 	}
+	// 	function myFunction(xml) {
+	// 		var i;
+	// 		var xmlDoc = xml.responseXML;
+	// 		var table="";
+	// 		var x = xmlDoc.getElementsByTagName("CD");
+	// 		for (i = 0; i <x.length; i++) {
+	// 			table += "<li><a href='#' >" +
+	// 			x[i].getElementsByTagName("ARTIST")[1].childNodes[0].nodeValue +
+	// 			"</a></li>";
+	// 		}
+	// 		document.getElementById("test2").innerHTML = table;
+	// 	}
+	</script>
+	</html>

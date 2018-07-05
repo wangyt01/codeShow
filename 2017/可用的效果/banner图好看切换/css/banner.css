@@ -1,0 +1,104 @@
+.bannerEffect .tp-bannertimer{background:#000;top: 0; filter:Alpha(opacity=40);opacity:0.4; z-index: 999!important;visibility: visible!important;}
+.bannerEffect .effa{position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 9999;}
+.bannerEffect .fullwidthbanner{position: relative;z-index: 10;}
+.bannerEffect .fullwidthbanner ul{padding: 0;}
+.bannerEffect .fullwidthbanner li{position: absolute; opacity: 0;filter:Alpha(opacity=0);width: 100%;}
+.bannerEffect .fullwidthbanner li img{width: 100%;}
+.bannerEffect .fullwidthbanner li:first-child{position: relative; opacity: 1;filter:Alpha(opacity=100);}
+.bannerEffect img{width: 100%;}
+.bannerEffect .fullwidthbanner-container{max-height: 100% !important}
+.bannerEffect .fullwidthbanner-container{width:100% !important;position:relative;padding:0;overflow:hidden;z-index: 1}
+.bannerEffect .fullwidthbanner-container .fullwidthabnner   {width:100% !important;position:relative;}
+.bannerEffect .fullwidthbanner ul{padding: 0;}
+.bannerEffect .tp-bullets.simplebullets.round .bullet:hover,
+.bannerEffect .tp-bullets.simplebullets.round .bullet.selected,
+.bannerEffect .tp-bullets.simplebullets.navbar .bullet:hover,
+.bannerEffect .tp-bullets.simplebullets.navbar .bullet.selected {background:#e1472f; }
+.bannerEffect .tp-leftarrow:hover,
+.bannerEffect .tp-rightarrow:hover {background-color:#e1472f;}
+/** BULLETS **/
+.bannerEffect .tp-bullets {z-index: 20;position: absolute;bottom: 10px!important;}
+.bannerEffect .tp-bullets.simplebullets.round{width: 100%!important}
+.bannerEffect .tp-bullets.simplebullets.round .bullet {cursor: pointer;position: relative;background: #fff;width: 10%;height: 6px;float: left;-webkit-transition: background 0.1s linear;-moz-transition: color, background 0.1s linear;-o-transition: color, background 0.1s linear;transition: color, background 0.1s linear;}
+
+.bannerEffect .tp-leftarrow.large,.bannerEffect .tp-rightarrow.large{z-index: 20;cursor: pointer;position: relative;background: #393939 url(http://static.files.mozhan.com/Public/Images/Theme84/slider-left-arrow.png) no-Repeat;width: 42px;height: 43px;margin-left: 0px;margin-top: -31px;box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);opacity: 0.2!important;filter:Alpha(opacity=20);
+    -webkit-transition: background 0.1s linear;
+    -moz-transition: color, background 0.1s linear;
+    -o-transition: color, background 0.1s linear;
+    transition: color, background 0.1s linear;
+    
+    /*打开注释，按钮变成圆形的
+    border-radius: 20px;  所有角都使用半径为5px的圆角，此属性为CSS3标准属性 
+    -moz-border-radius: 20px;  Mozilla浏览器的私有属性 
+    -webkit-border-radius: 20px;  Webkit浏览器的私有属性 
+    border-radius: 20px 20px 20px 20px; 四个半径值分别是左上角、右上角、右下角和左下角 
+    */
+}
+.bannerEffect .tp-rightarrow.large {background: #393939 url(http://static.files.mozhan.com/Public/Images/Theme84/slider-right-arrow.png) no-Repeat 0 0;filter:Alpha(opacity=20);opacity: 0.2!important;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);/*增加阴影*/
+}
+.bannerEffect .tp-leftarrow.large:hover,.bannerEffect .tp-rightarrow.large:hover{opacity:1!important;filter:Alpha(opacity=100);}
+.bannerEffect .tp-bullets.tp-thumbs {z-index: 10;position: absolute;padding: 3px;background-color: #fff;width: 500px;height: 50px;margin-top: -50px;}
+.bannerEffect .fullwidthbanner-container .tp-thumbs {padding: 3px;}
+.bannerEffect .tp-bullets.tp-thumbs .tp-mask {width: 500px;height: 50px;overflow: hidden;position: relative;}
+.bannerEffect .tp-bullets.tp-thumbs .tp-mask .tp-thumbcontainer {width: 5000px;position: absolute;}
+.bannerEffect .tp-bullets.tp-thumbs .bullet {width: 100px;height: 50px;cursor: pointer;overflow: hidden;background: none;margin: 0;float: left;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    /*filter: alpha(opacity=50);    */
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+}
+
+.bannerEffect .tp-bullets.tp-thumbs .bullet:hover,
+.bannerEffect .tp-bullets.tp-thumbs .bullet.selected {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+.bannerEffect .tp-thumbs img {width: 100%;}
+.bannerEffect .tp-bannertimer {width: 100%;height: 1px;position: absolute;z-index: 20;}
+.bannerEffect .tp-bannertimer.tp-bottom {bottom: 0px !important;height: 5px;}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .bannerEffect .responsive .tp-bullets.tp-thumbs {
+        width: 300px !important;
+        height: 30px !important;
+    }
+    .bannerEffect .responsive .tp-bullets.tp-thumbs .tp-mask {
+        width: 300px !important;
+        height: 30px !important;
+    }
+    .bannerEffect .responsive .tp-bullets.tp-thumbs .bullet {
+        width: 60px !important;
+        height: 30px !important;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 479px) {
+    .bannerEffect .responsive .tp-bullets {
+        display: none;
+    }
+    .bannerEffect .responsive .tparrows {
+        display: none;
+    }
+}
+.bannerEffect .tp-simpleresponsive img {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.bannerEffect .tp-simpleresponsive a {text-decoration: none;}
+.bannerEffect .tp-simpleresponsive ul {list-style: none;padding: 0;margin: 0;display: block;width: 100%;height: 100%;}
+.bannerEffect .tp-simpleresponsive >ul >li {list-stye: none;position: absolute;visibility: hidden;width: 100%;height: 100%;}
+.bannerEffect .caption.slidelink a div,
+.bannerEffect .tp-caption.slidelink a div {width: 10000px;height: 10000px;}
+.bannerEffect .tp-loader {background: url(http://static.files.mozhan.com/Public/Images/Theme84/loader.gif) no-repeat 10px 10px;background-color: #fff;margin: -22px -22px;top: 50%;left: 50%;z-index: 10;position: absolute;width: 44px;height: 44px;border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}

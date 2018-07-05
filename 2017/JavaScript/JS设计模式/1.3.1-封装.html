@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var myObject = (function(){
+		var _name = 'sven';  //私有变量
+		return {
+			getName: function(){//公开方法
+				return _name;
+			}
+		}
+	})();
+	console.log(myObject.getName());//输出sven
+	console.log(myObject._name);//输出undefined
+</script>
+<script>
+	var myobj = (function(){
+		var _name = []
+		for(var i =0;i<7;i++){
+			_name.push(i)
+		}
+		return {
+			getPublic:function(){
+				return _name
+			}
+		}
+	})()
+	var arr = myobj.getPublic();
+	console.log(arr)
+</script>
+</html>

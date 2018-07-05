@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var xmlhttp;
+
+	xmlhttp = CreateXHR();
+			//发送请求 true代表是否异步存储
+	xmlhttp.open("GET","test.json",true)
+			//接受请求
+	xmlhttp.send(); 
+			//如何响应请求
+	xmlhttp.onreadystatechange = function(){
+		if(xmlhttp.readyState ==4 && xmlhttp.status ==200){
+			var jsonstr = xmlhttp.responseText;
+			console.log(jsonstr);
+		}
+	}
+			
+	function CreateXHR(){
+		if(window.XMLHttpRequest){
+			//IE7,Chorme,Firefox
+			return  new XMLHttpRequest();
+		}else{
+			//IE6,IE5
+			return new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+	}
+
+
+
+	</script>
+</body>
+</html>

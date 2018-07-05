@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var duck = {
+		duckSinging: function(){
+			console.log("嘎嘎嘎"); 
+		}
+	};
+	var chicken = {
+		duckSinging: function(){
+			console.log("gagaga");
+		}
+	};
+
+	var choir = [];//合唱团
+
+	var joinChoir = function(animal){
+		if(animal && typeof animal.duckSinging === 'function'){//&& 全真才真
+			choir.push(animal);
+			console.log('恭喜加入合唱团');
+			console.log('合唱团已有数量:' + choir.length);
+	}
+};
+joinChoir(duck);
+joinChoir(chicken);
+</script>
+</html>

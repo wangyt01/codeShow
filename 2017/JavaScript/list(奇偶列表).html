@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*tr:nth-child(n){
+		background-color: red;
+	}*/
+	td:nth-child(2*odd-1){
+		background-color: blue;
+	}
+	/*tr:nth-child(2n){
+		background-color: blue;
+	}*/
+	/*td:nth-child(4n){
+		background-color: red;
+	}*/
+	/*1 2 3 4 5
+	1 4 5 8 9
+	2 3 6 7 10*/
+	</style>
+</head>
+<body>
+	<table>
+		<caption>Itinerary</caption>
+		<thead>
+			<tr>
+			<th>what</th>
+			<th>how</th>	
+			</tr>
+		</thead>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>10</td>
+		</tr>
+	</table>
+</body>
+<script>
+window.onload = stripeTables();
+	function stripeTables(){
+		if(!document.getElementsByTagName) return false;
+		var tables = document.getElementsByTagName('table');
+		for(var i=0;i<tables.length;i++){
+			var odd = false;
+			var rows = tables[i].getElementsByTagName('tr');
+			for(var j=0;j<rows.length;j++){
+				if(odd == true){
+					rows[j].style.backgroundColor = "red";
+					odd = false;
+					
+				}else{
+					odd =true;
+				}
+			}
+		}
+	}
+</script>
+</html>

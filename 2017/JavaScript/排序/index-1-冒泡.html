@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡排序</title>
+</head>
+
+<body>
+</body>
+<!-- 解析：1.比较相邻的两个元素，如果前一个比后一个大，则交换位置。
+
+　　　2.第一轮的时候最后一个元素应该是最大的一个。
+
+　　　3.按照步骤一的方法进行相邻两个元素的比较，这个时候由于最后一个元素已经是最大的了，所以最后一个元素不用比较。 -->
+<script>
+// [3,4,2]
+function sort(elements) {
+    for (var i = 0; i < elements.length; i++) {
+        for (var j = 0; j < elements.length - i - 1; j++) {
+            if (elements[j] > elements[j + 1]) {
+                var swap = elements[j];
+                elements[j] = elements[j + 1];
+                elements[j + 1] = swap;
+            }
+        }
+    }
+}
+//往一个数组中添加随机数
+var arr = [];
+for (var i = 0; i < 10000; i++) {
+    //随机数
+    var num = Math.random();
+    // console.log(Math.round(num*10))
+    //放入数组 round()四舍五入
+    arr.push(Math.round(num * 100))
+}
+console.log("before:"+arr);
+var elements = [2, 3, 4, 5, 9, 2, 4, 5, 6, 7];
+// console.log("before:" + elements);
+var start = new Date().getTime(); //起始时间
+// sort(elements); //执行待测函数
+sort(arr)
+var end = new Date().getTime(); //接受时间
+var time = (end - start) + "ms"; //返回函数执行需要时间 
+sort(elements);
+// console.log("after:" + elements);
+console.log("after:"+arr);
+console.log(time);
+//数据10000 158ms
+</script>
+<script>
+    function sort(elements){
+        for(var i=0;i<elements.length;i++){
+            for(var j=0;j<elements.length-i-1;j++){
+                if(elements[j]>elements[j+1]){
+                    var swap = elements[j];
+                    elements[j] = elements[j+1];
+                    elements[j+1] = swap;
+                }
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,29 @@
+JSON 名称/值
+name :"Tom";
+JSON 数字
+{"age":20}
+JSON 对象
+{"name":Tome,"age":20}
+JSON 数组
+{
+"site":[
+{"name":test1,"age":20},
+{"name":test2,"age":21},
+{"name":test3,"age":22}
+]}
+JSON Booleans
+{"flag":true}
+JSON NULL
+{"name":null}
+
+JSON 对象语法
+var myObj,x;
+myObj = {"name1":test1,"name2":test2,"name3":test3};
+x = myObj.name;
+document.getElementById("").innerHTML = x;
+
+JSON for-in循环
+var myObj = {"name":"runoob","alexa":1000,"site":null};
+for (x in myObj){
+	document.getElementById("demo").innerHTML += x + "<br>";
+}

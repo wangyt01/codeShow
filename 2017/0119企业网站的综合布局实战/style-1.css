@@ -1,0 +1,19 @@
+.box1{
+	width:100px;
+	height:200px;
+	border:1px solid #f00;
+	margin-bottom: 10px;
+	float: left;
+
+}
+.box2{
+	width:100px;
+	height:200px;
+	border:1px solid #00f;
+	float: left;
+	margin-left: 30px;
+}
+.box3 {
+clear:left;
+	
+}

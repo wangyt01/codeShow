@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>懒人原生纯CSS实现六边形效果</title>
+	<style>
+.lanren{
+    display: block;
+	width: 66px;height: 120px;margin:100px auto;background-color: #008000;position: absolute;}
+.lanren::before{content:"";width: 0;height: 0;position:absolute;left:-35px;top:0;border-right:35px solid #008000;border-top:60px solid transparent;border-bottom:60px solid transparent;}
+.lanren::after{content:"";width: 0;height: 0;position:absolute;right:-35px;top:0;border-left:35px solid #008000;border-top:60px solid transparent;border-bottom:60px solid transparent;}
+
+
+.lanren2{width: 90px;height: 152px;
+	margin:100px auto;
+	background-color: #393d44;position: relative;}
+.lanren2 .left{width: 0;height: 0;position:absolute;
+	left:-45px;top:0;border-right:46px solid #393d44;border-top:76px solid transparent;border-bottom:76px solid transparent;}
+.lanren2 .right{width: 0;height: 0;position:absolute;right:-45px;top:0;border-left:46px solid #393d44;border-top:76px solid transparent;border-bottom:76px solid transparent;}
+.div2 img{
+	display: block;
+	position: absolute;
+     border:1px solid red;
+
+	}
+.div1{
+	width: 150px;
+	height: 150px;
+	background: red;
+	float: left;
+}
+.div2{
+	/*float: left;*/
+		width: 150px;
+	height: 150px;
+	background: green;
+
+}
+
+	</style>
+
+</head>
+<body>
+	<!-- 方法一(不兼容低版本浏览器) -->
+    <!-- <div class="lanren"></div> -->
+
+    <!-- 方法二(兼容主流浏览器) -->
+   <!-- <div class="div1">   	
+    <div class="lanren2">
+    	<div class="left"></div>
+    	<div class="right"></div>
+    </div>
+     </div>
+    <div class="div2">
+    	<img src="image/i-13.png" height="77" width="180" alt="">
+    </div> -->
+    <div class="div1"></div>
+    <div class="div2"></div>
+</body>
+</html>

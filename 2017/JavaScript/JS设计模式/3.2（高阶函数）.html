@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="comment.js"></script>
+</head>
+<body>
+	
+</body>
+<script>
+	conLog('3.2.1 回调函数');
+	var getUserInfo = function(userId, callback){
+		$.ajax('3.2.text' + userId,function(data){
+			if(typeof callback === 'function'){
+			callback(data);
+			}
+		});
+	}
+
+	getUserInfo(13157, function(data){
+		conLog(data.userName);
+	});
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+// var animals = [
+//   {species: 'Lion', name: 'King'},
+//   {species: 'Whale', name: 'Fail'}
+// ];
+
+// for (var i = 0; i < animals.length; i++) {
+//   (function (i) { 
+//     this.print = function () { 
+//       console.log('#' + i  + ' ' + this.species + ': ' + this.name); 
+//     } 
+//     this.print();
+//   }).call(animals[i], i);
+// }
+
+// function test(){
+// 	this.a = 1
+// }
+// var t = new test();
+// console.log(t.a)
+// console.log(test.prototype);
+
+	</script>
+  <script>
+  function test(){
+    var a = 1;
+    function demo(){
+      console.log(a);
+    }
+    return demo;
+  }
+  var x = test()
+  // var y = demo;
+  console.log(demo())
+  </script>
+</body>
+</html>

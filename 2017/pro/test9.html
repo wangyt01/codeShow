@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/test.css">
+	<style>
+	.list-one .right a{
+		color: red;
+		width: 14px;
+		height: 14px;
+		display: block;
+		background-image: url(image/list-add.png);
+		 background-repeat:no-repeat ;
+    	background-position:center;
+	}
+	</style>
+</head>
+
+<body>
+				
+<!-- 中部左面的列表栏 -->
+		<div class="n-bg-1" style="float:left;width:240px;height:900px;background:url(./image/n-bg-3.png);">
+			<div class="list-content">
+			<!-- 	<div class="list-one" style="background:url(./image/list-bg.png);">
+					<div class="left">	
+						<img src="./image/list-1.png" height="16" width="16" alt="">
+					</div>
+					<p>系统标本</p>
+					<div class="right" id="right">
+						<a href="#">
+						</a>
+					</div>
+				</div> -->
+				<div class="main">1111</div>
+				<div class="list-second">
+					<ul id="list-second-down" class="list-u">
+						<li onclick="loadDoc()" style="background:url(./image/list-3.png) no-repeat left;">
+							<a onclick="loadDoc()" href="#">运动系统</a>
+							<img onclick="loadDoc()" src="image/list-down.png" height="6" width="12" alt="">
+						</li>
+					</ul>
+					<ul id="list-second-on" class="list-third demo">
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		<!-- list list end -->
+ 	
+</body>
+<script>
+	$(document).ready(function(){
+		$(".list-content>.main").click(function(){
+			var ulNode = $(this).next(".l");
+			ulNode.slideToggle();
+			// changeIcon($(this));
+		});
+	});
+	// $(document).ready(function(){
+	// 	$("#two>a").click(function(){
+	// 		var ulNode = $(this).next("ul");
+	// 		ulNode.slideToggle();
+	// 		changeIcon1($(this));
+	// 	})
+	// })
+
+	// function changeIcon(mainNode){
+	// 	if(mainNode){
+	// 		if(mainNode.css("background-image").indexOf("image/list-add.png")>=0){
+	// 			mainNode.css("background-image","url('image/list-2.png')");
+	// 		}else{
+	// 			mainNode.css("background-image","url('image/list-add.png')");
+	// 		}
+	// 	}
+	// }
+	// 	function changeIcon1(mainNode){
+	// 	if(mainNode){
+	// 		if(mainNode.css("background-image").indexOf("image/list-up.png")>=0){
+	// 			mainNode.css("background-image","url('image/list-down.png')");
+	// 		}else{
+	// 			mainNode.css("background-image","url('image/list-up.png')");
+	// 		}
+	// 	}
+	// }
+</script>
+</html>

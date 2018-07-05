@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        （1） 从第一个元素开始，该元素可以认为已经被排序
+        <br> （2） 取出下一个元素，在已经排序的元素序列中从后向前扫描
+        <br> （3） 如果该元素（已排序）大于新元素，将该元素移到下一位置
+        <br> （4） 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置
+        <br> （5）将新元素插入到下一位置中
+        <br> （6） 重复步骤2
+        <br>
+    </div>
+</body>
+<script>
+function sort(elements){
+	//假设第0个元素是一个有序的数列，第一个以后的是无序的序列，所以从第一个元素开始将无序数列的元素插入到有序数列中
+	for(var i =0;i<elements.length;i++){
+		//升序
+		if(elements[i]<elements[i-1]){
+			//取出无序数列中的第i个作为被插入元素
+			var guard = elements[i];
+			//记住有序数列的最后一个位置，并且将有序数列位置扩大一个
+			var j = i -1;
+			elements[i] = elements[j];
+			//比大小，找到被插入元素所在的位置
+			while(j >= 0 && guard < elements[j]){
+				elements[j+1] = elements[j];
+				j--;
+			}
+			elements[j+1] = guard; //插入
+		}
+	}
+}
+	//往一个数组中添加随机数
+var arr = [];
+for (var i = 0; i < 10; i++) {
+    //随机数
+    var num = Math.random();
+    // console.log(Math.round(num*10))
+    //放入数组 round()四舍五入
+    arr.push(Math.round(num * 100))
+}
+console.log("before:"+arr);
+// var elements = [2, 3, 4, 5, 9, 2, 4, 5, 6, 7];
+// console.log("before:" + elements);
+var start = new Date().getTime(); //起始时间
+sort(arr)
+var end = new Date().getTime(); //接受时间
+var time = (end - start) + "ms"; //返回函数执行需要时间 
+// quickSort(elements);
+// console.log("after:" + elements);
+console.log("after:"+arr);
+console.log(time);
+
+//数据10000 28ms
+</script>
+
+</html>

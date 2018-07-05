@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="" type="text/css" media="all">
+	<style type="text/css">
+	input:hover{
+		border: 1px solid red;
+		background-color:#ff0000;
+	}
+ 	p:before{content: "这是之前";}
+ 	p:after{content:"这是之后";}
+	p{
+		color: blue;
+	}
+	p.myColor{
+		color: black;
+	}
+	.myColor{
+		color: yellow;
+	}
+	#myColor{
+		color: greenyellow;
+	}
+	body{
+		text-align:center;
+	}
+	.poetry-box{
+		width: 250px;
+		margin: 0 auto;
+		background:#C0DCC0;
+	}
+	.clear{
+		clear:both;
+	}
+	.content .left{
+		column-count:4;
+		-webkit-column-count:4;
+	}
+	</style>
+</head>
+<body>
+	<form method="post" action="">
+		姓名：<input type="text" value="">
+		性别：<input type="text" value="">
+	</form>
+
+	<p>伪对象</p>
+	<!-- blue -->
+	<p>猜猜我是什么颜色的</p>
+	<!-- black -->
+	<p class="myColor">猜猜看</p>
+	<!-- greenyellow -->
+	<p class="myColor" id="myColor">猜猜看</p>
+	<!-- red -->
+	<p style="color:red;" class="myColor" id="myColor">猜猜看</p>
+	<del>
+		删除
+	</del>
+	<kbd>
+		Ctrl+L
+	</kbd>
+	<div class="clear"></div>
+	<div class="poetry-box">
+		
+	<h1>春晓</h1>
+	<address>唐代&middot;孟浩然</address>
+	<p>春眠不觉晓，处处闻啼鸟。</p>
+	<p>夜来风雨声，花落知多少。</p>
+	</div>
+	<div class="content">
+		<div class="left">
+			<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: <br>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+</p>
+		</div>
+		<div class="right">
+			<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+		</div>
+	</div>
+</body>
+</html>

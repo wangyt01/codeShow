@@ -1,0 +1,142 @@
+a:hover{
+	text-decoration: none;
+}
+
+a{
+	text-decoration: none;
+}
+.content{
+	/*margin:0 auto;*/
+	width: 1440px;
+	height: 900px;
+	background:url(../image/bg.jpg);
+}
+/*头部*/
+.header{
+	height: 100%;
+	width:100%;
+	position:absolute;
+	background-position: center center;
+	background-size: 100% 100%;
+	
+	/*line-height:42px;*/
+}
+.name-one{
+	margin-right:20px;margin-top:-10px;
+}
+.name-one li{
+	float: left;
+	padding-left: 20px;
+}
+.name-one li a{
+	font-size: 16px;
+	color: #fff;
+	margin-top: 20px;
+	padding-top: 20px;
+	/*border: 1px solid #ddd;*/
+}	
+.header .name span a{
+	font-family: Microsoft YaHei,"微软雅黑";
+	font-size: 12px;
+	color: #fff;
+	right: 0;
+}
+.header .name span{
+	padding-left: 28px;
+}
+.header .name{
+	padding-right: 32px;
+	float: right;
+}
+.header{
+	float: right;
+}
+/*人物图*/
+.people img{
+	/*display: block;
+	position: absolute;
+	margin-left: -700px;*/
+}
+/*系统名字*/
+.title img{
+	/*padding-top: 82px;
+	padding-left: 100px;
+	display: block;*/
+	/*position: absolute;*/
+}
+/*六角形图*/
+
+/*图形距离上面的距离
+1.6 2.4 3.5 有相似的地方
+*/
+.six{
+	margin-left:50%;
+	margin-top:300px;
+	padding-left: 100px;
+}
+@media screen and (max-width: 1440px){
+	.six{
+		margin-left: 45%;
+		margin-top:260px;
+	}
+}
+@media screen and (max-width:1366px){
+	.six{
+		margin-left: 45%;
+		margin-top:190px;
+	}
+}
+.six-one{
+	margin-top: 80px;
+	margin-left: 94px;
+}
+.six-two{
+	margin-top: -10px;
+	margin-left: -60px;
+}
+.six-three{
+	margin-top: -96px;
+	margin-left: 250px;	
+}
+.six-four{
+	margin-top: 80px;
+	margin-left: -60px;
+}
+.six-five{
+	margin-top: -96px;
+	margin-left: 250px;	
+}
+.six-six{
+	margin-top: 0px;
+	margin-left: 94px;
+}
+.six-1 img{
+	position: absolute;
+}
+.six-2 img{
+	display: block;
+	left:65px;
+	top:36px;
+	position: relative;
+}
+.six-3 p{
+	display: block;
+	left: 58px;
+	top:36px;
+	position: relative;
+	font-size: 16px;
+	color: #fff;
+	font-family: "微软雅黑",Microsoft YaHei;
+}
+/*底部*/
+.footer span a{
+	position: absolute;
+	bottom:0px;
+	right: 20%;
+	padding:0px;
+	margin:0px;
+	
+	font-family: Microsoft YaHei,"微软雅黑";
+	font-size: 12px;
+	color: #fff;
+}

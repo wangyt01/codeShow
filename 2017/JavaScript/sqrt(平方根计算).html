@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+	<h3>平方根计算</h3>
+	<button id="feach">刷新</button></div>
+	<input type="text" value="" id="number" placeholder="输入一个数字">
+	<button id="button">提交</button>
+	<div id="result"></div>
+	<script>
+	var feach = document.getElementById("feach");
+	var num = document.getElementById("number");
+	var btn = document.getElementById("button");
+	var result = document.getElementById("result");
+	feach.onclick = function myrefresh(){
+		window.location.reload();
+	}
+	btn.onclick = function initAll(){
+	// var ans = prompt("输入一个数字","");
+	var ans = num.value;
+	try{
+		if(!ans || isNaN(ans) || ans<0){
+			throw new Error("这不是一个数字")
+		}
+		result.innerHTML = ans+"的平方根是"+Math.sqrt(ans);
+	}
+	catch(errMsg){
+		result.innerHTML = errMsg.message; //这不是一个数字
+		//result.innerHTML = errMsg.name; //Error
+		// alert(errMsg.message);
+	}
+	}
+Math.sqrt();
+Math.random()
+
+	</script>
+
+</body>
+</html>

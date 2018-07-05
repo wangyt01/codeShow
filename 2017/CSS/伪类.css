@@ -1,0 +1,4 @@
+a:link{color:red;}/*a链接的默认状态*/
+a:visited{color:blue;}/*a标签被点击后的颜色*/
+a:hover{color:green;}
+a:active{color: black}

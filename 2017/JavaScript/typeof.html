@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+<h3>arguments.callee匿名递归调用</h3>
+	<script>
+	function Sing()
+    {
+        with(arguments.callee)
+          alert(author + "：" + poem);
+    };
+    Sing.author = "李白";
+    Sing.poem = "汉家秦地月，流影照明妃。一上玉关道，天涯去不归";
+    Sing();
+    Sing.author = "李战";
+    Sing.poem = "日出汉家天，月落阴山前。女儿琵琶怨，已唱三千年";
+    Sing();
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .owui-btn {
+        display: inline-block;
+        padding: .3em .8em;
+        border: 1px solid rgba(0, 0, 0, . 1);
+        background: #58a linear-gradient(hsla(0, 0%, 100%, .2),transparent);
+        border-radius: .2em;
+        box-shadow: 0 .05em .25em rgba(0, 0, 0, . 5);
+        color: white;
+        text-shadow: 0 -.05em .05em #335166;
+        font-size: 125%;
+        line-height: 1.5;
+    }
+    .owui-ok{
+ background-color:  #c00;
+}
+.owui-cancel{
+	background-color: #6b0;
+	}
+hr {
+ height:  .5em;
+  background:  currentColor;
+}
+
+.callout { position:  relative; }
+.callout::before {
+ content: "";
+ position:  absolute;
+  top: -.4em; left:  1em;
+ padding:  .35em;
+ background:  inherit;
+ border:  inherit;
+ border-right:  0;
+  border-bottom:  0;
+  transform: rotate(45deg);
+}
+
+.owui-border{
+	/*width: 200px;
+	height: 300px;*/
+	border:  10px solid hsla(0, 100%, 50%,.5);
+background:  white;
+background-clip:  padding-box;
+}
+.div-img{
+	width: 400px;
+	height: 200px;
+	background: #6A99BF;
+	font-size: 250%;
+	color: white;
+}
+.img{
+ 	width: 56px; height: 56px;
+    background: url('../images/css_sprites.png') -10px -10px;
+    /*background-position: right -10px bottom -10px;*/
+}
+
+    </style>
+
+</head>
+
+<body>
+    <div class="owui-btn">提交</div>
+    <div class="owui-btn owui-ok">OK</div>
+    <div class="owui-btn owui-cancel">Cancel</div>
+    <hr>
+    <div>
+    	<input type="text" placeholder="your name">
+    </div>
+    <div class="owui-border">
+    	hello world! <br> good good
+    </div>
+    <div class="div-img">
+    code 
+    	<div class="img">
+    		
+    	</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p><progress value="0" max="100" id="DownloadProgress"></progress>
+    <span><span id="ProgressTip">0</span>%</span>
+    <input type="button" value="start" id="Start" >
+</p>
+</body>
+<script>
+window.onload = function(){
+     var progressCtrl = {
+        init: function() {
+            var me = this;
+
+            me.initValue = 0;
+            me.progress = document.getElementById('DownloadProgress');
+            me.tip = document.getElementById('ProgressTip');
+            document.getElementById('Start').onclick = me.startDownload;
+        },
+        startDownload: function () {
+            var me = progressCtrl;
+
+            me.timer = setInterval(me.onInterval, 100);
+        },
+        onInterval: function () {
+            var me = progressCtrl;
+
+            var initValue = me.initValue++;
+
+            me.update(initValue);
+
+            if (initValue >= me.progress.max) {
+
+                clearInterval(me.timer);
+                me.tip.textContent = 100;
+
+
+            } else {
+                me.tip.textContent = me.initValue;
+            }
+        },
+        update: function (value) {
+            var me = progressCtrl;
+
+            return me.progress.value = value;
+        }
+    };
+
+    progressCtrl.init();
+}
+   
+</script>
+</html>

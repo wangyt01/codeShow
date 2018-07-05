@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="js/avalon.js"></script>
+	<script src="js/comment.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+	<h4>2.计算属性</h4>
+<p>计算属性是监控属性的强化版，它必须依赖于1个或多个监控属性。通过普通的监控属性实现对视图的监听，它自身的变化也由监控属性进行驱动。</p>
+<!-- <div ms-controller="avalon">
+	{{@test1}}
+	<table>
+		<tr>
+			<td>
+				<ul>
+					<li ms-for="el in @communities">{{el.community_name}}</li>
+				</ul>
+			</td>
+			<td>
+				<wbr ms-widget="{is:'ms-autocomplete', $id: 'aaa', name: 'community_id', communities :@communities}" />
+
+			</td>
+		</tr>
+	</div>
+</div> -->
+</body>
+<script>
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			myObj = JSON.parse(this.responseText);
+			// myStr = JSON.stringify(this.responseJSON);
+			console.log(myObj);
+		}
+		
+	};
+	xmlhttp.open("GET", "XML.json", true);
+	xmlhttp.send();
+    
+	// avalon.component('ms-autocomplete', {
+	// 	template: '<div><input type="text" ms-duplex-string="@search" placeholder="输入字母，查找单词"/>' +
+	// 	'<ul><li ms-for="($idx,opt) in @aaa">' +
+	// 	'{{opt.community_name}}</li></ul></div>',
+	// 	defaults: {
+	// 		search: '',
+	// 		communities: [],
+	// 		onReady:function(e){
+	// 			e.vmodel.$watch('search', function(v){
+	// 				avalon.log('current search word is '+ v)
+	// 			})
+	// 		},
+	// 		$computed: {
+	// 			aaa: {
+	// 				get: function() {
+	// 					var ret = [];
+	// 					for (var i = 0; i < this.communities.length; i++) {
+	// 						if ((this.communities[i].community_name.indexOf(this.search) > -1)) {
+	// 							ret[ret.length] = this.communities[i];
+	// 							if(ret.length === 5){
+	// 								break
+	// 							}
+	// 						}
+	// 					}
+	// 					return ret;
+	// 				}
+	// 			}
+	// 		}
+
+	// 	}
+	// });
+	// communities =
+	// communities = [, {
+	// 	community_id: 5,
+	// 	community_name: 'isnot',
+	// }, {
+	// 	community_id: 8,
+	// 	community_name: 'agood',
+	// }, {
+	// 	community_id: 10,
+	// 	community_name: 'example',
+	// }, {
+	// 	community_id: 22,
+	// 	community_name: 'for',
+	// }, {
+	// 	community_id: 23,
+	// 	community_name: 'such',
+	// }, {
+	// 	community_id: 43,
+	// 	community_name: 'test',
+	// }, {
+	// 	community_id: 45,
+	// 	community_name: 'thank',
+	// }, {
+	// 	community_id: 47,
+	// 	community_name: 'you',
+	// }, {
+	// 	community_id: 50,
+	// 	community_name: 'verymuch',
+	// }, {
+	// 	community_id: 51,
+	// 	community_name: 'youre',
+	// }, {
+	// 	community_id: 53,
+	// 	community_name: 'welcome',
+	// }, {
+	// 	community_id: 54,
+	// 	community_name: 'too',
+	// }, {
+	// 	community_id: 55,
+	// 	community_name: 'notsogood',
+	// }, {
+	// 	community_id: 56,
+	// 	community_name: 'cheerful',
+	// }];
+	// var vm = avalon.define({
+	// 	$id: 'avalon',
+	// 	test1: 'test1',
+	// 	communities: communities,
+	// });
+</script>
+</script>
+<div id="demo"> </div>
+</html>

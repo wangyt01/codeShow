@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	
+</style>
+<body>
+	<p>这是第一行</p>
+	<p>这是第二行</p>
+	<p>都会被复制</p>
+	<script>
+    x = document.getElementsByTagName("p");
+    for ( i=0; i<x.length; i++){
+    	document.write(x[i].innerHTML);
+    	document.write("<br>");
+    }
+	</script>
+</body>
+</html>

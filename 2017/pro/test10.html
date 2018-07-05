@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+ul,li{
+    padding: 0;
+    margin:0;
+    list-style: none;
+}
+a{
+    text-decoration:none;
+}
+#tree{
+    background-color: #000;
+}
+#tree_1{
+    border:1px solid red;
+}
+#tree_1_a{
+    display: block;
+    width: 500px;
+    color: #000;
+    border:1px solid blue;
+    background-color: #fff;
+}
+#tree_2{
+
+}
+  #tree_2_a{
+
+    display: block;
+    width: 300px;
+    color: #fff;
+    background: #ddd;
+  }
+  #tree_3_a{
+    display: block;
+    width: 100px;
+    color: #7e7e7e;
+  }
+  #tree_3_span:hover{
+    color: #1a5ac7;
+  }
+</style>
+</head>
+<body>
+ <div class="border1" id="left" ms-controller="bstree" style="">
+        <!-- <div class="leftTop fontW">数字标本</div> -->
+        <ul id="tree" class="ztree" style="width:240;height:700px;overflow:auto;">
+            <li id="tree_1">
+             <span id="tree_1_switch"></span>
+             <a href="" id="tree_1_a">
+                 <span id="tree_1_ico" class="">1</span>
+                 <span id="tree_1_span">系统标本</span>
+                 <i>11</i>
+             </a> 
+
+             <ul id="tree_2_ul">
+                 <li id="tree_2">
+                    <span id="tree_2_switch"></span>
+                 <a href="" id="tree_2_a">
+                 <span id="tree_2_ico">22</span>
+                 <span id="tree_2_span">运动系统</span>
+                 <i>22</i>
+                </a>
+                 <ul id="tree_3_ul">
+                 <li id="tree_3">
+                     <span id="tree_3_switch"></span>
+                    <a href="" id="tree_3_a">
+                 <span id="tree_3_ico"></span>
+                 <span id="tree_3_span">骨骼</span>
+                </a> 
+                 </li>
+                  <li id="tree_3">
+                     <span id="tree_3_switch"></span>
+                    <a href="" id="tree_3_a">
+                 <span id="tree_3_ico"></span>
+                 <span id="tree_3_span">骨骼1</span>
+                </a> 
+                 </li>
+             </ul> 
+                 </li>
+             </ul>
+         </li>
+     </ul>
+ </div>
+</body>
+</html>

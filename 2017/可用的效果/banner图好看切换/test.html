@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>面包屑</title>
+    <!-- <link rel="stylesheet" href="css/public.css"> -->
+    <style>
+
+/*-----点击看大图-----*/
+body .product-detail .BigImg{display: none; position:fixed;left: 0;top: 0; z-index:999; width: 100%;height: 100%;background: url(http://static.files.mozhan.com/Public/Images/bg/productBg.png) repeat;
+  filter:Alpha(opacity=0);opacity:0;
+}
+.Animate{
+  -webkit-transition: all .6s ease-in-out 0s;
+  -moz-transition: all .6s ease-in-out 0s;
+  -ms-transition: all .6s ease-in-out 0s;
+  -o-transition: all .6s ease-in-out 0s;
+  transition: all .6s ease-in-out 0s;}
+body .product-detail .BigImg.active{filter:Alpha(opacity=100);opacity:1;}
+body .product-detail .BigImg img{max-width: 100%;margin: 0 auto;max-height: 100%;
+  display: none;
+  -webkit-transition: all .3s ease-in-out 0s;
+  -moz-transition: all .3s ease-in-out 0s;
+  -ms-transition: all .3s ease-in-out 0s;
+  -o-transition: all .3s ease-in-out 0s;
+  transition: all .3s ease-in-out 0s;
+  filter:Alpha(opacity=0);opacity:0;}
+body .product-detail .BigImg img.active{
+  filter:Alpha(opacity=100);opacity:1;;
+}
+body .product-detail .imgBoxTable{width: 100%;height: 100%;text-align: center;}
+body .product-detail .closeBigImg{cursor: pointer; width: 40px;height: 40px;text-align: center;line-height: 40px;font-size: 40px;color: #fff;color: rgba(255,255,255,.6); position: absolute;top: 20px;right: 20px; z-index:3;}
+body .product-detail .left,body .product-detail .right{cursor: pointer; display: block!important; background: #fff;z-index: 2; position: absolute;left:20px;top:0;width:60px;height:100%; background: url(http://static.files.mozhan.com/Public/Images/productLeft.png) no-repeat center;}
+body .product-detail .right{left: auto;right: 20px;background: url(http://static.files.mozhan.com/Public/Images/productRight.png) no-repeat center;}
+
+    </style>
+</head>
+
+<body>
+<div class="Animate" style="">
+	<div class="">
+		<img src="img/banner-1.jpg" alt="">
+	</div>
+</div>
+</body>
+		
+</html>

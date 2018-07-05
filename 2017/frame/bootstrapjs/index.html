@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 工具提示（Tooltip）插件</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	/*改变弹出框*/
+	.tooltip.right {
+    padding: 0 5px;
+    margin-left: 13px;
+}
+	.tooltip.right .tooltip-arrow {
+    top: 50%;
+    left: -5px;
+    margin-top: -5px;
+    border-width: 10px 10px 10px 0;
+    border-right-color: #393939;}
+	.tooltip-inner{
+		 /*margin-left: 20px;*/
+		 max-width: 460px;
+		 text-align: left;
+    width: 460px;
+    height: auto;
+    padding: 12px 16px;
+    border: 8px solid #393939;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    font-family: "微软雅黑",Microsoft YaHei;
+    font-size: 14px;
+    line-height: 26px;
+    color: #333;
+    background: #fafafa; 
+	}
+	</style>
+</head>
+<body>
+
+<h4>工具提示（Tooltip）插件 - 锚</h4>
+这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" title="默认的 Tooltip">默认的 Tooltip</a>.
+这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" data-placement="left" title="左侧的 Tooltip">左侧的 Tooltip</a>.
+这是一个 <a href="#" data-toggle="tooltip" data-placement="top" title="顶部的 Tooltip">顶部的 Tooltip</a>.
+这是一个 <a href="#" data-toggle="tooltip" data-placement="bottom" title="底部的 Tooltip">底部的 Tooltip</a>.
+<p class="tooltip-options" >
+		这是一个 
+		<a href="#" data-trigger="click" data-placement="right" data-toggle="tooltip" title="<div class='show'>骨在成人为206块，约占体重的1／5，可分为躯干骨（51块），约占体重的1／5，可分为躯干骨（51块）、颅骨（29块，包括听小骨6块）、上肢骨（64块）和下肢骨（62块）四部分。每块骨均为一器官，具有一定的形态结构和血管、神经的供应，能不断进行新陈代谢，有其生长发育过程，并具有修复和改建的能力。</div>">Tooltip 方法 options</a>.
+	</p>
+<br>
+<!-- <h4>工具提示（Tooltip）插件 - 按钮</h4>
+<button type="button" class="btn btn-default" data-toggle="tooltip"  title="默认的 Tooltip"> 默认的 Tooltip</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="左侧的 Tooltip">左侧的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="顶部的 Tooltip">顶部的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="底部的 Tooltip">底部的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="右侧的 Tooltip">右侧的 Tooltip</button> -->
+<script>
+	// $(function () { $("[data-toggle='tooltip']").tooltip(); });
+	$(function () { $(".tooltip-options a").tooltip({html : true });});
+	// $(function () { $(".tooltip-options a").tooltip('show');});
+
+</script>
+
+</body>
+</html>

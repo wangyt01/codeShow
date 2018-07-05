@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../common/css/reset.css">
+	<!--[if lt IE 9]>
+      <script src="../../common/js/html5shiv.min.js"></script>
+      <script src="../../common/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+a{
+	text-decoration: none;
+	color: #000;
+}
+.owui-btn{
+		margin: 2px;
+		padding: 0 16px;
+		white-space:nowrap;
+		display: inline-block;
+		height: 30px;
+		line-height: 30px;
+		background: #0a669b;
+		text-align: center;
+		color: #fff;
+		border-radius: 3px;
+		cursor:pointer;
+		border: 0;
+		font-size: 13px;
+	}
+	.main-top{
+		position: absolute;
+		top:10px;
+	}
+	.main{
+		/*transform:translateX(-50%) translateY(-50%);
+		-webkit-transform:translateX(-50%) translateY(-50%);
+		-ms-transform:translateX(-50%) translateY(-50%);
+		-moz-transform:translateX(-50%) translateY(-50%);*/
+		border: 1px solid #ddd;	
+		width: 1000px;
+		/*height:auto;*/
+		margin: 10px auto;
+		padding: 10px;
+		display: flex;
+		justify-content:space-between;
+	}
+	.canvas{
+		width: 300px;
+		height: 150px;
+		border: 1px dashed #999;
+	}
+	.owui-p{
+		font-size: 13px;
+		margin: 16px 0;
+	}
+	p{
+		font-size: 13px;
+	}
+	.owui-hide{
+		display: none;
+	}
+	.main-1{
+
+	}
+	.owui-ul{
+		width: 100px;
+		text-align: center;
+
+	}
+	.owui-ul>li{
+		/*display: inline-block;*/
+		padding: 4px;
+		margin: 4px 10px;
+		border: 1px solid #999;
+	}
+	.owui-ul .active{
+		background: #ddd;
+	}
+	.owui-ul>li>a{
+		display: block;
+	}
+</style>
+<body>
+<div class="main-top">
+	<div id="show_btn" class="owui-btn">显示/隐藏文字</div> <br>
+	<ul class="owui-ul" id="show_ul">
+		<li class="owui-li"><a href="javascript:;">第一页</a></li>
+		<li><a href="javascript:;">第二页</a></li>
+		<li><a href="javascript:;">第三页</a></li>
+		<li><a href="javascript:;">第四页</a></li>
+		<li><a href="javascript:;">第五页</a></li>
+	</ul>
+</div>
+ <div id="main" class="main owui-hide">
+ 		<div>
+ 			<p class="owui-p"><strong>fillStyle</strong>：定义用蓝色填充的矩形</p>
+ 			<canvas id="canvas" class="canvas"></canvas>
+ 			<p class="owui-p">定义从上到下的渐变，作为矩形的填充样式：</p>
+ 			<canvas id="canvas_1" class="canvas"></canvas>
+ 			<p class="owui-p">定义从左到右的渐变，作为矩形的填充样式：</p>
+ 			<canvas id="canvas_2" class="canvas"></canvas>
+ 			<p class="owui-p">定义从黑到红到白的的渐变，作为矩形的填充样式：</p>
+ 			<canvas id="canvas_3" class="canvas"></canvas>
+
+ 		</div>
+ 		<div>
+ 			<p class="owui-p"><strong>strokeStyle</strong>：绘制一个矩形。请用蓝色的笔触颜色</p>
+ 			<canvas id="canvas_4" class="canvas"></canvas>
+ 			<p class="owui-p">绘制一个矩形。使用渐变笔触：</p>
+ 			<canvas id="canvas_5" class="canvas"></canvas>
+ 			<p class="owui-p">绘制一个矩形。使用渐变笔触：</p>
+ 			<canvas id="canvas_6" class="canvas"></canvas>
+ 		</div>
+ 		<div>
+ 			<p class="owui-p"><strong>shadowColor</strong>：绘制一个带有黑色阴影的蓝色矩形</p>
+ 			<canvas id="canvas_7" class="canvas"></canvas>
+ 			<p class="owui-p">绘制一个矩形，带有向右偏移 20 像素的阴影：</p>
+ 			<canvas id="canvas_8" class="canvas"></canvas>
+ 			<p class="owui-p">绘制一个矩形，带有向左偏移 20 像素的阴影：</p>
+ 			<canvas id="canvas_9" class="canvas"></canvas>
+ 			<p class="owui-p">绘制一个矩形，带有向上偏移 20 像素的阴影：</p>
+ 			<canvas id="canvas_10" class="canvas"></canvas>
+ 		</div>
+ 		
+ </div>
+ <div id="main_1" class="main">
+ 		<div>
+ 			<p class="owui-p"><strong>shadowBlur</strong>：绘制带黑色阴影矩形，模糊级数是 20</p>
+ 			<canvas id="canvas_11" class="canvas"></canvas>
+ 			<p class="owui-p"><strong>createRadialGradient</strong>：用放射状/圆形渐变进行填充：</p>
+ 			<canvas id="canvas_12" class="canvas"></canvas>
+ 			<p class="owui-p"><strong>addColorStop</strong>：多个 addColorStop() 方法来定义渐变</p>
+ 			<canvas id="canvas_13" class="canvas"></canvas>
+ 			<p class="owui-p"><strong>lineCap</strong>：绘制圆形的结束线帽</p>
+ 			<canvas id="canvas_14" class="canvas"></canvas>
+ 		</div>
+ 		<div>
+ 			<p class="owui-p"><strong>lineJoin</strong>：当两条线条交汇时，创建圆形边角</p>
+ 			<canvas id="canvas_15" class="canvas"></canvas>
+ 			<p class="owui-p"><strong>绘制五角星</strong></p>
+ 			<canvas id="canvas_16" class="canvas"></canvas>
+ 			<p class="owui-p"><strong>绘制矩形</strong></p>
+ 			<canvas id="canvas_17" class="canvas"></canvas>
+ 			<p class="owui-p"><strong>通过 rect() 方法来创建三个矩形</strong></p>
+ 			<canvas id="canvas_18" class="canvas"></canvas>
+ 		</div>
+ 		<div>
+ 			<p class="owui-p"><strong>fillRect</strong>：绘制 150*100 像素的已填充矩形</p>
+ 			<canvas id="canvas_19" class="canvas"></canvas>
+ 			<p class="owui-p"><strong>clearRect()</strong>：在给定矩形内清空一个矩形</p>
+ 			<canvas id="canvas_20" class="canvas"></canvas>
+ 			
+ 		</div>
+ </div>
+
+
+</body>
+<script>
+
+</script>
+<script src="js/canvas-1.js"></script>
+
+</html>

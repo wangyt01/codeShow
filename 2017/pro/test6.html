@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.onepage{
+			height:750px;
+		}
+		.onepage-bg{
+			height: 100%;
+			width:100%;
+			position:absolute;
+			background-position: center center;
+			background-size: 100% 100%;
+		}
+		.onepage-bg img{
+			margin-left: 24px;
+		}
+		#onepagebg{
+			background-image: url(image/首页2.jpg);
+		}
+		.test{
+			display: block;
+			padding-left: 60px;
+		}
+		.test img{
+			display: block;
+			border: 1px solid green;
+			float: left;
+		}
+		.test a{
+			margin-top: 20px;
+			padding-top: 20px;
+			border: 1px solid #ddd;
+		}
+		.name{
+			height: 42px;
+			line-height: 42px;
+			border: 1px solid blue;
+			float: right;
+		}
+		.test1 li{
+			float: left;
+			padding-left: 20px;
+		}
+		.test1 li a{
+			font-size: 16px;
+			color: #fff;
+
+		}
+		.test1 li a:hover{
+			text-decoration: none;
+			background-color:transparent;
+		}
+		.footer{
+			position:absolute;
+	bottom:0px;
+	right: 0px;
+	padding:0px;
+	margin:0px;
+			/*width: 100px;
+			height: 50px;
+			background: red;*/
+			color: #fff;
+			/*bottom: 20px;*/
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body data-spy="scroll" data-target="#myScrollscy" style="overflow:hidden;">
+	<div class="onepage" id="onepage">
+		<div class="onepage-bg" id="onepagebg">
+			<div class="people">
+
+				<div style="width:;height:42px;background:;">
+					<div class="name">
+
+							<ul class="test1" style="margin-right:20px;margin-top:-10px;">
+								<li><a href="#"><i class="icon-user"></i> 名字</a></li>
+								<li><a href="#"><i class="icon-lock"></i> 修改密码</a></li>
+								<li><a href="#"><i class="icon-off"></i> 退出</a></li>
+							</ul>
+						
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p>11111111111111</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+<!-- jQuery (Bootstrap 插件需要引入) -->
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<!-- 包含了所有编译插件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var googleMap = {
+		show: function(){
+			console.log('开始渲染谷歌地图');
+		}
+	};
+	var baiduMap = {
+		show: function(){
+			console.log('开始渲染百度地图');
+		}
+	};
+	var sosoMap = {
+		show: function(){
+			console.log('开始渲染搜搜地图');
+		}
+	}
+	var renderMap = function(map){
+		if( map.show instanceof Function){
+			map.show();
+		}
+	};
+//instanceof 运算符与 typeof 运算符相似，
+//用于识别正在处理的对象的类型。与 typeof 方法不同的是，
+//instanceof 方法要求开发者明确地确认对象为某特定类型。
+	renderMap(googleMap);
+	renderMap(baiduMap);
+	renderMap(sosoMap);
+</script>
+</html>

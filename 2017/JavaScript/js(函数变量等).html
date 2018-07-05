@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../common/css/owui.css">
+    <style>
+    h3 {
+        margin: 20px;
+        display: inline-block;
+    }
+
+    .owui-pre {
+        margin: 10px;
+    }
+
+    .content {
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+    .demo {
+        display: inline;
+        width: 600px;
+        height: 30px;
+        border: 1px solid #999;
+    }
+
+    .left {
+
+
+        position: fixed;
+        top: 100px;
+        left: 20px;
+    }
+
+    .left-content {
+        width: 200px;
+        min-height: 100px;
+        border: 1px solid #999;
+        background: #f1f1f1;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="left">
+        <h3>展示结果</h3>
+        <div class="left-content" id="demo"></div>
+    </div>
+    <div id="content" class="content">
+        <h3>定义变量</h3>
+        <pre class="owui-pre">
+     	var x;
+		x = "age";
+		document.write(x+"<br>");
+		x = "name";
+		document.write(x);
+		</pre>
+        <h3>if语句</h3>
+        <button id="btn1" class="btn">按钮1</button>
+        <pre class="owui-pre">
+		function myFunction(){
+		var x = "";
+		var time = new Date().getHours();
+		if (time&lt;12){
+			x = "Good Morning";
+		}else{
+			x = "Good Afternoon";
+		}
+		document.getElementById("dome").innerHTML=x;
+	 	}
+		window.onload =function(){}
+		</pre>
+        <h3>随机数访问</h3>
+        <button id="btn2" class="btn">按钮2</button>
+        <pre class="owui-pre">
+		   var r=Math.random();
+			var x=document.getElementById("demo")
+			if (r>0.5)
+			{
+			x.innerHTML="<a href='http://www.baidu.com'>百度一下</a>";
+			}
+			else
+			{
+			x.innerHTML="<a href='http://wyong.me'>欢迎拜访我的博客</a>";
+			}
+			}
+		</pre>
+        <h3>switch语句</h3>
+        <button id="btn3" class="btn">按钮3</button>
+        <pre class="owui-pre">
+			function myFunction(){
+	var x ;
+	var d = new Date().getDay();
+	switch(d)
+	{
+		case 0:x = "Today is Sunday";
+		break;
+		case 1:x = "Today is Monday";
+		break;
+		case 2:x = "Today is Tuesday";
+		break;
+		case 3:x = "Today is Wednesday";
+		break;
+		case 4:x = "Today is Thursday";
+		break;
+		case 5:x = "Today is Friday";
+		break;
+		case 6:x = "Today is Saturday";
+		break;
+
+}
+		</pre>
+        <h3>js中符号转换</h3>
+        <button id="btn4" class="btn">按钮4</button>
+        <button id="btn4_1" class="btn">按钮4-1</button>
+        <pre class="owui-pre">
+			
+			function myFunction(){
+				alert("Hello \n How are you!");
+			}
+			function myFunction(){
+				var x;
+				var r = confirm("按下按钮！");
+				if(r == true){
+					x = "你按下了\"确定\"按钮！";
+				}
+				else{
+					x = "你按下了\"取消\"按钮！";
+				}
+				document.getElementById("demo").innerHTML = x;
+			}
+		</pre>
+        <h3>函数传参</h3>
+        <button id="btn5" class="btn">按钮5</button>
+        <pre class="owui-pre">
+function myFunction(){
+	var x ;
+	var person = prompt("请你输入你的名字","Tom");
+	if(person !=null && person!=""){
+		x = "你好" + person + "!今天感觉如何？";
+		document.getElementById("demo").innerHTML = x;
+	}
+}
+function myFunction(name,job){
+	alert("Welcome"+name+",the"+job);
+}
+function myFunction(txt){
+	alert(txt);
+}
+function myFunction(){
+	return("Hello World");
+}
+	document.write(myFunction())
+	
+window.onload = initAll;
+
+	function initAll(a,b){
+	return a*b;
+}
+document.getElementById("demo").innerHTML = initAll(4,9);
+		</pre>
+        <h3>for,while,do...while</h3>
+        <button id="btn6" class="btn">按钮6</button>
+        <button id="btn6_1" class="btn">按钮6-1</button>
+        <button id="btn6_2" class="btn">按钮6-1</button>
+        <pre class="owui-pre">
+			function myFunction(){
+	var x = "",i;
+	for(i=1;i&lt;7;i++){
+		x = x + "<h" +i+">Heading"+ "</h"+i+">";
+	}
+	document.getElementById("demo").innerHTML = x;
+}
+function myFunction(){
+	var x = "",i=0;
+	while (i&lt;5){
+		x = x + "this number is" +i+"<br>";
+		i++;
+	}
+	document.getElementById("demo").innerHTML = x;
+}
+function myFunction(){
+	var x = "",i=0;
+	do{
+		x = x + "该数字为" +i+"<br>";
+		i++;
+	}
+	while (i&lt;5)
+		document.getElementById("demo").innerHTML = x;
+}
+		</pre>
+        <h3>break和continue</h3>
+        <button id="btn7" class="btn">按钮7</button>
+        <button id="btn7_1" class="btn">按钮7-1</button>
+        <pre class="owui-pre">
+			function myFunction(){
+	var x = "",i=0;
+	for(i=0;i&lt;10;i++){
+		if(i==4){
+			break;
+		}
+		x = x +"this is number"+i+"<br>";
+	}
+	document.getElementById("demo").innerHTML = x;
+}
+function myFunction(){
+	var x = "",i=0;
+	for(i=0;i&lt;10;i++){
+		if(i==3){
+			continue;
+		}
+		x = x + "this number is "+i+"<br>";
+	}
+	document.getElementById("demo").innerHTML = x;
+}
+		</pre>
+        <h3>函数内部调用参数</h3>
+        <button id="btn8" class="btn">按钮8</button>
+        <pre class="owui-pre">
+			function myFunction(){
+	var x;
+	var txt = "";
+	var person ={fname:"Bill",lname:"Gates",age:56};
+	for(x in person){
+		txt = txt + " "+person[x];
+	}
+	document.getElementById("demo").innerHTML = txt;
+}
+		</pre>
+        <h3>Date日期</h3>
+        <button id="btn9" class="btn">按钮9</button>
+        <pre class="owui-pre">
+			function displayDate(){
+	document.getElementById("demo").innerHTML= Date();
+}
+		</pre>
+        <h3>输出错误信息1</h3>
+        <button id="btn10" class="btn">按钮10</button>
+        <pre class="owui-pre">
+			var txt = "";
+function message(){
+	try{
+		addddlert("Welcome guset!");
+	}
+	catch(err){
+		txt = "本页有一个错误。\n\n";
+		txt += "错误描述："+err.message + "\n\n";
+        txt += "点击确定继续。\n\n";
+        alert(txt);
+	}
+}
+		</pre>
+        <h3>输出错误信息2</h3>
+        <button id="btn11" class="btn">按钮11</button>
+        <pre class="owui-pre">
+			var txt = "";
+function message(){
+	try{
+   adddlert("Welcome guset!");
+	}
+	catch(err){
+		txt = "本页有一个错误.\n\n";
+		txt += "单击确定继续跳转\n";
+		txt += "或者单击取消返回\n\n";
+		if(confirm(txt)){
+			document.location.href = "http://www.wyong.me/";
+		}
+	}
+}
+
+		</pre>
+        <h3>输入错误信息3</h3>
+        <button id="btn12" class="btn">按钮12</button>
+        <pre class="owui-pre">
+			onerror = handleErr;
+var txt = "";
+function handleErr(msg,url,l){
+	txt = "该页面有一个错误\n\n";
+	txt += "错误：" + msg + "\n";
+	txt += "URL:" + url + "\n";
+	txt += "行:" + l + "\n\n";
+	txt += "点击确定继续。\n\n";
+	alert(txt);
+	return true;
+}
+function message(){
+	addddlert("Wlecome guest!");
+}
+
+		</pre>
+        <h3>cookie</h3>
+        <pre class="owui-pre">
+function setCookie(cname,cvalue,exdays){
+	var d = new Date();
+	d.setTime(d.getTime()+(exdays*24*60*60*1000));
+	var expires = "expires=" + d.toGMTString();
+	document.cookie = cname + "=" + cvalue + ";" + expires;
+}
+function getCookie(cname){
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for(var i = 0;i&lt;ca.length;i++){
+		var c = ca[i].trim();
+		if(c.indexOf(name) == 0) return c.substring(name.length,c.length)
+	}
+	return "";
+}
+function checkCookie(){
+	var user = getCookie("username");
+	if(user!=""){
+		alert("Welcome again"+ user);
+	}
+	else{
+		user = prompt("Please enter your name:","");
+		if(user!=""){
+			alert ("Welcome agein" + user);
+		}
+		else{
+           user = prompt("Please enter your name:","");
+           if(user!="" && user!= null){
+           	setCookie("username",user,30);
+           }			
+		}
+	}
+}
+
+		</pre>
+        <h3>延迟运行</h3>
+        <pre class="owui-pre">
+			function myFunction(){
+	setTimeout(function(){
+		alert("Hello")
+	},3000)
+}		
+function timedText(){
+	var x = document.getElementById('txt');
+	var t1 = setTimeout(function(){
+		x.value = "2 seconds"
+	},2000);
+	var t2 = setTimeout(function(){
+		x.value = "4 seconds"
+	},4000);
+	var t3 = setTimeout(function(){
+		x.value = "6 seconds"
+	},6000)
+}
+
+		</pre>
+        <h3>ajax</h3>
+        <pre class="owui-pre">
+			function loadXMLDoc()
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{
+		//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{
+		// IE6, IE5 浏览器执行代码
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function()
+	{
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+			document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		}
+	}
+	xmlhttp.open("GET","/try/ajax/ajax_info.txt",true);
+	xmlhttp.send();
+}
+		</pre>
+    </div>
+</body>
+<script src="js/js(函数变量等).js"></script>
+<script>
+var con = document.getElementById("content");
+var h = con.getElementsByTagName("h3");
+// console.log(h[0].innerHTML[0]);
+for (var i = 0; i < h.length; i++) {
+    h[i].innerHTML = i + 1 + "." + h[i].innerHTML
+}
+</script>
+
+</html>

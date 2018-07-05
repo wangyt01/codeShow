@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 防止转码 -->
+    <meta name="applicable-device" content="pc,mobile">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform " />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="" />
+    <title>banner切换</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/test.css">
+</head>
+<body id="body" style="overflow-x:hidden; overflow-y: scroll;outline: none;" class="  Pagebg">
+    <div class="container">
+        <div class="row clearfix container tpl_two" id="md_tpl_two">
+            <!--  -->
+            <div class="col-md-12">
+                    <div id="md_banner" class="banner">
+                        <div class="col-md-12">
+                            <div data-design-rel="banner" class="carousel slide" id="myCarousel">
+                                <div class="bannerBox">
+                                    <div class="bannerEffect" id="pc_banner_content">
+                                        <div class="fullwidthbanner-container">
+                                            <div class="fullwidthbanner">
+                                                <ul>
+                                                    <li data-transition="slotzoom-horizontal" data-slotamount="15" data-masterspeed="300">
+                                                        <img src="./img/banner-1.jpg" alt="" />
+                                                    </li>
+                                                    <li data-transition="curtain-3" data-slotamount="15" data-masterspeed="300">
+                                                        <img src="./img/banner-2.jpg" alt="" />
+                                                    </li>
+                                                    <li data-transition="boxslide" data-slotamount="15" data-masterspeed="300">
+                                                        <img src="./img/banner-3.jpg" alt="" />
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--banner效果插件-->
+    <script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.banner.js"></script>
+    <script type="text/javascript" src="./js/banner.js"></script>
+    <!--end-->
+</body>
+
+</html>
