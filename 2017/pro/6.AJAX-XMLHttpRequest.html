@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<title>XMLHttpRequest 对象</title>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
  $(document).ready(function(){
@@ -102,7 +103,7 @@ xmlhttp.onreadystatechange = function() {
         document.getElementById("demo").innerHTML = myArr;
     }
 };
-xmlhttp.open("GET", "test.json", true);
+xmlhttp.open("GET", "data/5.AJAX-XML-test2.json", true);
 xmlhttp.send();
 
 </script>

@@ -80,7 +80,7 @@ a great option for JavaScript animations
             {{item.message}}
         </li>
         <li v-for="(item,index) in items" v-bind:style="liStyle">
-            <span v-bind:style="spanStyle">{{index}}</span>-{{item.message}}
+            <span v-bind:style="spanStyle">{{index+1}}</span>-{{item.message}}
         </li>
         <li v-for="(value,key) in object">
             {{key}}:{{value}}
