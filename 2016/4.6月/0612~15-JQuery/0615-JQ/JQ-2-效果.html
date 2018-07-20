@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.0.0.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="JQ-2-style.css">
+</head>
+<body>
+<script>
+    for(var i=0;i<20;i++){
+        $("<div>").appendTo(document.body);
+    }
+    $("div").click(function(){
+//        $(this).hide(1000,function(){//淡淡消失
+           $(this).remove();//消失
+//        });
+    });
+</script>
+</body>
+</html>

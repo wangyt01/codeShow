@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="foundation.css">
+</head>
+<body style="padding: 10px;" ng-app="app">
+<div ng-controller="FCtrl">
+    <input type="text" ng-model="data.msg">
+    <h2 ng-bind="data.msg"></h2>
+</div>
+<div ng-controller="SCtrl">
+    <input type="text" ng-model="data.msg">
+    <h2 ng-bind="data.msg"></h2>
+</div>
+</body>
+<script src="angular.min.js"></script>
+<script src="index-2.js"></script>
+</html>

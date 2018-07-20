@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transitions 过渡</title>
+<style>
+    div{
+        background-color: aquamarine;
+        color:#c0a16b;
+        width:100px;
+        /*transition:background-color 1s linear;*/
+        transition:transform 1s linear,color 1s linear ,width 1s linear;
+    }
+    div:hover{
+        background-color: #91b817;
+        color:#FFFFFF;
+        width:200px;
+        transform:rotate(360deg);
+    }
+</style>
+</head>
+<body>
+<div>示例文字</div>
+</body>
+</html>

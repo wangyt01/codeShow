@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<ul id="mytab" class="nav nav-pills" role="tablist">
+			<li role="presentation" class="active"><a href="">Home</a></li>
+			<li role="presentation"><a href="">Profile</a></li>
+			<li role="presentation"><a href="">Messages</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<ul id="mytab" class="nav nav-pills nav-stacked" role="tablist">
+			<li role="presentation" class="active"><a href="#">Home</a></li>
+			<li role="presentation"><a href="#">Profile</a></li>
+			<li role="presentation"><a href="#">Messages</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<ul id="mytab" class="nav nav-pills nav-justified" role="tablist">
+			<li role="presentation" class="active"><a href="">Home</a></li>
+			<li role="presentation"><a href="">Profile</a></li>
+			<li role="presentation"><a href="">Messages</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<ul id="mytab" class="nav nav-pills nav-justified" role="tablist">
+			<li role="presentation" class="active"><a href="">Home</a></li>
+			<li role="presentation"><a href="">Profile</a></li>
+			<li role="presentation" class="disabled"><a href="">Messages</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<ul id="mytab" class="nav nav-pills nav-justified" role="tablist">
+			<li role="presentation" class="active"><a href="">Home</a></li>
+			<li role="presentation"><a href="">Profile</a></li>
+			<li role="presentation" class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Messages
+			<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+				<li role="presentation"><a href="#" role="menuitem" tabindex="-1">first</a></li>
+				<li><a href="#" role="menuitem" tabindex="-1">second</a></li>
+				<li><a href="#" role="menuitem" tabindex="-1">third</a></li>
+				<li class="divider"></li>
+				<li><a href="#" role="menuitem" tabindex="-1">fourth</a></li>
+			</ul>
+			</li>
+		</ul>
+	</div>
+	<script src="jquery.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script>
+      $("#mytab a").click(function(e){
+        e.preventDefault();
+        $(this).tab("show");
+      })
+	</script>
+</body>
+</html>

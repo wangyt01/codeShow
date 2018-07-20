@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+var usednumbs = new Array(3); // 创建length为3的数组
+ 
+function used (n) {
+    if (!usednumbs[n]) { // 如果没用过
+        usednumbs[n] = true;
+        alert('第一次使用');
+    } else { // 如果已经用过
+        alert('已经用过了');
+    }
+}
+ 
+// usednumbs =》 [undefined, undefined, undefined];
+used(1); // 第一次使用
+// usednumbs =》 [undefined, true, undefined];
+ 
+used(2); // 第一次使用
+// usednumbs =》 [undefined, true, true];
+ 
+used(1); // 已经用过了
+// usednumbs =》 [undefined, true, true];
+	</script>
+</body>
+</html>

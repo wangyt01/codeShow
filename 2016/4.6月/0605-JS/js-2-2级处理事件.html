@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="bth">按钮</button>
+<script>
+    var bth = document.getElementById("bth");
+    bth.addEventListener("click",demo1);
+    bth.addEventListener("click",demo2);
+    bth.addEventListener("click",demo3);
+    function demo1(){
+        alert("DOM2级事件处理程序1")
+    }
+    function demo2(){
+        alert("DOM2级事件处理程序2")
+    }
+    function demo3(){
+        alert("DOM2级事件处理程序3")
+    }
+    bth.removeEventListener("click",demo2);//移除第二个事件
+</script>
+</body>
+</html>

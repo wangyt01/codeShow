@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bar Chart Display</title>
+	<script src="app-12.6.js"></script>
+	<style>
+    body{
+    	background-color:#fff;
+    	color: #000;
+    	font-size:12px;
+    }
+    #charType{
+    	float:left;
+    	width:200px;
+    }
+    th{
+    	font-size:16px;
+    	padding-left: 20px;
+    	padding-right:15px;
+    }
+    .horiz th{
+    	border-right:1px solid #000;
+    }
+    .horiz img{
+    	height: 15px;
+    	vertical-align: bottom;
+    	margin-right:10px;
+    }
+    .vert{
+    	text-align:center;
+    	vertical-align: bottom;
+    }
+    .vert th{
+    	border-left:1px solid #000;
+    	border-bottom:1px solid #000;
+    }
+    .vert img{
+    	width: 15px;
+    	padding-left: 10px;
+    	padding-right:10px;
+    	margin-top:10px;
+    }
+	</style>
+</head>
+<body>
+	<div id="charType">
+		Choose a chart:<br>
+		<input type="radio" name="type" value="browser" checked>Browser
+		<br>
+		<input type="radio" name="type" value="platform">Mobile Device Vendors<br>
+		<p><br></p>
+		Choose a color:<br>
+		<input type="radio" name="color" value="lilRed.gif" checked>Red
+		<br>
+		<input type="radio" name="color" value="lilGreen.gif">Green<br>
+		<input type="radio" name="color" value="lilBlue.gif">Blue<br>
+		<p><br></p>
+		Choose a direction:<br>
+		<input type="radio" name="direction" value="horizontal" checked>Horizontal<br><input type="radio" name="direction" value="vertical"> Vertical
+	</div>
+	<div id="chartArea"></div>
+	
+</body>
+</html>

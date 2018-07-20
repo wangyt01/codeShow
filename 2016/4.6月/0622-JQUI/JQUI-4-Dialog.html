@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.0.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+    <script>
+        $(document).ready(function(){
+           $("#btn").button().on("click",function(){
+               $("#div").dialog();
+           });
+        });
+    </script>
+</head>
+<body>
+<div id="div">
+    <p>这是一个对话框Dialog</p>
+</div>
+<a id="btn">按钮</a>
+</body>
+</html>

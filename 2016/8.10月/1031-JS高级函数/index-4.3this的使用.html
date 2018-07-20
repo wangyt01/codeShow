@@ -1,0 +1,14 @@
+
+<!-- <script src="app-4.3.js"></script> -->
+<!-- 例7 先输出green 在输出red -->
+<input type="button" id="test" value="test" style="color:red;"> 
+<script>
+var style={
+	color:"green"
+}
+window.test();
+	function test(){
+	alert(this.style.color);
+}
+document.getElementById("test").onclick=test;
+</script>

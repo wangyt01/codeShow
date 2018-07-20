@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2016</title>
+    <script src="../vue@2.5.6/vue.min.js"></script>
+    <script src="index-2016.js"></script>
+</head>
+
+<body>
+    <div id="list">
+        <div class="list" v-for="item in data">
+            <h4>{{item.name}}</h4>
+            <ol>
+                <li v-for="el in item.list"><a v-bind:href="el.url">{{el.name}}</a></li>
+            </ol>
+        </div>
+    </div>
+</body>
+<script>
+var vm = new Vue({
+    el: "#list",
+    data: {
+        data: listArr
+    }
+})
+</script>
+
+</html>

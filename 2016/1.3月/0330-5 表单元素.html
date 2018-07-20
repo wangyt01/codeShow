@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>form标签</title>
+    
+    </head>
+<body>
+    <form actin="后台文件。php" method="get">
+    <h3>文本域</h3>
+    <textarea cols="10" rows="10">这里是文本域 </textarea>
+    <br>姓名:<input type="text"/><br>
+        <h3>单选框</h3>
+    <input type="radio" name="sex"/>男<br>
+    <input type="radio" name="sex"/>女<br>
+        <input type="radio" name="sex1"><lable for="1">男</lable><br>
+        <input type="radio" name="sex2"><lable for="2">女</lable><br>
+        <h3>复选框</h3>
+        <input type="checkbox" name="fuxuan"/>bike<br>
+        <input type="checkbox" name="fuxuan" checked="checked"/>car<br>        
+        <h3>下拉列表</h3>
+        <select multiple="multiple">
+        <option value="1">巧克力</option>
+        <option value="2">草莓</option>
+        <option value="3">蓝莓</option>
+        <option value="4" selected="selected">椰果</option>
+        </select>
+        <h3>定义域</h3>
+        <fieldset>
+        <legend>健康信息</legend>
+        身高<input type="text"/>
+        体重：<input type="text"/>    
+            
+        </fieldset>
+        <h3>按钮</h3>
+        <input type="button" value="按钮"><br>
+        <input type="submit" value="提交"><br>
+        <input type="reset" value="重置"><br>
+        <button>这里可以添加图片</button>
+    </form>
+    </body>
+</html>

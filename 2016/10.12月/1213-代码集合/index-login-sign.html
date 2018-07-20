@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="CSS/bootstrap.min.css">
+	<style>
+        .row {
+            margin-bottom: 20px;
+        }
+      .row .row{
+          margin-top:10px;
+          margin-bottom:0;
+      }
+        [class*="col-"]{
+            padding-top:15px;
+            padding-bottom:0px;
+           /* background-color: aquamarine;
+            background-color: rgba(86,61,124,.3);
+            border:1px solid #a2a2a2;
+            border:1px solid rgba(86,61,124,.2);*/
+        }
+    </style>
+</head>
+<body>
+		<div class="container">
+		<div class="row">
+			<ul id="myTab" class="nav nav-pills">
+			<li  role="presentation" class="col-md-3 col-md-offset-3">
+				<a class="btn btn-default" href="#home" data-toggle="tab">登陆</a>
+			</li>
+			<li  role="presentation" class="col-md-3 active">
+				<a class="btn btn-default" href="#myhome" data-toggle="tab">注册</a>
+			</li>
+		</ul>
+		
+
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade" id="home">
+			<p>1</p>
+			</div>	
+			<div class="tab-pane fade" id="myhome">
+			<input type="text" class="form-control" placeholder="UserName">
+				<p>
+					Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.
+				</p>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+<script src="JS/jquery.min.js"></script>
+<script src="JS/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tooltips</title>
+	<link rel="stylesheet" type="text/css" href="../JS/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>Tooltip</h1>
+			<small>Bootstrap</small>
+		</div>
+		<p class="tooltip-demo" style="margin-bottom:0">
+			Tight pants next level keffiyeh you probably haven't <a href="#" title="Default tooltip" data-toggle="tooltip" data-original-tittle="Default tooltip">heard of them</a>. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel<a href="#" title="Default tooltip"  data-toggle="tooltip" data-original-tittle="Default tooltip">have a</a>  terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa,<a href="#" title="Default tooltip"  data-toggle="tooltip" data-orginal-tittle="Default tooltip">four loko </a> mcsweeney's cleanse vegan chambray. A really ironic artisan whatever keytar, scenester farm-to-table banksy Austin twitter handle freegan cred raw denim single-origin <a href="#" title="Default tooltip"  data-toggle="tooltip" data-original-tittle="Default tooltip">coffee </a> viral.
+		</p>
+		<br>
+		<p>
+			<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+		</p>
+	</div>
+	<script type="text/javascript" src="../JS/jquery.min.js"></script>
+	<script type="text/javascript" src="../JS/bootstrap.min.js"></script>
+	<script>
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+	</script>
+</body>
+</html>

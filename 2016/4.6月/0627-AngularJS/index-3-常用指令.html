@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="foundation.css">
+    <style>
+        .tx{
+            width:50px;
+            height:50px;
+            margin-bottom:10px;
+            margin-left:80px;
+        }
+        .button-expand{
+            width:100%;
+        }
+    </style>
+</head>
+<body style="padding: 10px;" ng-app="app">
+<div ng-controller="UserCtrl">
+    <form name="f" ng-submit="register(user)">
+        <fieldset>
+            <legend>基本信息</legend>
+            <img ng-src="{{user.icon}}"
+                 ng-show="user.isShowImg"
+                 ng-class="{'tx':user.showicon}">
+            <div>
+                <input type="text" ng-model="user.uname" placeholder="用户名" required>
+                <input type="password" ng-model="user.pwd" placeholder="密码" required>
+                职位:<select >
+                <option value="">--请选择--</option>
+                <option value="1" ng-selected="user.zw=='1'">H5前端工程师</option>
+                <option value="2" ng-selected="user.zw=='2'">JAVA工程师</option>
+            </select>
+                性别:
+                <input type="radio"
+                       ng-checked="user.sex==1"
+                       name="sex">&nbsp;男&nbsp;
+                <input type="radio"
+                       ng-checked="user.sex==0"
+                       name="sex">&nbsp;女&nbsp;
+                </div>
+        </fieldset>
+        <fieldset>
+          <lengend>爱好</lengend>
+            <div>
+                <input type="checkbox"
+                       ng-checked="isChecked(1)"
+                       name="ai">&nbsp;篮球&nbsp;
+                <input type="checkbox"
+                       ng-checked="isChecked(2)"
+                       name="ai">&nbsp;足球&nbsp;
+                <input type="checkbox"
+                       ng-checked="isChecked(3)"
+                       name="ai">&nbsp;排球&nbsp;
+            </div>
+        </fieldset>
+        <button type="submit" class="button-expand"
+        ng-disabled="f.$invalid"
+        >提交</button><!--不填表格就是灰色，无法提交-->
+
+    </form>
+
+</div>
+</body>
+<script src="angular.min.js"></script>
+<script src="app-3.js"></script>
+</html>

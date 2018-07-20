@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+/*  Global STYLE  */
+html{color:#000;background:#fff}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,textarea,p,th,td{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+fieldset,img{border:0}
+li{list-style:none}
+em,strong,th{font-style:normal;font-weight:normal}
+
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit}
+input,button,textarea,select{*font-size:100%}
+textarea{resize:none}
+table{border-collapse:collapse;border-spacing:0}
+/*  body  */
+body{font-size:12px;font-family:Arial, "宋体";color:#666}
+/*a:link,a:visited{color:#666;text-decoration:none}*/
+a{color:#666;text-decoration:none}
+a:hover{color:#F00;text-decoration:underline}
+
+/*
+a,area {blr:expression(this.onFocus=this.blur()) }   //IE
+a:focus {outline:none;}                              //FF
+*/
+.clearfix:after{clear:both;content: ".";display:
+        block;height:0;line-height:0;visibility:hidden;}
+.clearfix{zoom:1}
+.fl{display:inline;float:left}.fr{display:inline;float:right}
+.imgbor{padding:2px;background:#fff;border:1px #ccc solid}
+.mt10{margin-top:10px}
+.ml10{margin-left:10px}
+.mr10{margin-right:10px}
+.mb{margin-bottom:10px}
+.fb{font-weight:bold}.f14{font-size:14px}
+.rel{position:relative}
+.tl{text-align:left}.tc{text-align:center}.tr{text-align:right}
+.none{display:none}
+.nobort{border-top:none !important}.noborb{border-bottom:none
+!important}.noborl{border-left:none !important}.noborr{border-right:none
+!important}

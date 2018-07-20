@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+.bg{
+    background-color: #ddd;
+}
+.bg1{
+    background-color: #FFEBCD;
+}
+.bg2{
+    background-color: #F4A460;
+}
+.font1{
+    font-size: 14px;
+}
+.font2{
+    font-size: 16px;
+}
+.font3{
+    font-size: 18px;
+}
+#test1{
+   height: 800px;
+}
+#test1 p{
+    text-indent:35px;
+}
+button{
+    width:30px;
+    height: 30px;
+    border:1px solid #ddd;
+    border-radius:25px;
+    -webkit-border-radius:25px;
+}
+.o{
+    
+    background-color: #ddd;
+    
+}
+.f{
+   
+    background-color: #FFEBCD;
+ }
+.c{  
+    background-color: #F4A460;
+   
+}
+.b{
+    margin-left: -80px;
+    position: absolute;
+}
+.b button{
+    position: relative;
+    display: block;
+}
+</style>
+</head>
+<body>
+<div class="container">
+ <div class="b">背景变换
+     <button id="bg1" class="o" type="button" onclick="myFunction()"></button>
+     <button id="bg2" class="f" type="button" onclick="myFunction()"></button>
+     <button id="bg3" class="c" type="button" onclick="myFunction()"></button>
+     <button class="o" type="button" onclick="myFunction3()">小</button>
+     <button class="f" type="button" onclick="myFunction4()">中</button>
+     <button class="c" type="button" onclick="myFunction5()">大</button>
+     </div>
+   <div id="test1">
+   <p>本技术具有高效除恶臭、无需添加任何物质、适应性强、连续运行稳定可靠、运行成本低、设备占地面积小，自重轻等优势，采用国际上最先进技术理念，可彻底分解工业废气中有毒有害物质，并能达到完美的脱臭、净化效果，经分解后的工业废气，可完全达到无害化排放，不产生二次污染，同时达到高效消毒杀菌的作用。设备具有安全、防爆特性，已通过国家防爆电器产品质量监督检验中心的Ex防爆合格认证。主要用于硫化氢、硫醇类、硫醚类、氨、胺类、吲哚类、烃类、醛类、VOC类等恶臭气体的脱臭净化处理，适用于油气田、炼油厂、橡胶厂、皮革厂、油漆厂、化工厂、制药厂、印刷厂、污水处理厂、垃圾转运站等行业。<br>
+   本技术具有高效除恶臭、无需添加任何物质、适应性强、连续运行稳定可靠、运行成本低、设备占地面积小，自重轻等优势，采用国际上最先进技术理念，可彻底分解工业废气中有毒有害物质，并能达到完美的脱臭、净化效果，经分解后的工业废气，可完全达到无害化排放，不产生二次污染，同时达到高效消毒杀菌的作用。设备具有安全、防爆特性，已通过国家防爆电器产品质量监督检验中心的Ex防爆合格认证。主要用于硫化氢、硫醇类、硫醚类、氨、胺类、吲哚类、烃类、醛类、VOC类等恶臭气体的脱臭净化处理，适用于油气田、炼油厂、橡胶厂、皮革厂、油漆厂、化工厂、制药厂、印刷厂、污水处理厂、垃圾转运站等行业。<br>
+   本技术具有高效除恶臭、无需添加任何物质、适应性强、连续运行稳定可靠、运行成本低、设备占地面积小，自重轻等优势，采用国际上最先进技术理念，可彻底分解工业废气中有毒有害物质，并能达到完美的脱臭、净化效果，经分解后的工业废气，可完全达到无害化排放，不产生二次污染，同时达到高效消毒杀菌的作用。设备具有安全、防爆特性，已通过国家防爆电器产品质量监督检验中心的Ex防爆合格认证。主要用于硫化氢、硫醇类、硫醚类、氨、胺类、吲哚类、烃类、醛类、VOC类等恶臭气体的脱臭净化处理，适用于油气田、炼油厂、橡胶厂、皮革厂、油漆厂、化工厂、制药厂、印刷厂、污水处理厂、垃圾转运站等行业。<br>
+   本技术具有高效除恶臭、无需添加任何物质、适应性强、连续运行稳定可靠、运行成本低、设备占地面积小，自重轻等优势，采用国际上最先进技术理念，可彻底分解工业废气中有毒有害物质，并能达到完美的脱臭、净化效果，经分解后的工业废气，可完全达到无害化排放，不产生二次污染，同时达到高效消毒杀菌的作用。设备具有安全、防爆特性，已通过国家防爆电器产品质量监督检验中心的Ex防爆合格认证。主要用于硫化氢、硫醇类、硫醚类、氨、胺类、吲哚类、烃类、醛类、VOC类等恶臭气体的脱臭净化处理，适用于油气田、炼油厂、橡胶厂、皮革厂、油漆厂、化工厂、制药厂、印刷厂、污水处理厂、垃圾转运站等行业。</p>
+   </div>
+
+   </div>
+	<script>
+    // var nums = new Array(3);
+
+    // function use(n){
+    // 	if(!nums[n]){
+    // 		nums[n] = true;
+    // 		console.log("第一次使用");
+    // 	}else{
+    // 		console.log("用过了");
+    // 	}
+    // }
+    // use(1);
+    // use(2);
+    // use(3);
+    // use(4);
+    // use(1);
+    // window.onload = myFunction();
+     var bag1 =  document.getElementById("bg1");
+     var bag2 =  document.getElementById("bg2");
+     var bag3 =  document.getElementById("bg3");
+     var pid = document.getElementById("test1");
+     bag1.onclick=function myFunction(){    
+        pid.style.background= "#ddd";
+    }
+     bag2.onclick=function myFunction(){    
+        pid.style.background= "#FFEBCD";
+    }
+    bag3.onclick = function myFunction(){
+        pid.style.background = "#F4A460";
+    }   
+    function myFunction3(){
+        pid.style.fontSize= "16px";
+    }
+    function myFunction4(){
+        pid.style.fontSize= "18px";
+    }
+    function myFunction5(){
+        pid.style.fontSize= "20px";
+    }
+	</script>
+</body>
+</html>
