@@ -1,4 +1,8 @@
+ 
 <?php
+/**
+* 连接数据库链接
+*/
 // error_reporting(E_ALL^E_NOTICE^E_WARNING);
 error_reporting(0);
 
