@@ -1,3 +1,0 @@
-$(function() {
-	$("#sortable").sortable().disableSelection();
-});

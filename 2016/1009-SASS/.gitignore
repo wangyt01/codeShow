@@ -1,7 +1,0 @@
-#sass打包后文件
-.sass-cache
-#npm文件
-node_modules
-#打包后信息文件
-*.map
-*.scss

@@ -1,4 +1,0 @@
-#忽略所有node_modules文件
-node_modules
-.idea
-*.project

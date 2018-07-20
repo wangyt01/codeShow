@@ -1,3 +1,0 @@
-$(function() {
-	$("#stylemenu").buttonset();
-});
