@@ -59,6 +59,20 @@ git diff
 
 如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。<br>
 
+<pre>
+//从最近到最远的提交日志
+git log
+//回退到上一个版本
+git reset --hard HEAD^
+</pre>
+<h4>小结</h4>
+现在总结一下：<br>
+
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。<br>
+
+穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。<br>
+
+要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。<br>
 
 <div>v2.0.0</div>
 </body>
