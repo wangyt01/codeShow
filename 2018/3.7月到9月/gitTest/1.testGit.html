@@ -193,6 +193,15 @@ rebase的目的是使得我们在查看历史提交的变化时更容易，因�
 命令<code>git tag -a < tagname> -m "blablabla..."</code>可以指定标签信息；<br>
 
 命令git tag可以查看所有标签。
+
+<h4>小结</h4>
+命令<code>git push origin < tagname></code>可以推送一个本地标签；<br>
+
+命令<code>git push origin --tags</code>可以推送全部未推送过的本地标签；<br>
+
+命令<code>git tag -d < tagname></code>可以删除一个本地标签；<br>
+
+命令<code>git push origin :refs/tags/< tagname></code>可以删除一个远程标签。<br>
 <br>
 <br>
 <h2>dev---分支</h2>
