@@ -85,6 +85,35 @@ HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历�
 
 <h4>小结</h4>
 现在，你又理解了Git是如何跟踪修改的，每次修改，如果不用<code>git add</code>到暂存区，那就不会加入到<code>commit</code>中。
+
+<h4>小结</h4>
+又到了小结时间。 <br>
+
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
+
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD <file></code>，就回到了场景1，第二步按场景1操作。 <br>
+
+场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。 <br>
+
+<h4>小结</h4>
+命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。
+
+<h4>小结</h4>
+要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>； <br>
+
+关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；<br>
+
+此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；<br>
+
+分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步，真是太方便了！<br>
+
+<h4>小结</h4>
+要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。<br>
+
+Git支持多种协议，包括<code>https</code>，但通过<code>ssh</code>支持的原生<code>git</code>协议速度最快。<br>
 <div>v2.0.0</div>
+<br>
+<br>
+<h2>dev---分支</h2>
 </body>
 </html>
