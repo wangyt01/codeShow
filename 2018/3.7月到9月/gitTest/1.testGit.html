@@ -138,7 +138,61 @@ git log --graph --pretty=oneline --abbrev-commit
 解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。<br>
 
 用<code>git log --graph</code>命令可以看到分支合并图。<br>
+
+<h4>小结</h4>
+Git分支十分强大，在团队开发中应该充分应用。<br>
+
+合并分支时，加上<code>--no-ff</code>参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而<code>fast forward</code>合并就看不出来曾经做过合并。 <br>
+
+<h4>小结</h4>
+修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除； <br>
+
+当手头工作没有完成时，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再<code>git stash pop</code>，回到工作现场。<br>
+
+<h4>小结</h4>
+开发一个新feature，最好新建一个分支； <br>
+
+如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D < name></code>强行删除。 <br>
 <div>v2.0.0</div>
+
+<p>
+多人协作的工作模式通常是这样：<br>
+
+首先，可以试图用<code>git push origin < branch-name></code>推送自己的修改；<br>
+
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；<br>
+
+如果合并有冲突，则解决冲突，并在本地提交；<br>
+
+没有冲突或者解决掉冲突后，再用<code>git push origin < branch-name></code>推送就能成功！<br>
+
+如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令<code>git branch --set-upstream-to < branch-name> origin/< branch-name></code>。<br>
+</p>
+
+<h4>小结</h4>
+查看远程库信息，使用<code>git remote -v</code>； <br>
+
+本地新建的分支如果不推送到远程，对其他人就是不可见的；<br>
+
+从本地推送分支，使用<code>git push origin branch-name</code>，如果推送失败，先用<code>git pull</code>抓取远程的新提交；<br>
+
+在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致； <br>
+
+建立本地分支和远程分支的关联，使用<code>git branch --set-upstream branch-name origin/branch-name</code>；<br>
+
+从远程抓取分支，使用<code>git pull</code>，如果有冲突，要先处理冲突。<br>
+
+<h4>小结 <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0015266568413773c73cdc8b4ab4f9aa9be10ef3078be3f000">链接例子</a></h4>
+rebase操作可以把本地未push的分叉提交历史整理成直线；<br>
+
+rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。<br>
+
+<h4>小结</h4>
+命令<code>git tag < tagname></code>用于新建一个标签，默认为HEAD，也可以指定一个commit id；<br>
+
+命令<code>git tag -a < tagname> -m "blablabla..."</code>可以指定标签信息；<br>
+
+命令git tag可以查看所有标签。
 <br>
 <br>
 <h2>dev---分支</h2>
