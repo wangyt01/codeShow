@@ -21,6 +21,9 @@ var listArr = [{
 	list:[{
 		name:"Vue",
 		url:"3.7月到9月/Vue/index.html"
+	},{
+		name:"Git指令大全",
+		url:"3.7月到9月/gitTest/1.testGit.html"
 	}]
 },{
 	name:"4.10月到12月",
