@@ -6,7 +6,7 @@
 </head>
 <style>
 	pre {
-	    padding: 10px;
+	 padding: 10px;
     background: #fafafa;
     font: 12px / 18px Consolas,monospace,serif;
     color: #444;
@@ -16,15 +16,36 @@
     border: 1px solid #ddd;
     border-radius: 3px;
 }
+code{
+	font-size: 12px;
+    font-family: Consolas,monospace,serif;
+    color: #D05;
+    white-space: nowrap;
+    padding: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fafafa;
+}
 </style>
 <body>
 		<div>
 			<pre>
-				//把文件添加到仓库
-				git add gitTest
-				//把文件提交到仓库
-				git commit -m 'wrote a readme file'
+//把文件添加到仓库 
+git add gitTest 
+//把文件提交到仓库 
+git commit -m 'wrote a readme file'
 			</pre>
+			<div>
+				<h4>小结</h4>
+现在总结一下今天学的两点内容： <br>
+
+初始化一个Git仓库，使用git init命令。<br>
+
+添加文件到Git仓库，分两步：<br>
+
+使用命令 <code>git add <file></code>，注意，可反复多次使用，添加多个文件； <br>
+使用命令<code>git commit -m <message></code>，完成。
+			</div>
 		</div>
 </body>
 </html>
