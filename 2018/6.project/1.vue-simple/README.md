@@ -1,4 +1,4 @@
-# 1.vue-simple
+# vue-simple
 
 > A Vue.js project
 
