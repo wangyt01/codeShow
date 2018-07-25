@@ -1,5 +1,5 @@
 {
-  "name": "1.vue-simple",
+  "name": "vue-simple",
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "wangyongtan <1345903768@qq.com>",
@@ -25,6 +25,7 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.4",
+    "lodash": "^4.17.10",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.0.5",

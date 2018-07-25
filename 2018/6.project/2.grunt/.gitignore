@@ -1,0 +1,11 @@
+archive
+#忽略所有node_modules文件
+node_modules
+.idea
+*.project
+
+#sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map

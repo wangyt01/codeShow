@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>testGit</title>
+</head>
+<style>
+	pre {
+	 padding: 10px;
+    background: #fafafa;
+    font: 12px / 18px Consolas,monospace,serif;
+    color: #444;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    overflow: auto;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+code{
+	font-size: 12px;
+    font-family: Consolas,monospace,serif;
+    color: #D05;
+    white-space: nowrap;
+    padding: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fafafa;
+}
+</style>
+<body>
+		<div>
+
+			<pre>
+//把文件添加到仓库 
+git add gitTest 
+//把文件提交到仓库 
+git commit -m 'wrote a readme file'
+			</pre>
+			<div>
+				<h4>小结</h4>
+现在总结一下今天学的两点内容： <br>
+
+初始化一个Git仓库，使用git init命令。<br>
+
+添加文件到Git仓库，分两步：<br>
+
+使用命令 <code>git add <file></code>，注意，可反复多次使用，添加多个文件； <br>
+使用命令<code>git commit -m <message></code>，完成。
+			</div>
+		</div>
+		<pre>
+//修改的信息
+git status
+//修改文件的详细信息
+git diff
+		</pre>
+		<h4>小结</h4>
+要随时掌握工作区的状态，使用<code>git status</code>命令。<br>
+
+如果<code>git status</code>告诉你有文件被修改过，用<code>git diff</code>可以查看修改内容。<br>
+
+<pre>
+//从最近到最远的提交日志
+git log
+//回退到上一个版本
+git reset --hard HEAD^
+</pre>
+<h4>小结</h4>
+现在总结一下：<br>
+
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code>。<br>
+
+穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。<br>
+
+要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。<br>
+
+<h4>小结</h4>
+暂存区是Git非常重要的概念，弄明白了暂存区，就弄明白了Git的很多操作到底干了什么。<br>
+
+没弄明白暂存区是怎么回事的童鞋，请向上滚动页面，再看一次。<br>
+
+第一次修改 -> <code>git add</code> -> 第二次修改 -> <code>git add</code> -> 	<code>git commit</code> 
+
+好，现在，把第二次修改提交了，然后开始小结。
+
+<h4>小结</h4>
+现在，你又理解了Git是如何跟踪修改的，每次修改，如果不用<code>git add</code>到暂存区，那就不会加入到<code>commit</code>中。
+
+<h4>小结</h4>
+又到了小结时间。 <br>
+
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code>。<br>
+
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD <file></code>，就回到了场景1，第二步按场景1操作。 <br>
+
+场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。 <br>
+
+<h4>小结</h4>
+命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。
+
+<h4>小结</h4>
+要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>； <br>
+
+关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容；<br>
+
+此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；<br>
+
+分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步，真是太方便了！<br>
+
+<h4>小结</h4>
+要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。<br>
+
+Git支持多种协议，包括<code>https</code>，但通过<code>ssh</code>支持的原生<code>git</code>协议速度最快。<br>
+
+<h4>小结</h4>
+Git鼓励大量使用分支：<br>
+
+查看分支：<code>git branch</code> <br>
+
+创建分支：<code>git branch <-name> </code> <br>
+
+切换分支：<code>git checkout <-name> </code> <br>
+
+创建+切换分支：<code>git checkout -b <-name> </code> <br>
+
+合并某分支到当前分支：<code>git merge <-name> </code> <br>
+
+删除分支：<code>git branch -d <-name></code> <br>
+<br><br>
+<pre>
+//用带参数的<code>git log</code>也可以看到分支的合并情况：
+git log --graph --pretty=oneline --abbrev-commit
+</pre>
+
+<h4>小结</h4>
+当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。 <br>
+
+解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。<br>
+
+用<code>git log --graph</code>命令可以看到分支合并图。<br>
+
+<h4>小结</h4>
+Git分支十分强大，在团队开发中应该充分应用。<br>
+
+合并分支时，加上<code>--no-ff</code>参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而<code>fast forward</code>合并就看不出来曾经做过合并。 <br>
+
+<h4>小结</h4>
+修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除； <br>
+
+当手头工作没有完成时，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再<code>git stash pop</code>，回到工作现场。<br>
+
+<h4>小结</h4>
+开发一个新feature，最好新建一个分支； <br>
+
+如果要丢弃一个没有被合并过的分支，可以通过<code>git branch -D < name></code>强行删除。 <br>
+<div>v2.0.0</div>
+
+<p>
+多人协作的工作模式通常是这样：<br>
+
+首先，可以试图用<code>git push origin < branch-name></code>推送自己的修改；<br>
+
+如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；<br>
+
+如果合并有冲突，则解决冲突，并在本地提交；<br>
+
+没有冲突或者解决掉冲突后，再用<code>git push origin < branch-name></code>推送就能成功！<br>
+
+如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令<code>git branch --set-upstream-to < branch-name> origin/< branch-name></code>。<br>
+</p>
+
+<h4>小结</h4>
+查看远程库信息，使用<code>git remote -v</code>； <br>
+
+本地新建的分支如果不推送到远程，对其他人就是不可见的；<br>
+
+从本地推送分支，使用<code>git push origin branch-name</code>，如果推送失败，先用<code>git pull</code>抓取远程的新提交；<br>
+
+在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致； <br>
+
+建立本地分支和远程分支的关联，使用<code>git branch --set-upstream branch-name origin/branch-name</code>；<br>
+
+从远程抓取分支，使用<code>git pull</code>，如果有冲突，要先处理冲突。<br>
+
+<h4>小结 <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0015266568413773c73cdc8b4ab4f9aa9be10ef3078be3f000">链接例子</a></h4>
+rebase操作可以把本地未push的分叉提交历史整理成直线；<br>
+
+rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。<br>
+
+<h4>小结</h4>
+命令<code>git tag < tagname></code>用于新建一个标签，默认为HEAD，也可以指定一个commit id；<br>
+
+命令<code>git tag -a < tagname> -m "blablabla..."</code>可以指定标签信息；<br>
+
+命令git tag可以查看所有标签。
+
+<h4>小结</h4>
+命令<code>git push origin < tagname></code>可以推送一个本地标签；<br>
+
+命令<code>git push origin --tags</code>可以推送全部未推送过的本地标签；<br>
+
+命令<code>git tag -d < tagname></code>可以删除一个本地标签；<br>
+
+命令<code>git push origin :refs/tags/< tagname></code>可以删除一个远程标签。<br>
+<br>
+<br>
+
+</body>
+</html>
