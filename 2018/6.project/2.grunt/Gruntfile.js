@@ -58,7 +58,7 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
         // 设置任务，删除文件夹
         clean: {
-            dist: 'dist/'
+            dist: 'dist'
         },
 
 
