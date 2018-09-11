@@ -1,8 +1,10 @@
+
+
 /*! ***********************************
     文      件:reset.css
     说      明:样式重置公共样式;
     作      者:王勇坛;
-    时      间:2018.7.2;
+    时      间:2018;
     修 改 人:;
     修改时间:;
     修改说明:;
@@ -114,3 +116,24 @@ input, select {
 .clear{
     clear:both;
 }
+
+.clear-2 {
+    overflow: hidden;
+    *zoom: 1;
+}
+/*==for IE6/7 Maxthon2==*/
+.clear-3 {
+    zoom: 1;
+}
+
+/*==for FF/chrome/opera/IE8==*/
+.clear-3:after {
+    clear: both;
+    content: '.';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+

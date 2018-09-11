@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>2018</title>
-	<script src="../common/vue@2.5.6/vue.min.js"></script>
-	<script src="index-2018.js"></script>
+    <meta charset="UTF-8">
+    <title>2018</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="css-2018/css/2.index-2018-vue.css">
+    <script src="../common/vue@2.5.6/vue.min.js"></script>
+    <script src="index-2018.js"></script>
 </head>
+
 <body>
-	<div id="list">
-		<div v-for="item in data">
-			<h4>{{item.name}}</h4>
-			<ol>
-				<li v-for="el in item.list"><a v-bind:href="el.url">{{el.name}}</a></li>
-			</ol>
-		</div>
-	</div>
+    <div class="index-container">
+        <div class="c-container">
+            <div id="list" class="list">
+                <div v-for="item in data">
+                    <h4>{{item.name}}</h4>
+                    <ol>
+                        <li v-for="el in item.list"><a v-bind:href="el.url" target="_blank">{{el.name}}</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
-	var vm = new Vue({
-		el:"#list",
-		data:{
-			data:listArr
-		}
-	})
+var vm = new Vue({
+    el: "#list",
+    data: {
+        data: listArr
+    }
+})
 </script>
+
 </html>
