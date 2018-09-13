@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  div aaa
+  p
+  = 'This code is <escaped>!'
+  br
+  a(href='google.com') Google
+  br
+  a(class='button' href='google.com') Google
+  br
+  a(class='button', href='google.com') Google
+  input(
+    type='checkbox'
+    name='agreement'
+    checked
+  )
+  div(class='div-class', (click)='play()') 点击1
+  div(class='div-class' '(click)'='play()') 点击2
