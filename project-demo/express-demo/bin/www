@@ -87,4 +87,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log("成功启动并打印端口号 http://localhost:" + port);
+  console.log('express-demo server listening on port ' + port);
 }
