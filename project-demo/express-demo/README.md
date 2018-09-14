@@ -18,3 +18,11 @@
     console.log("成功启动并打印端口号 http://localhost:" + port);
     console.log('express-demo server listening on port ' + port);
 ```
+
+#### 4.  监控js代码改变的插件nodemon  
+##### 要全局安装，项目中安装出现错误，所以全局安装使用就可以了
+```
+    npm install -g nodemon
+    //使用
+    nodemon ./bin/www
+```
