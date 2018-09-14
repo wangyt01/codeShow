@@ -15,6 +15,6 @@
 
 ##### 修改./bin/www中 www文件,在函数`onListening()`中添加如下代码
 ```
-	console.log("成功启动并打印端口号 http://localhost:" + port);
+    console.log("成功启动并打印端口号 http://localhost:" + port);
     console.log('express-demo server listening on port ' + port);
 ```
