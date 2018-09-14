@@ -1,10 +1,40 @@
-
-
-.index-container{
-	width:1200px;
-	margin:0 auto;
-	border:1px solid #ddd;
+.header {
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 16px;
+  background: #477FB8;
 }
-.div-class{
-	cursor: pointer;
+.header .title {
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 120px;
+}
+.header .left {
+  float: right;
+  margin-right: 80px;
+}
+.header .left .user-btn a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.middle-content {
+  width: 1000px;
+  margin: 0 auto;
+  height: 800px;
+}
+
+.footer {
+  width: 100%;
+  position: fixed;
+  height: 40px;
+  left: 0;
+  bottom: 0;
+  line-height: 40px;
+  color: #fff;
+  font-size: 14px;
+  background: #477FB8;
+  text-align: center;
 }

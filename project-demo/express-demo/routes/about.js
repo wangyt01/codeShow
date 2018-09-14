@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/views/about.pug', function(req, res, next) {
   res.send('这是关于的界面,由路由引入');
 });
 
