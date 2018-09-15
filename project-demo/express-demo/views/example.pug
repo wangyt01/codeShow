@@ -1,0 +1,55 @@
+extends layout
+
+
+block content
+  - var title1 = "On Dogs: Man's Best Friend";
+  - var author = "enlore";
+  - var theGreat = "<span>escape!</span>";
+  div(class="index-container")
+    h1= title
+    br
+    h2= title1
+    br
+    em #{message}
+    br
+    br
+    p Written with love by #{author}
+    p This will be safe: #{theGreat}
+    p Welcome to #{title}
+    div aaa
+    p
+    = 'This code is <escaped>!'
+    br
+    a(href='google.com') Google
+    br
+    a(class='button' href='google.com') Google
+    br
+    a(class='button', href='google.com') Google
+    input(
+	   type='checkbox'
+	   name='agreement'
+	   checked
+    )
+    div(class='div-class', (click)='play()') 点击1
+    div(class='div-class' '(click)'='play()') 点击2
+    div(class='control')
+     p 
+      | If I don't write the paragraph with tag interpolation, tags like
+      strong strong
+      | and
+      em em
+      | might produce unexpected results.
+     p.  	
+      If i do, whitespace is #[strong respected] and #[em everybody] is happy.
+     - for(var i=0;i<3;i++ )
+       li item
+     //- 
+        这是一个带变量的循环
+     //-
+      Comments for your template writers.
+      Use as much text as you want.
+     - var list =  ["Uno", "Dos", "Tres","Cuatro", "Cinco", "Seis"] 
+     ol
+       each item in list
+         li= item
+    

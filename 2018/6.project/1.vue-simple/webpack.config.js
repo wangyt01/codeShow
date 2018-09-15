@@ -69,7 +69,11 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
+<<<<<<< HEAD
       },, {
+=======
+      }, {
+>>>>>>> 9c847eb1b9b8f2fe333d6f76432d28327e9eb585
         test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
         loader: 'file-loader'
       }

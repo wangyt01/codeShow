@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>富文本框使用</title>
+    <!-- 引入重置css -->
+    <link rel="stylesheet" href="../../../common/css/reset.css">
+    <!-- 引入element-ui css -->
+    <link rel="stylesheet" href="../../../common/element-ui@2.4.4/lib/theme-chalk/index.css">
+    <!-- 引入vue -->
+    <script src="../../../common/vue@2.5.6/vue.js"></script>
+    <!-- 引入element-ui js  -->
+    <script src="../../../common/element-ui@2.4.4/lib/index.js"></script>
+    <!-- 引入jquery -->
+    <script src='../../../common/JQuery-3.0.0/jquery-3.0.0.min.js'></script>
+    <!-- 引入quill样式和主题 -->
+    <!-- <link rel="stylesheet" href="quill/dist/quill.core.css"> -->
+    <!-- <link rel="stylesheet" href="quill/dist/quill.snow.css"> -->
+    <!-- 引入layui -->
+    <link rel="stylesheet" href="../../../common/layui/css/layui.css">
+    <script src="../../../common/layui/layui.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <el-button type="text" @click="show()">点击打开 Dialog</el-button>
+        <el-dialog title="提示" :visible.sync="dialogVisible" width="30%">
+            <span>这是一段信息</span>
+            <!-- <div class="editor">
+             
+              
+            </div> -->
+            <textarea id="demo" style="display: none;"></textarea>
+            <span class="name">111</span>
+            <span slot="footer" class="dialog-footer">
+		    <el-button @click="dialogVisible = false">取 消</el-button>
+		    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+		  </span>
+        </el-dialog>
+        <!--  <div id="editor">
+                <p>Hello World!</p>
+                <p>Some initial <strong>bold</strong> text</p>
+                <p>
+                    <br>
+                </p>
+            </div> -->
+        <!-- <textarea id="demo" style="display: none;"></textarea> -->
+    </div>
+</body>
+<!-- Include the Quill library -->
+<script src="quill/dist/quill.js"></script>
+<script>
+var toolbarOptions = [
+    ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+    // ['blockquote', 'code-block'],
+
+    // [{ 'header': 1 }, { 'header': 2 }], // custom button values
+    // [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+    // [{ 'script': 'sub' }, { 'script': 'super' }], // superscript/subscript
+    // [{ 'indent': '-1' }, { 'indent': '+1' }], // outdent/indent
+    // [{ 'direction': 'rtl' }], // text direction
+
+    // [{ 'size': ['small', false, 'large', 'huge'] }], // custom dropdown
+    // [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+    [{ 'color': [] }, { 'background': [] }], // dropdown with defaults from theme
+    // [{ 'font': [] }],
+    [{ 'align': [] }],
+
+    // ['clean'] // remove formatting button
+];
+// var quillEditor = new Quill('.editor', {
+//                 modules: {
+//                     toolbar: toolbarOptions
+//                 },
+//                 theme: 'snow'
+//             });
+// var editor = new Quill('#editor', {
+//                 modules: {
+//                     toolbar: toolbarOptions
+//                 },
+//                 theme: 'snow'
+//             });
+
+
+var vm = new Vue({
+    el: '#app',
+    data: {
+        dialogVisible: false
+    },
+    methods: {
+        show() {
+            this.dialogVisible = true;
+            layui.use('layedit', function() {
+                var layedit = layui.layedit;
+                layedit.build('demo'); //建立编辑器
+            });
+        }
+
+    }
+
+})
+</script>
+
+</html>

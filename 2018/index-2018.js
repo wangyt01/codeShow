@@ -27,6 +27,9 @@ var listArr = [{
 	},{
 		name:"input样式整理",
 		url:"3.7月到9月/1.index(input样式).html"
+	},{
+		name:"web规范",
+		url:"3.7月到9月/3.index(web规范).html"
 	}]
 },{
 	name:"4.10月到12月",
@@ -42,9 +45,6 @@ var listArr = [{
 	},{
 		name:"窗口大小自适应",
 		url:"5.JavaScript/2.index(窗口大小自适应).html"
-	},{
-		name:"数组去重",
-		url:"5.JavaScript/3.index(数组去重).html"
 	},{
 		name:"面向对象编程指南",
 		url:"5.JavaScript/面向对象编程指南/1.index(6.15.2).html"
@@ -66,9 +66,6 @@ var listArr = [{
 	},{
 		name:"JavaScrip高级程序设计-工厂模式等",
 		url:"5.JavaScript/JavaScrip高级程序设计(第三版)/2.index(工厂模式等).html"
-	},{
-		name:"WebGL编程指南",
-		url:"5.JavaScript/WebGL编程指南/1.index.html"
 	}]
 },{
 	name:"6.project",

@@ -1,0 +1,147 @@
+<!--
+文      件：2.index(vue组件).html
+说      明：vue组件
+作      者：王勇坛
+时      间：2018.8.3
+修 改 人:
+修改时间:
+修改说明:
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>vue组件使用</title>
+</head>
+<!-- 引入重置css -->
+<link rel="stylesheet" href="../../../common/css/reset.css">
+<!-- 引入element-ui css -->
+<link rel="stylesheet" href="../../../common/element-ui@2.4.4/lib/theme-chalk/index.css">
+<!-- 引入vue -->
+<script src="../../../common/vue@2.5.6/vue.js"></script>
+<!-- 引入element-ui js  -->
+<script src="../../../common/element-ui@2.4.4/lib/index.js"></script>
+<!-- 引入jquery -->
+<script src='../../../common/JQuery-3.0.0/jquery-3.0.0.min.js'></script>
+
+<body>
+    <div></div>
+    <div id="blog">
+        <!-- 模板 -->
+        <div :style="{ fontSize: postFontSize + 'em' }">
+            <blog-post 
+            v-for="post in posts" 
+            v-bind:key="post.id"
+            v-if="post.id ==1" 
+            v-bind:post="post" 
+            v-on:enlarge-text="onEnlargeText"
+            v-bind:likes="post.likes"
+            ></blog-post>
+           </div>
+            <div :style="{ fontSize: postFontSize1 + 'em' }">
+            <blog-post 
+            v-for="post in posts" 
+            v-bind:key="post.id"
+            v-if='post.id != 1'
+            v-bind:post="post" 
+            v-on:enlarge-text="postFontSize1 += $event"
+            ></blog-post>
+            </div>
+             <!-- <blog-post v-model="infos" v-bind:info ='info'></blog-post> -->
+            <custom-input v-model="searchText"></custom-input>
+             {{searchText}}
+           
+            <br>
+            <alert-box>
+                Something bad happened.
+            </alert-box>
+            局部组件 这里不能用：<component-a></component-a>
+        
+    </div>
+    <div id='app-1'>
+    	<component-a>局部组件 这里可以用</component-a>
+
+    </div>
+    <template id="my-tem">
+        <div class="blog-post">
+            <!-- <h3 v-if="post.title">{{ post.title }}</h3> -->
+            <h3 v-if="post.infos">{{post.infos}}</h3>
+            <h3 v-else="post.title">{{ post.title }}</h3>
+			<div>{{post.likes}}</div>
+            <el-button v-on:click="$emit('enlarge-text',0.1,'第二个参数')">
+                $emit() 向父元素传递参数  父元素用 $event接收
+            </el-button>
+            <br>
+            <br>
+            <div v-html="post.content"></div>
+        </div>
+    </template>
+</body>
+<script>
+// 全局注册
+Vue.component('blog-post', {
+    props: ['post','likes', 'isPublished','title'],//注册属性
+    template: '#my-tem'
+})
+
+
+Vue.component('custom-input', {
+    props: ['value'],
+    template: `
+    <input
+      v-bind:value="value"
+      v-on:input="$emit('input', $event.target.value)" style="width:200px;"
+    ></input>
+  `
+})
+
+Vue.component('alert-box', {
+    template: `
+    <div class="demo-alert-box">
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
+  `
+})
+// 局部组件
+var ComponentA = { 
+  template: `
+    <div class="demo-alert-box">
+      <strong>局部组件</strong>
+      <slot></slot>
+    </div>
+  `
+ }
+new Vue({
+    el: '#blog',
+    data: {
+        posts: [
+            { id: 1, title: 'My journey with Vue' , infos:'$event 接收',likes:100},
+            { id: 2, title: 'Blogging with Vue' ,infos:'onEnlargeText: function(enlargeAmount, second) 函数接受'},
+            { id: 3, title: 'Why Vue is so fun' },
+        ],
+        postFontSize: 1,
+        postFontSize1:1
+       
+       
+    },
+    methods: {
+        onEnlargeText: function(enlargeAmount, second) {
+            this.postFontSize += enlargeAmount
+            console.log('这是第一个参数：' + enlargeAmount);
+            console.log('这是第二个参数：' + second)
+        }
+    },
+    // watch:
+})
+
+new Vue({
+  el: '#app-1',
+  components: {
+    'component-a': ComponentA
+  }
+})
+</script>
+
+</html>

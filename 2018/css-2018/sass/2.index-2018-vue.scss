@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/*!*
+ * @desc 首页的样式
+ * @author 王勇坛
+ * @date 2018
+ */
+
+
+
+ .index-container{
+ 	.c-container{
+ 		width:1000px;
+ 		margin:0 auto;
+		.list{
+			h4{
+
+			}
+			ol{
+				li{
+					margin:6px 0;
+					margin-left:34px;
+					a{
+						text-decoration:none;
+						color:#444;
+					}
+				}
+			}
+		}
+ 	}
+ }
