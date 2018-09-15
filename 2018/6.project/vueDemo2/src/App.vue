@@ -1,10 +1,8 @@
 <template>
   <div id="app">
           <!-- <img src="./assets/logo.png"> -->
-          <h1>{{ msg }}</h1>
-          <br>
+        <h1>{{ msg }}</h1>
         <h2>{{obj.name}}</h2>
-        <br>
         <ul>
           <li v-for="item in listArr">
             {{item}}
@@ -39,22 +37,30 @@
         </ul>
 
         <!-- 双向数据绑定 -->
-        <input type="text" v-model="msg">
-<br>
-        <button @click="getMsg()">获取表单数据get</button>
-<br>
-        <button @click="setMsg()">设置表单数据set</button>
-<br>
+        <!-- <input type="text" v-model="msg"> -->
+        <el-input v-model="msg" placeholder="请输入内容" style="width:200px;"></el-input>
+       <el-button type="primary" @click="getMsg()">获取表单数据get</el-button>
+       <el-button type="primary" @click="setMsg()">设置表单数据set</el-button>
         <!-- ref获取DOM节点 -->
-        <input type="text" ref="username">
-  <br>
-        <button @click="getInputValue">获取ref定义的DOM节点</button>
-        <br>
+        <el-input placeholder="请输入内容" ref="username" style="width:200px;"></el-input>
+         <el-button type="primary" @click="getInputValue">获取ref定义的DOM节点</el-button>
         <!-- 事件对象 -->
-        <button data-aid="20180722" @click="eventObj($event)">事件对象获取</button>
+        <el-button type="primary" data-aid="20180722" @click="eventObj($event)">事件对象获取</el-button>
         <br>
         <!-- 添加 -->
-        <input type="text">
+        <el-input v-model="input" placeholder="请输入内容" style="width:300px;"></el-input>
+         <el-button type="primary" @click="addList()">添加</el-button>
+         <hr>
+         <br>
+         <br>
+          
+        <el-tag v-for="(item,key) in list" :key="item">
+        <el-checkbox-group v-model="checkList">
+        <el-checkbox label="复选框 A"></el-checkbox>
+        </el-checkbox-group>
+      标签 {{item}} ---- {{key}}
+        <el-button type="danger" icon="el-icon-delete" @click="deleteList(key)" circle></el-button>
+        </el-tag> 
         
   </div>
   
@@ -70,8 +76,13 @@ export default {
       html:"<h2>this is h2</h2>",
       div:"this is div",
       flag:true,
+      checkList:{
+        title:'',
+        checked:''
+      },
       listArr:['name1','name2','name3'],
       list:[],
+      input:'',
       listObj:[
       {name:"cat",
         list:[{
@@ -112,6 +123,13 @@ export default {
         //获取自定义的值
         var aid = e.srcElement.dataset.aid 
         console.log(aid)
+      }
+      ,addList(){
+        this.list.push(this.input);
+      }
+      ,deleteList(key){
+        //splice  js操作数组的方法
+        this.list.splice(key,1);
       }
     }
   }

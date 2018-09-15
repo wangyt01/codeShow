@@ -2,14 +2,11 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: {
-    build:'./src/main.js',
-    app:'./src/app.js'
-  },
+  entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist/js'),
+    path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: '[name].js'
+    filename: 'build.js'
   },
   module: {
     rules: [
@@ -69,10 +66,10 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      },, {
+        }, {
         test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
         loader: 'file-loader'
-      }
+        }
     ]
   },
   resolve: {
