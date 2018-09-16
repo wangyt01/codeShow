@@ -1,8 +1,6 @@
-//- layout.pug
-doctype html
-html
-  //- 引入的css,js等头部文件
-  include includes/head
-  body
-    include includes/about
-    include includes/foot
+extends layout
+
+
+block content 
+    div(class='abuout-contaienr')
+     div(class ='middle-content red') 这是关于页面！！！

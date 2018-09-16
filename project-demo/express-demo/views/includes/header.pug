@@ -1,12 +1,9 @@
 //- 这是顶部
 
-header
- div(class='header')
+header#header
+ div(class='header') 
   div(class='title') 平凡的世界
-  div(class='top-container')
-   div(class='right')
-   - for(var i=0;i<3;i++ )
-       li item
-   div(class='left')
-  	div(class='user')
-  	 a(href='/login') 登录
+  div(class='left')
+   div(class='user-btn')
+    a(href='/about') 登录    
+  
