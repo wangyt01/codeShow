@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*! ************************************
+    文      件:login.css
+    说      明:登录样式说明;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+body {
+  background: #f2f2f2;
+}
+
+.login-container {
+  width: 400px;
+  height: 200px;
+  margin: 200px auto;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 40px 0;
+  padding-right: 70px;
+}

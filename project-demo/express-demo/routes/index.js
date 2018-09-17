@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/about', function (req, res) {
-res.render('about', { title: '关于' });
+	res.render('about', { title: '关于' });
 });
 router.post('/about', function (req, res) {
 });

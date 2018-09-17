@@ -1,3 +1,22 @@
+/*! ************************************
+    文      件:.css
+    说      明:样式说明;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+
+
+ul,ol,li{
+	list-style:none;
+}
+
+a{
+	text-decoration:none;
+}
+
 
 .header{
 	height: 80px;
@@ -6,13 +25,36 @@
     font-size: 16px;
     background: #477FB8;
     .title{
-    	float:left;
-    	font-size:24px;
-    	font-weight:bold;
+    	position:absolute;
     	margin-left:120px;
+    	a{
+    		font-size:24px;
+    	font-weight:bold;
+    	color:#fff;
+    	}
+    }
+    .nav{
+    	width:1000px;
+    	margin:0 auto;
+    	ul{
+    		li{
+    			float:left;
+    			a{
+					font-size:16px;
+					color:#fff;
+					&:hover{
+						color:#ddd;
+					}
+    			}
+    			&:nth-child(2){
+    				margin-left:14px;
+    			}
+    		}
+    	}
     }
 	.left{
-		float:right;
+		position:absolute;
+		right:0;
 		margin-right:80px;
 		.user-btn{
 			a{
@@ -20,6 +62,9 @@
 				color:#fff;
 			}
 		}
+	}
+	.login-show{
+		display:none;
 	}
 }
 
