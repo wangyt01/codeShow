@@ -26,3 +26,17 @@
     //使用
     nodemon ./bin/www
 ```
+#### 5.  mongodb 配置启动
+- 在E:\mongodb中建mongod.cfg文件,添加一下内容 
+```
+  systemLog:
+    destination: file
+    path: e:\mongodb\data\log\mongod.log
+  storage:
+    dbPath: E:\mongodb\data\db
+```
+- 启动MongoDB服务
+```
+  net start MongoDB
+```
+  
