@@ -25,7 +25,7 @@ a {
 }
 .header .title {
   position: absolute;
-  margin-left: 120px;
+  margin-left: 10px;
 }
 .header .title a {
   font-size: 24px;
@@ -65,7 +65,6 @@ a {
 .middle-content {
   width: 1000px;
   margin: 0 auto;
-  height: 800px;
 }
 
 .footer {
