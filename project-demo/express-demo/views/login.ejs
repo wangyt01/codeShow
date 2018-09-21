@@ -13,13 +13,13 @@
 
 <main>
 	<div class="login-container">
-	<div class="title">
+	<div class="login-title">
 		<%= title %>
 	</div>
 	<form action="" class="layui-form">
 		<div class="layui-form">
 			<div class="layui-form-item">
-				<label class='layui-form-label' for="">账号</label>
+				<!-- <label class='layui-form-label' for="">账号</label> -->
 				<div class="layui-input-block">
 					<input type="text" name="title" required  lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
 				</div>
@@ -27,16 +27,19 @@
 		</div>
 		<div class="layui-form">
 			<div class="layui-form-item">
-				<label class='layui-form-label' for="">密码</label>
+				<!-- <label class='layui-form-label' for="">密码</label> -->
 				<div class="layui-input-block">
-					<input type="text" name="password" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+					<input type="password" name="password" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 		</div>
-		<div class="layui-form-item" style="maring-top:30px;">
+		<div class="layui-form-item" style="margin-top:30px;">
 			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
-				<a class="layui-btn layui-btn-normal" href="./registered">注册</a>
+				<button class="layui-btn login-btn" lay-submit lay-filter="formDemo">登录</button>
+				<div class="login-bottom">
+					<span>没有账号?</span>
+				<a class="" href="./registered">注册</a>
+				</div>
 			</div>
 		</div>
 		</form>

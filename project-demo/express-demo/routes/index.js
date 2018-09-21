@@ -29,7 +29,9 @@ router.get('/login', function(req, res) {
 		title: '登录'
 	});
 });
-router.post('/login', function(req, res) {});
+router.post('/login', function(req, res) {
+	
+});
 
 router.get('/registered', function(req, res) {
 	res.render('registered', {
@@ -37,15 +39,34 @@ router.get('/registered', function(req, res) {
 	});
 });
 router.post('/registered', function(req, res, next) {
-	var schema = new Schema({
-		username: 111,
-		password: 2222
-	});
-	schema.post('save', function(next) {
-		// do stuff
-		console.log("fffff")
-		next(); //执行完毕，执行下一中间件
-	});
+	var username = req.body.name;
+	var psw = req.body.psw;
+	var param = {
+				name:username,
+				password:psw
+			}
+	console.log(param)
+	demoModel.findOne({name:username},function(err,result){
+		if(err){
+			res.send(500);
+			console.log("err:" + err);
+		}else if(result){
+			req.session.error = '用户已存在';
+			res.send(500);
+		}else{
+			
+			demoModel.create(param,function(err,docs){
+				if(err){
+					res.send(500);
+					console.log("err:" + err);
+				}else{
+					req.session.error='创建成功';
+					res.send(200);
+					console.log('create()创建--保存成功：' + docs);	
+				}
+			})
+		}
+	})
 });
 
 

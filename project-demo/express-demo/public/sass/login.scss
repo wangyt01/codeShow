@@ -7,27 +7,62 @@
     修改时间:;
     修改说明:添加删除什么样式;
 ************************************/
-body{
-	background:#f2f2f2;
+body {
+	background: #f2f2f2;
 }
-.login-container{
-	width:400px;
-	height:300px;
-	margin:200px auto;
-	border:1px solid #ddd;
-	background:#fff;
-	// padding:40px 0;
-	padding-right:70px;
-	.title{
-		height:40px;
-		// line-height:80px;
-		margin-left:40px;
-		margin-top:30px;
-		text-align:center;
-		font-size:24px;
-		font-weight:bold;
+
+$l-t-height: 60px;
+$l-r-b-h: 60px;
+
+.login-container {
+	width: 400px;
+	margin: 200px auto;
+	border: 1px solid #ddd;
+	background: #fff;
+
+	.login-title, .reg-title {
+		height: $l-t-height;
+		line-height: $l-t-height;
+		text-align: center;
+		color: #0084FF;
+		font-size: 24px;
+		font-weight: bold;
 	}
-	.layui-form{
-		margin-top:20px;
+
+	.layui-form {
+		margin-top: 20px;
+
+		.layui-form-item {
+			.layui-input-block {
+				width: 380px;
+				margin-left: 0;
+				padding: 0 10px;
+
+				.login-btn, .reg-btn {
+					width: 380px;
+				}
+
+				.login-bottom, .reg-bottom {
+					font-size: 14px;
+					text-align: center;
+					height: $l-r-b-h;
+					line-height: $l-r-b-h;
+					color: #888;
+					margin-top: 30px;
+
+					span {
+					}
+
+					a {
+						color: #175199;
+					}
+
+				}
+
+			}
+
+		}
+
 	}
+
 }

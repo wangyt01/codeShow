@@ -14,20 +14,37 @@ body {
 
 .login-container {
   width: 400px;
-  height: 300px;
   margin: 200px auto;
   border: 1px solid #ddd;
   background: #fff;
-  padding-right: 70px;
 }
-.login-container .title {
-  height: 40px;
-  margin-left: 40px;
-  margin-top: 30px;
+.login-container .login-title, .login-container .reg-title {
+  height: 60px;
+  line-height: 60px;
   text-align: center;
+  color: #0084FF;
   font-size: 24px;
   font-weight: bold;
 }
 .login-container .layui-form {
   margin-top: 20px;
+}
+.login-container .layui-form .layui-form-item .layui-input-block {
+  width: 380px;
+  margin-left: 0;
+  padding: 0 10px;
+}
+.login-container .layui-form .layui-form-item .layui-input-block .login-btn, .login-container .layui-form .layui-form-item .layui-input-block .reg-btn {
+  width: 380px;
+}
+.login-container .layui-form .layui-form-item .layui-input-block .login-bottom, .login-container .layui-form .layui-form-item .layui-input-block .reg-bottom {
+  font-size: 14px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  color: #888;
+  margin-top: 30px;
+}
+.login-container .layui-form .layui-form-item .layui-input-block .login-bottom a, .login-container .layui-form .layui-form-item .layui-input-block .reg-bottom a {
+  color: #175199;
 }
