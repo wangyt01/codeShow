@@ -21,7 +21,9 @@ var kittySchema = mongoose.Schema({
 	// 用户名: 字符串
     username: String,
     // 密码: 字符串
-    password: String
+    password: String,
+    //时间
+    date: { type: Date, default: Date.now }
 }
 //这个代码添加,防止表在moogoose查循中表的名字自动添加 s 
 ,{collection: 'demos' }

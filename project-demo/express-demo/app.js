@@ -44,7 +44,7 @@ app.use(session({
 		maxAge: 1000*60*30
 	}
 }));
-//++当登录错误是打印文档
+//++当登录错误是打印文档，session数据清除
 app.use(function(req,res,next){ 
 	res.locals.user = req.session.user;
 	var err = req.session.error;

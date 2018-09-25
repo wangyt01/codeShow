@@ -12,10 +12,19 @@
     </div>
     <div class="left">
         <div class="user-btn">
-            <a href="/login" id="loginBtn">登录</a>
+            <% if (user.name != void 0) { %>
+                <a href="#"><%= user.name %></a>
+                <a href="/logout" id="logout" style="margin-left:30px;">登出</a>
+            <% } else { %>
+                <a href="/login" id="loginBtn">登录</a>
+            <% } %>
+                
         </div>
         <div class="user-btn">
             <a href="/registered" id="regBtn">注册</a>
         </div>
     </div>
 </div>
+<script>
+
+</script>

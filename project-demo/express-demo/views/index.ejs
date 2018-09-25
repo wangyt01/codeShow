@@ -14,18 +14,54 @@
 </header>
 
 <main>
-	<div class="middle-content">
-	<% for(var i=0;i<data.length;i++) {%>
-	      	<p> 
+	<div class="middle-content" id="indexContent">
+ 	<table class="layui-table" lay-filter="indexTable">
+  <colgroup>
+    <col width="150">
+    <col width="400">
+    <col width='150'>
+  </colgroup>
+  <thead>
+    <tr>
+
+      <th>用户名</th>
+      <th>加入时间</th>
+      <th>密码</th>
+      <td>操作</td>
+    </tr> 
+  </thead>
+  <tbody>
+   	<% for(var i=0;i<data.length;i++) {%>
+    <tr>
+
+	      	<td> 
       			<%= data[i].name %>
-	      	</p>
+	      	</td>
+	      	<td>
+	      		<% if(data[i].date == void 0 ) {%>
+	      				未知
+	      			<% }else{ %>
+	      				<%= data[i].date %>
+	      				<%} %> 
+	      	</td>
+	      	<td>
+	      	<%= data[i].password %>
+	      	</td>
+	      	<td>
+	      	 <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  			<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+	      	</td>
+    </tr>
+
 	      <% }  %>
+  </tbody>
+</table> 
 	</div>
+      
 </main>
 
 <footer>
     <% include ./includes/footer %>
 </footer>
-
 </body>
 </html>
