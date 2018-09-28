@@ -1,19 +1,74 @@
+// var inData = JSON.parse('<%- JSON.stringify(data)%>');
+// var inData = <%- JSON.stringify(data)%>
+ // console.log(IndexData);
+
+var vm = new Vue({
+	el:"#indexContent",
+	data:{
+		data:IndexData,
+	}
+})
 
 
-$(document).ready(function(){
-	// $("#loginBtn").click(function(){
-	// 	alert("登录")
-	// })
-	//弹出一个登录层
- //  $('#loginBtn').on('click', function(){
-	// layer.open({
-	//   type: 1,
-	//   title: '登录',
-	//   maxmin: true,
-	//   shadeClose: true, //点击遮罩关闭层
-	//   area : ['400px' , '300px'],
-	//   content: $('#loginShow')
-	// });
- //  });
+  $(document).ready(function() {
+  //删除
+  $('#indexTable a').click(function() {
+    var that = this;
+    layer.confirm('is not?', function(index) {
+      //获取ID
+      var trId = $(that).parent().parent().attr('id');
+      var data = {
+        id: trId
+      }
+      $.ajax({
+        url: '/index',
+        type: 'post',
+        data: data,
+        success: function(data, status) {
+          if (status == 'success') {
+            console.log(data);
+            console.log('删除成功');
+            //删除成功后移除这行数据
+            $('#' + trId).remove();
+          }
+        },
+        error: function(data, err) {
+          console.log('删除失败')
+        }
+      })
+      layer.close(index);
+    });
+  })
+  //查询
+  layui.use(['form', 'table'], function() {
+    var form = layui.form,
+      table = layui.table;
+
+    //监听提交
+    form.on('submit(formQuery)', function(data) {
+      layer.msg(JSON.stringify(data.field));
+      $.ajax({
+        url: '/index',
+        type: 'post',
+        data: data.field,
+        success: function(data, status) {
+          console.log(data)
+          if (status == 'success') {
+            console.log("查询成功");
+            // $('#indexTable').html('`<%= data %>`')
+            // form.render();
+  
+        
+          
+          }
+        },
+        error: function(data, err) {
+          console.log('查询失败');
+        }
+      })
+      return false;
+    });
+  })
+
 })
 

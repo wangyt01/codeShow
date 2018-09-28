@@ -23,7 +23,7 @@ var kittySchema = mongoose.Schema({
     // 密码: 字符串
     password: String,
     //时间
-    date: { type: Date, default: Date.now }
+    time: { type: Date, default: Date.now }
 }
 //这个代码添加,防止表在moogoose查循中表的名字自动添加 s 
 ,{collection: 'demos' }

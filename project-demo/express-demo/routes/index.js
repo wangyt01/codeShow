@@ -17,21 +17,49 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.post('/index', function(req, res) {
+	var id = req.body.id;
+	var name = req.body.username;
+	var response = res;
+	//删除
+	demoModel.deleteOne({
+		_id: id
+	}, function(err,result) {
+		if (err) {
+			console.log("删除错误" + err);
+			//页面错误的状态
+			res.send(500);
+		} else {
+			console.log("删除成功");
+			//页面的成功状态
+			res.send(200);
 
-router.get('/logout', function(req, res, next) {
-	console.log("***************************************");
-	//删除登录信息
-	delete req.session.user;
-	if (req.session.user != void 0) {
-		console.log("已经登录");
-		res.redirect("/");
-	} else {
-		// console.log("no login")
-		// res.render("login")
-		res.redirect("login");
-		// res.render("login");
-	}
-});
+		}
+	});
+	demoModel.find({name:name}, function(err, data, res) {
+		if (err) console.log(err)
+		response.render('index', {
+			title: '首页',
+			data: data
+		});
+		console.log("index-结果查询:"+ data);
+	})
+})
+
+// router.get('/logout', function(req, res, next) {
+// 	console.log("***************************************");
+// 	//删除登录信息
+// 	delete req.session.user;
+// 	if (req.session.user != void 0) {
+// 		console.log("已经登录");
+// 		res.redirect("/");
+// 	} else {
+// 		// console.log("no login")
+// 		// res.render("login")
+// 		res.redirect("login");
+// 		// res.render("login");
+// 	}
+// });
 
 // module.exports = router;
 
@@ -61,7 +89,7 @@ router.post('/login', function(req, res) {
 	}, function(err, result) {
 		if (err) {
 			res.send(500);
-			console.log("login:"+err);
+			console.log("login:" + err);
 		} else if (!result) {
 			req.session.error = '用户名不存在';
 			res.send(404);

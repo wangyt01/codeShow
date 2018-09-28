@@ -15,7 +15,16 @@
 
 <main>
 	<div class="middle-content" id="indexContent">
- 	<table class="layui-table" lay-filter="indexTable">
+  <form class="layui-form" action="">
+  <div class="layui-form-item" style="margin-top:20px;">
+    <div class="layui-input-inline">
+      <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" id="demoReload" autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-input-inline">
+      <button class="layui-btn" lay-submit lay-filter="formQuery"  data-type="reload">查询</button>
+    </div>
+  </div>
+  <table class="layui-table" id="indexTable" lay-filter="test">
   <colgroup>
     <col width="150">
     <col width="400">
@@ -23,16 +32,25 @@
   </colgroup>
   <thead>
     <tr>
-
       <th>用户名</th>
       <th>加入时间</th>
       <th>密码</th>
       <td>操作</td>
     </tr> 
   </thead>
-  <tbody>
-   	<% for(var i=0;i<data.length;i++) {%>
-    <tr>
+
+  <tbody id="tbodyLoad">
+  <tr v-for="el in data">
+    <td>{{el.name}}</td>
+    <td>{{el.time}}</td>
+    <td>{{el.password}}</td>
+    <td>
+       <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+          <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </td>
+  </tr>
+   <!-- 	<% for(var i=0;i<data.length;i++) {%>
+    <tr id="<%= data[i]._id %>" >
 
 	      	<td> 
       			<%= data[i].name %>
@@ -53,9 +71,10 @@
 	      	</td>
     </tr>
 
-	      <% }  %>
+	      <% }  %> -->
   </tbody>
 </table> 
+</form>
 	</div>
       
 </main>
@@ -63,5 +82,12 @@
 <footer>
     <% include ./includes/footer %>
 </footer>
+<script>
+  var IndexData =JSON.parse('<%- JSON.stringify(data)%>');
+  // for(var i=0;i<inData.length)
+
+</script>
+<script src="js/index.js"></script>
+
 </body>
 </html>
