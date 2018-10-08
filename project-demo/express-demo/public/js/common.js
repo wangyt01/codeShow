@@ -112,9 +112,7 @@ function autoAjax(url, param, sucess, fail) {
 			sucess(data);
 		}
 
-	// }, "json");
-	});
-
+	}, "json");
 
 }
 

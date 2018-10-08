@@ -18,10 +18,10 @@
   <form class="layui-form" action="">
   <div class="layui-form-item" style="margin-top:20px;">
     <div class="layui-input-inline">
-      <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名" id="demoReload" autocomplete="off" class="layui-input">
+      <input type="text" name="username" required placeholder="请输入用户名" id="demoReload" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-input-inline">
-      <button class="layui-btn" lay-submit lay-filter="formQuery"  data-type="reload">查询</button>
+      <button class="layui-btn" lay-submit lay-filter="formQuery"  data-type="reload" @click.prevent="query()">查询</button>
     </div>
   </div>
   <table class="layui-table" id="indexTable" lay-filter="test">
@@ -40,7 +40,7 @@
   </thead>
 
   <tbody id="tbodyLoad">
-  <tr v-for="el in data">
+  <tr v-for="el in data" v-bind:id="el._id">
     <td>{{el.name}}</td>
     <td>{{el.time}}</td>
     <td>{{el.password}}</td>

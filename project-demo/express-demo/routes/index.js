@@ -14,36 +14,61 @@ router.get('/', function(req, res, next) {
 		// console.log("index-结果查询:"+ data);
 	})
 	// res.render('index', { title: 'Express-demo' ,message:"这是index.js中的信息数据"});
-
+	next();
 });
 
 router.post('/index', function(req, res) {
 	var id = req.body.id;
 	var name = req.body.username;
 	var response = res;
-	//删除
-	demoModel.deleteOne({
-		_id: id
-	}, function(err,result) {
-		if (err) {
-			console.log("删除错误" + err);
-			//页面错误的状态
-			res.send(500);
-		} else {
-			console.log("删除成功");
-			//页面的成功状态
-			res.send(200);
+	console.log("-------------------")
+	console.log(name.length)
+	console.log("-------------------")
 
-		}
-	});
-	demoModel.find({name:name}, function(err, data, res) {
-		if (err) console.log(err)
-		response.render('index', {
-			title: '首页',
-			data: data
+	//删除利用id
+	if (id) {
+		//删除
+		demoModel.deleteOne({
+			_id: id
+		}, function(err, result) {
+			if (err) {
+				console.log("删除错误" + err);
+				//页面错误的状态
+				res.send(500);
+				return;
+			} else {
+				console.log("删除成功");
+				//页面的成功状态
+				res.send(JSON.stringify(result));
+				return;
+			}
 		});
-		console.log("index-结果查询:"+ data);
-	})
+	}
+	//查询利用名字
+	if (name != void 0) {
+		if (name.length == 0) {
+			var param = {}
+		} else {
+			var param = {
+				name: name
+			}
+		}
+		console.log('$$$$$$$$$$$$$$$$')
+		demoModel.find(param, function(err, data, res) {
+			if (err) {
+				console.log(err);
+				res.send({
+					result: false
+				});
+				return;
+			} else {
+				console.log("查询成功");
+				response.send(data);
+				return;
+
+			}
+		})
+	}
 })
 
 // router.get('/logout', function(req, res, next) {
@@ -90,17 +115,25 @@ router.post('/login', function(req, res) {
 		if (err) {
 			res.send(500);
 			console.log("login:" + err);
+			return;
+
 		} else if (!result) {
 			req.session.error = '用户名不存在';
 			res.send(404);
+			return;
+
 		} else {
 			//从数据库查出的密码是否和这个一样
 			if (psw != result.password) {
 				req.session.error = '密码错误';
 				res.send(404);
+				return;
+
 			} else {
 				req.session.user = result;
 				res.send(200);
+				return;
+
 			}
 		}
 	})
@@ -125,23 +158,32 @@ router.post('/registered', function(req, res, next) {
 		if (err) {
 			res.send(500);
 			console.log("registered:" + err);
+			return;
+
 		} else if (result) {
 			req.session.error = '用户已存在';
 			res.send(500);
+			return;
+
 		} else {
 
 			demoModel.create(param, function(err, docs) {
 				if (err) {
 					res.send(500);
 					console.log("err:" + err);
+					return;
+
 				} else {
 					req.session.error = '创建成功';
 					res.send(200);
 					console.log('create()创建--保存成功：' + docs);
+					return;
+
 				}
 			})
 		}
 	})
+	next();
 });
 
 
