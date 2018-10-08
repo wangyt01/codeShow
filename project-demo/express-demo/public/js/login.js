@@ -58,7 +58,6 @@ layui.use('form', function() {
 						},
 						function(indexPage) {
 							location.href = '/';
-
 							layer.close(indexPage);
 						})
 				}

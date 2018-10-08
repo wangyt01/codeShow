@@ -6,70 +6,74 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 	var response = res;
 	demoModel.find({}, function(err, data, res) {
-		if (err) console.log(err)
-		response.render('index', {
-			title: '首页',
-			data: data
-		});
-		// console.log("index-结果查询:"+ data);
+		if (err) console.log(next(err))
+			// return;
+			response.send(data)
+		// response.render('index', {
+		// 	title: '首页',
+		// 	data: data
+		// });
+	// return;
+		console.log("index-结果查询:"+ data);
 	})
 	// res.render('index', { title: 'Express-demo' ,message:"这是index.js中的信息数据"});
-	next();
+	// res.send("fffff")
+	
 });
 
-router.post('/index', function(req, res) {
-	var id = req.body.id;
-	var name = req.body.username;
-	var response = res;
-	console.log("-------------------")
-	console.log(name.length)
-	console.log("-------------------")
+// router.post('/index', function(req, res) {
+// 	var id = req.body.id;
+// 	var name = req.body.username;
+// 	var response = res;
+// 	console.log("-------------------")
+// 	console.log(name.length)
+// 	console.log("-------------------")
 
-	//删除利用id
-	if (id) {
-		//删除
-		demoModel.deleteOne({
-			_id: id
-		}, function(err, result) {
-			if (err) {
-				console.log("删除错误" + err);
-				//页面错误的状态
-				res.send(500);
-				return;
-			} else {
-				console.log("删除成功");
-				//页面的成功状态
-				res.send(JSON.stringify(result));
-				return;
-			}
-		});
-	}
-	//查询利用名字
-	if (name != void 0) {
-		if (name.length == 0) {
-			var param = {}
-		} else {
-			var param = {
-				name: name
-			}
-		}
-		console.log('$$$$$$$$$$$$$$$$')
-		demoModel.find(param, function(err, data, res) {
-			if (err) {
-				console.log(err);
-				res.send({
-					result: false
-				});
-				return;
-			} else {
-				console.log("查询成功");
-				response.send(data);
-				return;
+// 	//删除利用id
+// 	if (id) {
+// 		//删除
+// 		demoModel.deleteOne({
+// 			_id: id
+// 		}, function(err, result) {
+// 			if (err) {
+// 				console.log("删除错误" + err);
+// 				//页面错误的状态
+// 				res.send(500);
+// 				return;
+// 			} else {
+// 				console.log("删除成功");
+// 				//页面的成功状态
+// 				res.send(JSON.stringify(result));
+// 				return;
+// 			}
+// 		});
+// 	}
+// 	//查询利用名字
+// 	if (name != void 0) {
+// 		if (name.length == 0) {
+// 			var param = {}
+// 		} else {
+// 			var param = {
+// 				name: name
+// 			}
+// 		}
+// 		console.log('$$$$$$$$$$$$$$$$')
+// 		demoModel.find(param, function(err, data, res) {
+// 			if (err) {
+// 				console.log(err);
+// 				res.send({
+// 					result: false
+// 				});
+// 				return;
+// 			} else {
+// 				console.log("查询成功");
+// 				response.send(data);
+// 				return;
 
-			}
-		})
-	}
-})
+// 			}
+// 		})
+// 	}
+// })
 
 // router.get('/logout', function(req, res, next) {
 // 	console.log("***************************************");
@@ -108,7 +112,7 @@ router.post('/login', function(req, res) {
 		name: username,
 		password: psw
 	}
-	console.log(param)
+	console.log(param);
 	demoModel.findOne({
 		name: username
 	}, function(err, result) {

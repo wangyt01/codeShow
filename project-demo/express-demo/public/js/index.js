@@ -3,35 +3,35 @@
 // console.log(IndexData);
 var ctx = ''
 //查询
-layui.use('form', function() {
-  var form = layui.form;
+// layui.use('form', function() {
+//   var form = layui.form;
 
 
-  var vm = new Vue({
-    el: "#indexContent",
-    data: {
-      data: IndexData,
-    },
-    methods: {
-      query: function() {
-        //监听提交
-        form.on('submit(formQuery)', function(data) {
-          // layer.msg(JSON.stringify(data.field));
-          console.log(data.field);
-          autoAjax('/index', data.field, function(json) {
-            console.log(json)
-            if (json) {
-              console.log("查询成功");
-              vm.data = json;
-            }
-          })
-        })
-      }
-    }
-  })
+//   var vm = new Vue({
+//     el: "#indexContent",
+//     data: {
+//       data: IndexData,
+//     },
+//     methods: {
+//       query: function() {
+//         //监听提交
+//         form.on('submit(formQuery)', function(data) {
+//           // layer.msg(JSON.stringify(data.field));
+//           console.log(data.field);
+//           autoAjax('/index', data.field, function(json) {
+//             console.log(json)
+//             if (json) {
+//               console.log("查询成功");
+//               vm.data = json;
+//             }
+//           })
+//         })
+//       }
+//     }
+//   })
 
 
-})
+// })
 //   $(document).ready(function() {
 //   //删除
 //   $('#indexTable a').click(function() {
