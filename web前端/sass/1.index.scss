@@ -1,0 +1,66 @@
+$s-select-width: 240px;
+
+.c-select {
+	width: $s-select-width;
+	// text-align: center;
+	margin-left: 200px;
+
+	.c-top-select {
+		cursor: pointer;
+		border: 1px solid #C9C9C9;
+		padding: 10px 0;
+		padding-left: 10px;
+
+		span {
+		}
+
+		i {
+			float: right;
+			font-size: 28px;
+			position: relative;
+			top: -6px;
+			color: #C2C2C2;
+		}
+
+		.icon-xiangyou {
+			float: right;
+			font-size: 28px;
+			position: relative;
+			top: -6px;
+			color: #C2C2C2;
+		}
+
+		.icon-xiangxia1 {
+			font-size: 18px;
+			top: 0;
+			right:6px;
+		}
+
+	}
+
+	.c-option {
+		width: $s-select-width - 2px;
+		position: absolute;
+		border: 1px solid #C9C9C9;
+		margin-top: 4px;
+
+		.option-item {
+			cursor: pointer;
+			padding: 10px 0;
+			padding-left: 10px;
+
+			&:hover {
+				background: #DADADA;
+				color: #000;
+			}
+
+		}
+
+		.active {
+			background: #5FB878;
+			color: #fff;
+		}
+
+	}
+
+}
