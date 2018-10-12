@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*! ************************************
+    文      件: index.html
+    说      明:首页样式;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+.all-container header {
+  height: 80px;
+  width: 100%;
+  background: #ddd;
+}
+.all-container .a-container {
+  width: 1000px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+.all-container .a-container .a-nav {
+  width: 100%;
+  margin-top: 10px;
+}
+.all-container .a-container .a-nav .a-n-container ul li {
+  width: 12%;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #c9c9c9;
+}
+.all-container .a-container .a-nav .a-n-container ul li:hover {
+  background: #999;
+}
+.all-container .a-container .a-nav .a-n-container ul li a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+}
+.all-container .a-container .a-nav .a-n-container ul li a:hover {
+  color: #fff;
+}
+.all-container .a-container .a-list {
+  font-size: 14px;
+  border: 1px solid #c9c9c9;
+  width: 12%;
+}
+.all-container .a-container .a-list ol li {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.all-container .a-container .a-list ol li:hover {
+  background: #999;
+}
+.all-container .a-container .a-list ol li a {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+}
+.all-container .a-container .a-list ol li a:hover {
+  color: #fff;
+}
+.all-container footer {
+  height: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #ddd;
+}

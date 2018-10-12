@@ -12,76 +12,93 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>代码合集</title>
-    <script src="./common/vue@2.5.6/vue.min.js"></script>
+    <title>代码合集首页</title>
+    <link rel="stylesheet" href="./common/css/reset.css">
+    <link rel="stylesheet" href="./common/bootstrap-3.3.6/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./common/layui-2.1.4/css/layui.css">
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="./common/css/index.css">
 </head>
 
 <body>
-    <!-- 头部最多 -->
-    <header>头部</header>
-    <!-- 全局容器   -->
-    <div class="a-container">
-    <!-- 导航 -->
-    <div class="a-nav">
-        <div class="container">
-            <ul>
-                <li><a href="2016/index-2016.html" target="_blank">2016</a></li>
-                <li><a href="./2017/2.index-2017-vue.html" target="_blank">2017</a></li>
-                <li><a href="./2018/2.index-2018-vue.html" target="_blank">2018</a></li>
-            </ul>
+    <div class="all-container" id="index">
+        <!-- 头部最多 -->
+        <header>头部</header>
+        <!-- 全局容器   -->
+        <div class="a-container">
+            <!-- 导航 -->
+            <div class="a-nav">
+                <div class="a-n-container">
+                    <ul>
+                        <li v-for="el in data"><a v-bind:href="el.url" target="_blank">{{el.name}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <!-- 列表 -->
+            <div class="a-list">
+                <ol>
+                    <li v-for="el in listData"><a v-bind:href="el.url">{{el.name}}</a></li>
+                    
+                </ol>
+            </div>
         </div>
+        <footer>底部</footer>
     </div>
-    <!-- 列表 -->
-    <div class="a-list"></div>
-    <div>
-        <ol>
-            <li><a href="2016/1213-index-1-HTML代码.html">HTML代码</a></li>
-            <li><a href="2016/1213-index-2-CSS.html">CSS代码</a></li>
-            <li><a href="2016/1213-index-3-HTML5代码.html">HTML5代码</a></li>
-            <li><a href="2016/1213-index-4-CSS3代码.html">CSS3代码</a></li>
-            <li><a href="2016/1213-index-5-JS代码.html">JS代码</a></li>
-            <li><a href="2016/1213-index-6-JQ代码.html">JQ代码</a></li>
-            <li><a href="2016/1213-index-7-AngularJS代码.html">AngularJS代码</a></li>
-            <li><a href="2016/1213-index-8-Bootstrap代码.html">Bootstrap代码</a></li>
-            <li><a href="2016/1213-index-9-JS基础教程.html">JS基础教程</a></li>
-            <li><a href="2016/1213-index-简单项目.html">简单项目</a></li>
-        </ol>
-    </div>
-    </div>
-    <footer>底部</footer>
 </body>
+<script src="./common/vue@2.5.6/vue.min.js"></script>
 <script>
 var vm = new Vue({
-    el: "#app",
+    el: "#index",
     data: {
-        item: [1, 2, 3, 4]
+        data: [{
+            url: "./2016/index-2016.html",
+            name: "2016"
+        }, {
+            url: "./2017/2.index-2017-vue.html",
+            name: "2017"
+        }, {
+            url: "./2018/2.index-2018-vue.html",
+            name: "2018"
+        }, {
+            url: "./web前端/1.index(样式美化).html",
+            name: "web前端"
+        }],
+        listData:[{
+            url: "2016/1213-index-1-HTML代码.html",
+            name: "HTML代码"
+        },{
+            url: "2016/1213-index-2-CSS.html",
+            name: "CSS代码"
+        },{
+            url: "2016/1213-index-3-HTML5代码.html",
+            name: "HTML5代码"
+        },{
+            url: "2016/1213-index-4-CSS3代码.html",
+            name: "CSS3代码"
+        },{
+            url: "2016/1213-index-5-JS代码.html",
+            name: "JS代码"
+        },{
+            url: "2016/1213-index-6-JQ代码.html",
+            name: "JQ代码"
+        },{
+            url: "2016/1213-index-7-AngularJS代码.html",
+            name: "AngularJS代码"
+        },{
+            url: "2016/1213-index-8-Bootstrap代码.html",
+            name: "Bootstrap代码"
+        },{
+            url: "2016/1213-index-9-JS基础教程.html",
+            name: "JS基础教程"
+        },{
+            url: "2016/1213-index-简单项目.html",
+            name: "简单项目"
+        }]
     }
 })
-
-// window.onload = function(){
-//  htmlCode.query();
-// }
-// var htmlCode = avalon.define({
-//  $id:"htmlCode",
-//  data:[1,2,3,4]
-//  // query:function(){
-//  //  autoAjax("data/list.json",function(data){
-//  //      console.log(data)
-//  //      if(json.result){
-//  //          htmlCode.data = data
-//  //      }
-//  //  })
-//  // }
-// })
 </script>
 <script>
-//  var jsObj = {};  
-// jsObj.testArray = [1,2,3,4,5];  
-// jsObj.name = 'CSS3';  
-// jsObj.date = '8 May, 2011';  
-// var str = JSON.stringify(jsObj);  
-// var str1 = JSON.parse(str);  
-// console.log(typeof str1);
 </script>
 
 </html>

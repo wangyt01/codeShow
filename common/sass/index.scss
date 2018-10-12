@@ -1,0 +1,101 @@
+/*! ************************************
+    文      件: index.html
+    说      明:首页样式;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+$li-width-1:12%;
+$li-height: 40px;
+
+.all-container {
+	header {
+		height: 80px;
+		width: 100%;
+		background: #ddd;
+	}
+
+	.a-container {
+		width: 1000px;
+		margin: 0 auto;
+		font-size: 16px;
+
+		.a-nav {
+			width:100%;
+			margin-top:10px;
+			.a-n-container {
+				ul {
+					li {
+						width: $li-width-1;
+						// display: line-block;
+						float: left;
+						height: $li-height;
+						line-height: $li-height;
+						text-align: center;
+						border: 1px solid #c9c9c9;
+						&:hover{
+								background: #999;
+
+						}
+						a {
+							text-decoration: none;
+							display: inline-block;
+							width: 100%;
+
+							&:hover {
+								color: #fff;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		.a-list {
+			font-size:14px;
+			border: 1px solid #c9c9c9;
+			width: $li-width-1;
+			ol {
+					li {
+						height: $li-height;
+						line-height: $li-height;
+						text-align: center;
+						&:hover{
+								background: #999;
+							
+						}
+						a {
+							text-decoration: none;
+							display: inline-block;
+							width: 100%;
+
+							&:hover {
+								color: #fff;
+							}
+
+						}
+
+					}
+
+			}
+
+		}
+
+	}
+
+	footer {
+		height: 40px;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background: #ddd;
+	}
+
+}
