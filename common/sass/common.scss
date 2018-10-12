@@ -1,0 +1,98 @@
+/*! ************************************
+    文      件: common.css
+    说      明:公共的标签样式;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+
+$li-width-1:100% / 4;
+$li-height: 40px;
+$c-h-height: 80px;
+
+// 公共头部
+header {
+	.c-header {
+		height: $c-h-height;
+		line-height: $c-h-height;
+		width: 100%;
+		background: #393D49;
+		.c-h-left {
+			position: absolute;
+			left:10px;
+			.title {
+				color: #B8B9BD;
+				font-size:15px;
+			}
+
+		}
+
+		.c-h-nav {
+			width: 1000px;
+			margin: 0 auto;
+			height: $li-height;
+			padding-top: 20px;
+
+			.c-n-container {
+				border: 1px solid #c9c9c9;
+				overflow: hidden;
+
+				ul {
+					li {
+						width: $li-width-1;
+						float: left;
+						height: $li-height;
+						line-height: $li-height;
+						text-align: center;
+						border-right: 1px solid #c9c9c9;
+						&:last-child{
+							border-right:0;
+						}
+						&:hover {
+							background: #999;
+						}
+
+						a {
+							text-decoration: none;
+							display: inline-block;
+							width: 100%;
+							color: #C1C2C6;
+
+							&:hover {
+								color: #fff;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+$c-f-height: 40px;
+
+//公共底部
+
+footer {
+	.c-footer {
+		height: $c-f-height;
+		line-height: $c-f-height;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background: #393D49;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+	}
+
+}

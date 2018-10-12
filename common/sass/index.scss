@@ -22,41 +22,7 @@ $li-height: 40px;
 		margin: 0 auto;
 		font-size: 16px;
 
-		.a-nav {
-			width:100%;
-			margin-top:10px;
-			.a-n-container {
-				ul {
-					li {
-						width: $li-width-1;
-						// display: line-block;
-						float: left;
-						height: $li-height;
-						line-height: $li-height;
-						text-align: center;
-						border: 1px solid #c9c9c9;
-						&:hover{
-								background: #999;
-
-						}
-						a {
-							text-decoration: none;
-							display: inline-block;
-							width: 100%;
-
-							&:hover {
-								color: #fff;
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
-		}
+		
 
 		.a-list {
 			font-size:14px;

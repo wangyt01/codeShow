@@ -4,20 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <title>2016</title>
-    <script src="../common/vue@2.5.6/vue.min.js"></script>
-    <script src="index-2016.js"></script>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../common/bootstrap-3.3.6/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../common/layui-2.1.4/css/layui.css">
+    <!-- 公共样式 -->
+    <link rel="stylesheet" href="../common/css/common.css">
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="../common/css/index-2016.css">
 </head>
 
 <body>
-    <div id="list">
-        <div class="list" v-for="item in data">
-            <h4>{{item.name}}</h4>
-            <ol>
-                <li v-for="el in item.list"><a v-bind:href="el.url">{{el.name}}</a></li>
-            </ol>
+    <div id="list" class="all-container">
+        <!-- S 公共头部 -->
+        <common-header></common-header>
+        <!-- E 公共头部-->
+        <div class="middle-container">
+            <div class="list" v-for="item in data">
+                <h4>{{item.name}}</h4>
+                <ul>
+                    <li v-for="el in item.list" class=""><a target="_blank" v-bind:href="el.url">{{el.name}}</a></li>
+                </ul>
+            </div>
         </div>
+        <!-- S 公共底部 -->
+        <common-footer></common-footer>
+        <!-- E 公共底部 -->
     </div>
 </body>
+<script src="../common/vue@2.5.6/vue.min.js"></script>
+<script src="../common/JQuery-3.0.0/jquery-3.0.0.js"></script>
+<script src="../common/layui-2.1.4/layui.js">
+</script>
+<!-- 模板 -->
+<script src="../common/js/common-template.js"></script>
+<script src="index-2016.js"></script>
 <script>
 var vm = new Vue({
     el: "#list",
@@ -25,6 +45,80 @@ var vm = new Vue({
         data: listArr
     }
 })
+
+$(document).ready(function() {
+    // waterFlow()
+   console.log( $('.middle-container .list:nth-child(5)').css({
+    "position":"absolute",
+    "top":720+ 10 +"px"
+    }))
+   console.log("fff")
+   waterFlow()
+})
+//https://www.cnblogs.com/dyx-wx/p/4642637.html
+function waterFlow() {
+    var listChild = $('.middle-container').children();
+    var len = $('.middle-container').children().length;
+    //创建数组, 用来盛放每一行的高度
+    var onlyOneColsArr = [];
+    for (i = 1; i < len + 1; i++) {
+            var listHeight = $('.middle-container .list:nth-child(' + i + ')').height();
+            onlyOneColsArr.push(listHeight);
+      /*  if (i < 4) {
+        } else {
+            //当大于每行存放的图片个数时进入该方法, Math.min.apply这个方法是为了得到数组中的最小值
+            var minHeightOfCols = Math.min.apply(null, onlyOneColsArr);
+            //此方法的目的是为了得到最小高度图片的下表, 也就是在每行的第几张, 具体方法见下面
+            var minHeightOfindex = getminIndex(onlyOneColsArr, minHeightOfCols);
+            //定义布局方式为绝对布局
+            $('.list:nth-child(' + i + ')').css({ "position": "absolute", "top": minHeightOfCols + "px", "left": $('.list:nth-child(minHeightOfindex)').offset() + "px" });
+            //将两张图片高度相加得到一个新的高度用来进行下一次的计算
+            onlyOneColsArr[minHeightOfindex] += $('.list:nth-child(' + i + ')').offsetHeight;
+
+        }*/
+    }
+    console.log(onlyOneColsArr)
+}
+
+
+//此方法是为了进行最小高度下标的确定
+function getminIndex(onlyOneColsArr, min) {
+    //遍历传进来的高度数组
+    for (var i in onlyOneColsArr) {
+        //如果高度等于最小高度, 返回i即为该图片下标
+        if (onlyOneColsArr[i] == min) {
+            return i;
+        }
+    }
+}
+
+/**
+ ** 快速排序
+ ** @param {Array} elements 数组
+ */
+function quickSort(elements) {
+    if (elements.length <= 1) {
+        return elements;
+    }
+    //floor() 对一个数进行下舍入 
+    var pivotIndex = Math.floor(elements.length / 2);
+    //splice(index,howmany) 向/从数组中添加/删除项目，然后返回被删除的项目 
+    //howmany为如果设置为 0，则不会删除项目 
+    //pivot 删除的数
+    var pivot = elements.splice(pivotIndex, 1)[0];
+    var left = [];
+    var right = [];
+    //
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i] < pivot) {
+            left.push(elements[i]);
+        } else {
+            right.push(elements[i]);
+        }
+    }
+    //concat() 方法用于连接两个或多个数组
+    return quickSort(left).concat([pivot], quickSort(right));
+};
 </script>
 
 </html>
