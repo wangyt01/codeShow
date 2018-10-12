@@ -1,0 +1,22 @@
+<p>
+ {{hero}}
+</p>
+
+<h2>{{heroClass.name}} Details</h2>
+<h2>{{heroClass.name | uppercase}} Details</h2>
+<div><span>id: </span>{{heroClass.id}}</div>
+<div><span>name: </span>{{heroClass.name}}</div>
+
+<div>
+  <label>name:
+    <input [(ngModel)]="heroClass.name" placeholder="name">
+  </label>
+</div>
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes;index as i">
+    <span class="badge">[{{i}}]{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+

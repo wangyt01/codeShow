@@ -1,64 +1,771 @@
-$s-select-width: 240px;
+/*! ************************************
+    文      件:
+    说      明:样式美化;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
 
-.c-select {
-	width: $s-select-width;
-	// text-align: center;
-	margin-left: 200px;
+$s-select-width: 100px;
+$s-input-width: 200px;
+$s-search-width: 30px;
+$s-input-font-size: 15px;
+$c-border-show: 0;
+$c-btn-width: 202px;
 
-	.c-top-select {
-		cursor: pointer;
-		border: 1px solid #C9C9C9;
-		padding: 10px 0;
-		padding-left: 10px;
+.all-container {
+	width: 1000px;
+	margin: 0 auto;
+	padding-bottom: 50px;
 
-		span {
-		}
-
-		i {
-			float: right;
-			font-size: 28px;
-			position: relative;
-			top: -6px;
-			color: #C2C2C2;
-		}
-
-		.icon-xiangyou {
-			float: right;
-			font-size: 28px;
-			position: relative;
-			top: -6px;
-			color: #C2C2C2;
-		}
-
-		.icon-xiangxia1 {
-			font-size: 18px;
-			top: 0;
-			right:6px;
-		}
-
+	h3 {
+		margin: 10px 0;
+		font-size: 18px;
+		font-weight: 600;
+		color: #393D49;
 	}
 
-	.c-option {
-		width: $s-select-width - 2px;
-		position: absolute;
-		border: 1px solid #C9C9C9;
-		margin-top: 4px;
+}
 
-		.option-item {
+.container {
+	padding: 40px 0;
+	border: 1px solid #ddd;
+}
+
+// 选择框样式美化
+.c-search-show {
+	border: 1px solid #c9c9c9;
+	width: $s-select-width +$s-input-width+$s-search-width;
+	border-radius: 45px;
+	margin-left: 10px;
+
+	.c-select {
+		width: $s-select-width;
+		display: inline-block;
+
+		.c-top-select {
 			cursor: pointer;
-			padding: 10px 0;
-			padding-left: 10px;
+			border: $c-border-show solid #C9C9C9;
+			width: inherit;
 
-			&:hover {
-				background: #DADADA;
-				color: #000;
+			input {
+				width: 50%;
+				padding: 10px 0;
+				border: 0;
+				outline: 0;
+				padding-left: 10px;
+				cursor: pointer;
+				font-size: $s-input-font-size;
+				border-radius: 45px;
+				text-align: center;
+			}
+
+			i {
+				float: right;
+				font-size: 28px;
+				position: relative;
+				color: #C2C2C2;
+			}
+
+			.icon-xiangyou {
+				float: right;
+				font-size: 28px;
+				top: 4px;
+				color: #C2C2C2;
+			}
+
+			.icon-xiangxia1 {
+				font-size: 18px;
+				top: 9px;
+				right: 6px;
 			}
 
 		}
 
-		.active {
-			background: #5FB878;
-			color: #fff;
+		.c-option {
+			width: $s-select-width - 2px;
+			position: absolute;
+			border: 1px solid #C9C9C9;
+			margin-top: 4px;
+			background: #fff;
+
+			.option-item {
+				cursor: pointer;
+				padding: 10px 0;
+				padding-left: 10px;
+				font-size: $s-input-font-size;
+
+				&:hover {
+					background: #DADADA;
+					color: #000;
+				}
+
+			}
+
+			.active {
+				background: #5FB878;
+				color: #fff;
+			}
+
+		}
+
+	}
+
+	.c-input {
+		display: inline-block;
+		border: $c-border-show solid #C9C9C9;
+		margin-left: -6px;
+		width: $s-input-width;
+		border-left: 1px solid #c9c9c9;
+
+		input {
+			padding: 10px 0;
+			border: 0;
+			outline: none;
+			font-size: $s-input-font-size;
+			padding-left: 10px;
+			width: $s-input-width - 10px;
+
+			::-webkit-input-placeholder {
+
+				/* WebKit, Blink, Edge */
+				color: #999999;
+				padding-left: 10px;
+			}
+
+			:-moz-placeholder {
+
+				/* Mozilla Firefox 4 to 18 */
+				color: #999999;
+				padding-left: 10px;
+			}
+
+			::-moz-placeholder {
+
+				/* Mozilla Firefox 19+ */
+				color: #999999;
+				padding-left: 10px;
+			}
+
+			:-ms-input-placeholder {
+
+				/* Internet Explorer 10-11 */
+				color: #999999;
+				padding-left: 10px;
+			}
+
+		}
+
+	}
+
+	.c-search {
+		padding: 10px 0;
+		width: $s-search-width;
+		display: inline-block;
+		text-align: center;
+		cursor: pointer;
+		border: $c-border-show solid #C9C9C9;
+		margin-left: -6px;
+		position: relative;
+		top: 1px;
+
+		i {
+			font-size: 15px;
+			color: #999;
+		}
+
+	}
+
+}
+
+// 输入框input的美化
+
+.c-input-show {
+	.c-input {
+		width: $s-input-width;
+		border: 1px solid #C9C9C9;
+		margin-left: 10px;
+
+		input {
+			padding: 10px 0;
+			border: 0;
+			outline: none;
+			font-size: $s-input-font-size;
+			padding-left: 10px;
+			width: $s-input-width - 10px;
+
+			::-webkit-input-placeholder {
+
+				/* WebKit, Blink, Edge */
+				color: #999999;
+				padding-left: 10px;
+			}
+
+			:-moz-placeholder {
+
+				/* Mozilla Firefox 4 to 18 */
+				color: #999999;
+				padding-left: 10px;
+			}
+
+			::-moz-placeholder {
+
+				/* Mozilla Firefox 19+ */
+				color: #999999;
+				padding-left: 10px;
+			}
+
+			:-ms-input-placeholder {
+
+				/* Internet Explorer 10-11 */
+				color: #999999;
+				padding-left: 10px;
+			}
+
+		}
+
+	}
+
+}
+
+// 登录输入框-不带图标
+
+.c-input-login {
+	border: 1px solid #ddd;
+	background: #fff;
+	width: $s-input-width +100px;
+	margin-left: 10px;
+
+	.c-login {
+		width: $s-input-width;
+		margin: 0 auto;
+		padding-top: 10px;
+		padding-bottom: 20px;
+
+		.login-title {
+			text-align: center;
+
+			span {
+				font-size: $s-input-font-size + 4;
+				color: #5FB878;
+				padding: 10px 0;
+				display: inline-block;
+			}
+
+		}
+
+		.user, .psw {
+			width: $s-input-width;
+			border: 1px solid #C9C9C9;
+			// margin-left: 10px;
+
+			input {
+				padding: 10px 0;
+				border: 0;
+				outline: none;
+				font-size: $s-input-font-size;
+				padding-left: 10px;
+				width: $s-input-width - 10px;
+
+				::-webkit-input-placeholder {
+
+					/* WebKit, Blink, Edge */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				:-moz-placeholder {
+
+					/* Mozilla Firefox 4 to 18 */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				::-moz-placeholder {
+
+					/* Mozilla Firefox 19+ */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				:-ms-input-placeholder {
+
+					/* Internet Explorer 10-11 */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+			}
+
+		}
+
+		.user {
+			input {
+			}
+
+		}
+
+		.psw {
+			margin-top: 20px;
+
+			input {
+			}
+
+		}
+
+		.login-btn {
+			margin-top: 20px;
+			cursor: pointer;
+
+			span {
+				width: $c-btn-width;
+				padding: 10px 0;
+				display: inline-block;
+				background: #5FB878;
+				color: #fff;
+				text-align: center;
+				border-radius: 4px;
+				font-size: $s-input-font-size;
+			}
+
+		}
+
+	}
+
+}
+
+// 登录输入框-带图标
+.c-input-login-yes {
+	border: 1px solid #ddd;
+	background: #fff;
+	width: $s-input-width +100px;
+	margin-left: 10px;
+
+	.c-login {
+		width: $s-input-width;
+		margin: 0 auto;
+		padding-top: 10px;
+		padding-bottom: 20px;
+
+		.login-title {
+			text-align: center;
+
+			span {
+				font-size: $s-input-font-size + 4;
+				color: #5FB878;
+				padding: 10px 0;
+				display: inline-block;
+			}
+
+		}
+
+		.user, .psw {
+			width: $s-input-width;
+			border: 1px solid #C9C9C9;
+
+			span {
+				width: 30px;
+				display: inline-block;
+				text-align: center;
+
+				i {
+					font-size: 15px;
+					color: #757575;
+				}
+
+				.icon-yonghu {
+					position: relative;
+					top: 3px;
+				}
+
+				.icon-mima {
+					font-size: 16px;
+					position: relative;
+					top: 2px;
+					color: #999;
+				}
+
+			}
+
+			input {
+				padding: 10px 0;
+				border: 0;
+				outline: none;
+				font-size: $s-input-font-size;
+				// padding-left: 10px;
+				width: $s-input-width - 40px;
+
+				::-webkit-input-placeholder {
+
+					/* WebKit, Blink, Edge */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				:-moz-placeholder {
+
+					/* Mozilla Firefox 4 to 18 */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				::-moz-placeholder {
+
+					/* Mozilla Firefox 19+ */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				:-ms-input-placeholder {
+
+					/* Internet Explorer 10-11 */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+			}
+
+		}
+
+		.user {
+			i {
+			}
+
+			input {
+			}
+
+		}
+
+		.psw {
+			margin-top: 20px;
+
+			i {
+			}
+
+			input {
+			}
+
+		}
+
+		.login-btn {
+			margin-top: 20px;
+			cursor: pointer;
+
+			span {
+				width: $c-btn-width;
+				padding: 10px 0;
+				display: inline-block;
+				background: #5FB878;
+				color: #fff;
+				text-align: center;
+				border-radius: 4px;
+				font-size: $s-input-font-size;
+			}
+
+		}
+
+	}
+
+}
+
+// 登录输入框带图标-下划线样式
+.c-input-login-yes-line {
+	border: 1px solid #ddd;
+	background: #fff;
+	width: $s-input-width +100px;
+	margin-left: 10px;
+
+	.c-login {
+		width: $s-input-width;
+		margin: 0 auto;
+		padding-top: 10px;
+		padding-bottom: 20px;
+
+		.login-title {
+			text-align: center;
+
+			span {
+				font-size: $s-input-font-size + 4;
+				color: #5FB878;
+				padding: 10px 0;
+				display: inline-block;
+			}
+
+		}
+
+		.user, .psw {
+			width: $s-input-width;
+			border-bottom: 1px solid #C9C9C9;
+
+			span {
+				width: 30px;
+				display: inline-block;
+				text-align: center;
+
+				i {
+					font-size: 15px;
+					color: #757575;
+				}
+
+				.icon-yonghu {
+					position: relative;
+					top: 3px;
+				}
+
+				.icon-mima {
+					font-size: 16px;
+					position: relative;
+					top: 2px;
+					color: #999;
+				}
+
+			}
+
+			input {
+				padding: 10px 0;
+				border: 0;
+				outline: none;
+				font-size: $s-input-font-size;
+				// padding-left: 10px;
+				width: $s-input-width - 40px;
+
+				::-webkit-input-placeholder {
+
+					/* WebKit, Blink, Edge */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				:-moz-placeholder {
+
+					/* Mozilla Firefox 4 to 18 */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				::-moz-placeholder {
+
+					/* Mozilla Firefox 19+ */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+				:-ms-input-placeholder {
+
+					/* Internet Explorer 10-11 */
+					color: #999999;
+					padding-left: 10px;
+				}
+
+			}
+
+		}
+
+		.user {
+			i {
+			}
+
+			input {
+			}
+
+		}
+
+		.psw {
+			margin-top: 20px;
+
+			i {
+			}
+
+			input {
+			}
+
+		}
+
+		.login-btn {
+			margin-top: 20px;
+			cursor: pointer;
+
+			span {
+				width: $c-btn-width;
+				padding: 10px 0;
+				display: inline-block;
+				background: #5FB878;
+				color: #fff;
+				text-align: center;
+				border-radius: 4px;
+				font-size: $s-input-font-size;
+			}
+
+		}
+
+	}
+
+}
+
+$table-widht-1:10%;
+$table-widht-2:10%;
+$table-widht-3:10%;
+$table-widht-4:10%;
+$table-widht-5:10%;
+$table-widht-6:20%;
+$table-height-th: 50px;
+$table-height-td: 40px;
+
+//表格
+
+.c-table {
+	color: #666666;
+	border: 1px solid #E6E6E6;
+
+	table {
+		width: 100%;
+	}
+
+	th, td {
+		text-align: left;
+		text-indent: 20px;
+
+		&:nth-child(1) {
+			width: $table-widht-1;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(2) {
+			width: $table-widht-2;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(3) {
+			width: $table-widht-3;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(4) {
+			width: $table-widht-4;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(5) {
+			width: $table-widht-5;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(6) {
+			width: $table-widht-6;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(7) {
+			// width: 100% - $table-widht-1 - $table-widht-2 - $table-widht-3;
+		}
+
+	}
+
+	.table-th {
+		height: $table-height-th;
+		line-height: $table-height-th;
+		background: #F2F2F2;
+		border-bottom: 1px solid #E6E6E6;
+
+		.th-item {
+		}
+
+	}
+
+	.table-content {
+		border-bottom: 1px solid #E6E6E6;
+
+		&:hover {
+			background: #F2F2F2;
+		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		td {
+			height: $table-height-td;
+			line-height: $table-height-td;
+		}
+
+	}
+
+}
+
+//表格-有边线
+
+.c-table-line {
+	color: #666666;
+	border: 1px solid #E6E6E6;
+
+	table {
+		width: 100%;
+	}
+
+	th, td {
+		text-indent: 20px;
+		text-align: left;
+
+		&:nth-child(1) {
+			width: $table-widht-1;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(2) {
+			width: $table-widht-2;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(3) {
+			width: $table-widht-3;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(4) {
+			width: $table-widht-4;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(5) {
+			width: $table-widht-5;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(6) {
+			width: $table-widht-6;
+			border-right: 1px solid #E6E6E6;
+		}
+
+		&:nth-child(7) {
+			// width: 100% - $table-widht-1 - $table-widht-2 - $table-widht-3;
+		}
+
+	}
+
+	.table-th {
+		height: $table-height-th;
+		line-height: $table-height-th;
+		background: #F2F2F2;
+		border-bottom: 1px solid #E6E6E6;
+	}
+
+	.table-content {
+		border-bottom: 1px solid #E6E6E6;
+		// cursor: pointer;
+
+		&:hover {
+			background: #F2F2F2;
+		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		td {
+			height: $table-height-td;
+			line-height: $table-height-td;
 		}
 
 	}

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>select选择框美化</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <!-- 阿里字体库样式 -->
+    <link rel="stylesheet" href="plug-in/font_852056_h5f7bm08h75/iconfont.css">
+    <!-- layui -->
+    <link rel="stylesheet" href="plug-in/layui-2.1.4/css/layui.css">
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/1.index.css">
+</head>
+
+<body>
+    <div class="all-container">
+        <h3>1.选择框美化</h3>
+        <!--S 搜索框美化 -->
+        <div class="container">
+            <div class="c-search-show" id="select">
+                <div class="c-select">
+                    <div class="c-top-select">
+                        <input type="text" v-model="selectText" placeholder="selectText" onfocus="this.blur()">
+                        <i class="iconfont icon-xiangyou"></i>
+                    </div>
+                    <div class="c-option" style="display:none;">
+                        <div class="option-item" v-for="el in data" @click="showSelect(el.name)">{{el.name}}</div>
+                    </div>
+                </div>
+                <div class="c-input">
+                    <input type="text" v-model="inputText" @keyup.enter="enter(inputText)" placeholder="请输入">
+                </div>
+                <div class="c-search">
+                    <i class="iconfont icon-sousuo" @click="enter('搜索')"></i>
+                </div>
+            </div>
+        </div>
+        <!-- E 搜索框美化-->
+        <h3>2.输入框input美化</h3>
+        <!-- S 普通输入框 -->
+        <div class="container">
+            <div class="c-input-show" id="input">
+                <div class="c-input">
+                    <input id="inputBtn" @keyup.enter="enter" type="text" placeholder="请输入后,点击回车">
+                </div>
+            </div>
+        </div>
+        <!-- E 普通输入框 -->
+        <h3>3.登录输入框-不带图标</h3>
+        <!-- S 登录输入框 -->
+        <div class="container">
+            <div class="c-input-login" id="noLogin">
+                <form action="">
+                    <div class="c-login">
+                        <div class="login-title">
+                            <span>登录</span>
+                        </div>
+                        <div class="user">
+                            <input type="text" placeholder="请输入用户名">
+                        </div>
+                        <div class="psw">
+                            <input type="password" placeholder="请输入密码">
+                        </div>
+                        <div class="login-btn">
+                            <span>登录</span></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- E 登录输入框 -->
+        <h3>4.登录输入框-带图标</h3>
+        <!-- S 登录输入框 -->
+        <div class="container">
+            <div class="c-input-login-yes" id="yesLogin">
+                <form action="">
+                    <div class="c-login">
+                        <div class="login-title">
+                            <span>登录</span>
+                        </div>
+                        <div class="user">
+                            <span><i class="iconfont icon-yonghu"></i></span>
+                            <input type="text" placeholder="请输入用户名">
+                        </div>
+                        <div class="psw">
+                            <span><i class="iconfont icon-mima"></i></span>
+                            <input type="password" placeholder="请输入密码">
+                        </div>
+                        <div class="login-btn">
+                            <span>登录</span></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- E 登录输入框 -->
+        <h3>5.登录输入框带图标-下划线</h3>
+        <!-- S 登录输入框 -->
+        <div class="container">
+            <div class="c-input-login-yes-line" id="yesLineLogin">
+                <form action="">
+                    <div class="c-login">
+                        <div class="login-title">
+                            <span>登录</span>
+                        </div>
+                        <div class="user">
+                            <span><i class="iconfont icon-yonghu"></i></span>
+                            <input type="text" placeholder="请输入用户名">
+                        </div>
+                        <div class="psw">
+                            <span><i class="iconfont icon-mima"></i></span>
+                            <input type="password" placeholder="请输入密码">
+                        </div>
+                        <div class="login-btn">
+                            <span>登录</span></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- E 登录输入框  -->
+        <h3>6.表格-无边线</h3>
+        <!-- S 表格 -->
+        <div class="container">
+            <div class="c-table" id="table">
+                <table>
+                    <tr class="table-th">
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>大小</th>
+                        <th>操作</th>
+                        <th>操作2</th>
+                        
+                    </tr>
+                    <tr class="table-content" v-for="el in data">
+                        <td>张三</td>
+                        <td>2017000000</td>
+                        <td>是的</td>
+                        <td>删除</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- E表格 -->
+        <h3>6.表格-有边线</h3>
+        <!-- S 表格 -->
+        <div class="container">
+            <div class="c-table-line" id="tableLine">
+                <table>
+                    <tr class="table-th">
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>大小</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr class="table-content" v-for="el in data">
+                        <td>张三</td>
+                        <td>2017000000</td>
+                        <td>是的</td>
+                        <td>删除</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- E表格 -->
+    </div>
+</body>
+<script src="plug-in/jquery-1.11.2.min.js"></script>
+<script src="plug-in/layui-2.1.4/layui.js"></script>
+<script src="plug-in/vue@2.5.6/vue.js"></script>
+<script>
+layui.use('layer', function() {
+    var layer = layui.layer;
+});
+
+var vm = new Vue({
+    el: "#select",
+    data: {
+        data: [{
+            name: "植物类"
+        }, {
+            name: "动物类"
+        }, {
+            name: "矿物类"
+        }, {
+            name: "其他"
+        }, {
+            name: "文化"
+        }],
+        selectText: "全部",
+        inputText: ""
+    },
+    methods: {
+        showSelect: function(name) {
+            this.selectText = name;
+            layer.msg("你选择了:" + name);
+        },
+        enter: function(name) {
+            if (name == "") {
+                layer.msg("输入为空");
+            } else {
+
+                layer.msg(name);
+            }
+        }
+    }
+})
+
+var input = new Vue({
+    el: "#input",
+    data: {
+        data: [],
+        isKey: "未点击"
+
+    },
+    methods: {
+        enter: function() {
+            layer.msg("回车");
+        }
+    }
+})
+var table = new Vue({
+    el: "#table",
+    data: {
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+})
+
+var tableLine = new Vue({
+    el: "#tableLine",
+    data: {
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+})
+
+$(document).ready(function() {
+    autoPage();
+    $(window).resize(function() {
+        autoPage();
+    })
+    selectStyle()
+})
+/**
+ ** 选择样式的重写
+ **
+ */
+
+function selectStyle() {
+    var isShow = null;
+    $('.c-top-select').click(function() {
+        if (isShow) {
+            $('.c-option').css('display', "none");
+            $('.c-top-select>i').removeClass('icon-xiangxia1').addClass('icon-xiangyou');
+            isShow = false;
+        } else {
+            $('.c-option').css('display', "block");
+            $('.c-top-select>i').removeClass('icon-xiangyou').addClass('icon-xiangxia1');
+            isShow = true;
+        }
+    })
+    $('.option-item').click(function() {
+        // var text = $(this).text()
+        // $("#selectText").html(text);
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.c-option').css('display', "none");
+        $('.c-top-select>i').removeClass('icon-xiangxia1').addClass('icon-xiangyou');
+        isShow = false;
+    })
+}
+
+/***
+ ** 自适应页面
+ */
+function autoPage() {
+    var pageHeight = window.innerHeight;
+    //背景图片高度
+    var bgHeight = pageHeight - $('.c-footer').height();
+    $('.content-bg').css('height', bgHeight + 'px');
+    $('.middle-content').css('height', bgHeight + 'px');
+}
+</script>
+
+</html>
