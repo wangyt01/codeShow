@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
 	document.forms[0].onsubmit = validForm;
 	//当页面加载时，匿名函数会查找页面第一个表单。对于这个表单，他为表单

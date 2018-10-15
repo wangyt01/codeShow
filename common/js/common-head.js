@@ -42,7 +42,7 @@ function getRootPath() {
     var post = path.indexOf(pathName);
     //取得主机地址
     var hostPath = path.substring(0, post);
-    console.log(hostPath)
+    // console.log(hostPath)
     //取得项目名
     var name = pathName.substring(0, pathName.substr(1).indexOf("/") + 1);
     if (hostPath == "file://") {
@@ -59,11 +59,17 @@ dynamicLoading.meta();
 //动态加载项目 CSS文件
 dynamicLoading.css(rootPath + "/plug-in/bootstrap-3.3.6/dist/css/bootstrap.css");
 dynamicLoading.css(rootPath + "/plug-in/layui-2.1.4/css/layui.css");
+dynamicLoading.css(rootPath + "/plug-in/jquery-ui-1.11.4.custom/jquery-ui.min.css");
+// dynamicLoading.css(rootPath + "");
+// dynamicLoading.css(rootPath + "");
 dynamicLoading.css(rootPath + "/plug-in/iconfont/iconfont.css");
 document.writeln("    <!-- 重置样式 -->");
 dynamicLoading.css(rootPath + "/common/css/reset.css");
 document.writeln("    <!-- 公共样式 -->");
 dynamicLoading.css(rootPath + "/common/css/common.css");
+// dynamicLoading.css(rootPath + "");
+// dynamicLoading.css(rootPath + "");
+// dynamicLoading.css(rootPath + "");
 
 
 
@@ -71,12 +77,16 @@ dynamicLoading.css(rootPath + "/common/css/common.css");
 document.writeln("<!-- 公共js -->");
 dynamicLoading.js(rootPath + "/common/js/common.js", "utf-8");
 dynamicLoading.js(rootPath + "/plug-in/JQuery-3.0.0/jquery-3.0.0.js", "utf-8");
+dynamicLoading.js(rootPath + "/plug-in/jquery-ui-1.11.4.custom/jquery-ui.min.js");
+// dynamicLoading.js(rootPath + "");
+// dynamicLoading.js(rootPath + "");
 dynamicLoading.js(rootPath + "/plug-in/layui-2.1.4/layui.js", "utf-8");
 dynamicLoading.js(rootPath + "/plug-in/vue@2.5.6/vue.min.js", "utf-8");
 document.writeln("<!-- 公共模板 -->");
 dynamicLoading.js(rootPath + "/common/js/common-template.js", "utf-8");
-// dynamicLoading.js(rootPath + "/js/process/center/common/jquery.dataTables.js", "utf-8");
-// dynamicLoading.js(rootPath + "/js/platform/system/loadHeader.js", "utf-8");
+// dynamicLoading.js(rootPath + "");
+// dynamicLoading.js(rootPath + "");
+// dynamicLoading.js(rootPath + "");
 
 
 // $(function(){

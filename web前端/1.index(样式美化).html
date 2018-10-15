@@ -10,10 +10,12 @@
 </head>
 
 <body>
-    <div class="all-container">
-    <!-- S 公共头部 -->
+    <div class="" id="header">
+        <!-- S 公共头部 -->
         <common-header></common-header>
         <!-- E 公共头部-->
+    </div>
+    <div class="all-container">
         <h3>1.选择框美化</h3>
         <!--S 搜索框美化 -->
         <div class="container">
@@ -127,7 +129,6 @@
                         <th>大小</th>
                         <th>操作</th>
                         <th>操作2</th>
-                        
                     </tr>
                     <tr class="table-content" v-for="el in data">
                         <td>张三</td>
@@ -160,7 +161,9 @@
             </div>
         </div>
         <!-- E表格 -->
-         <!-- S 公共底部 -->
+    </div>
+    <div id="footer">
+        <!-- S 公共底部 -->
         <common-footer></common-footer>
         <!-- E 公共底部 -->
     </div>
@@ -170,6 +173,18 @@ layui.use('layer', function() {
     var layer = layui.layer;
 });
 
+var header = new Vue({
+    el: "#header",
+    data: {
+        data: []
+    }
+})
+var footer = new Vue({
+    el: "#footer",
+    data: {
+        data: []
+    }
+})
 var vm = new Vue({
     el: "#select",
     data: {

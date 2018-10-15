@@ -56,6 +56,9 @@ $li-height: 30px;
 					text-overflow: ellipsis;
 					white-space: nowrap;
 					overflow: hidden;
+					&:visited{
+						color:#660099;
+					}
 				}
 
 			}
