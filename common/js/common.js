@@ -30,3 +30,32 @@ function autoAjax(url, fnSucc, fnFaild) {
         }
     }
 }
+
+
+/**
+ ** 快速排序
+ ** @param {Array} elements 数组
+ */
+function quickSort(elements) {
+    if (elements.length <= 1) {
+        return elements;
+    }
+    //floor() 对一个数进行下舍入 
+    var pivotIndex = Math.floor(elements.length / 2);
+    //splice(index,howmany) 向/从数组中添加/删除项目，然后返回被删除的项目 
+    //howmany为如果设置为 0，则不会删除项目 
+    //pivot 删除的数
+    var pivot = elements.splice(pivotIndex, 1)[0];
+    var left = [];
+    var right = [];
+    //
+    for (var i = 0; i < elements.length; i++) {
+        if (elements[i] < pivot) {
+            left.push(elements[i]);
+        } else {
+            right.push(elements[i]);
+        }
+    }
+    //concat() 方法用于连接两个或多个数组
+    return quickSort(left).concat([pivot], quickSort(right));
+}

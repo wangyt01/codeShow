@@ -13,24 +13,23 @@ $li-height: 30px;
 .middle-container {
 	width: 1000px;
 	margin: 0 auto;
-	// -webkit-column-width: $s-width-1;
-	// -webkit-column-count: 4;
-	// column-count: 4;
-	// -webkit-column-gap: 50px;
-	// -moz-column-gap: 50px;
-	// column-gap: 50px;
-	position: relative;
+	position: relative;	
+	/* Safari */
+	// display: -webkit-flex;
+	// display: flex;
+	// flex-wrap: wrap;
+	// flex-direction: column;
+	// justify-content: space-between;
 
 	.list {
-		width: calc((100% - 30px)/4);
-		margin-left: 10px;
+		width:$s-width-1;
+		// margin-left: 10px;
 		border: 1px solid #999;
 		float: left;
 		text-align: center;
 		font-size: 15px;
-
 		&:nth-child(4n+1) {
-			margin-left: 0;
+			// margin-left: 0;
 		}
 
 		h4 {
