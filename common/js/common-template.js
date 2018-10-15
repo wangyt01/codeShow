@@ -7,24 +7,6 @@
 //修改时间:
 //修改说明:                
 //////////////////////////////////
-//head中引入代码
-Vue.component('common-link',{
-	data:function(){
-		return{
-
-		}
-	},
-	template:' \
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">\
-    <!-- 图标 -->\
-    <link rel="shortcut icon" href="./common/images/favicon.ico" type="image/x-icon" />\
-    <link rel="stylesheet" href="./common/css/reset.css">\
-    <link rel="stylesheet" href="./common/bootstrap-3.3.6/dist/css/bootstrap.css">\
-    <link rel="stylesheet" href="./common/layui-2.1.4/css/layui.css">\
-    <!-- 公共样式 -->\
-    <link rel="stylesheet" href="./common/css/common.css">\
-	'
-})
 
 
 //公共顶部
@@ -32,16 +14,16 @@ Vue.component("common-header", {
 	data: function() {
 		return {
 			data: [{
-				url: "/github/codeShow/2016/index-2016.html",
+				url: "2016/index-2016.html",
 				name: "2016"
 			}, {
-				url: "/github/codeShow/2017/2.index-2017-vue.html",
+				url: "2017/2.index-2017-vue.html",
 				name: "2017"
 			}, {
-				url: "/github/codeShow/2018/2.index-2018-vue.html",
+				url: "2018/2.index-2018-vue.html",
 				name: "2018"
 			}, {
-				url: "/github/codeShow/web前端/1.index(样式美化).html",
+				url: "web前端/1.index(样式美化).html",
 				name: "web前端"
 			}]
 		}
@@ -69,10 +51,10 @@ Vue.component("common-header", {
 		openUrl:function(Index){
 			// var tempwindow=window.open('_blank'); // 先打开页面
 			// tempwindow.location=this.data[Index].url; // 后更改页面地址
-			window.location.href = this.data[Index].url;
+			window.location.href = rootPath +  this.data[Index].url;
 		},
 		openIndex:function(){
-			window.location.href ="/github/codeShow/index.html";
+			window.location.href = rootPath + "index.html";
 		}
 	}
 })
