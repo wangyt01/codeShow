@@ -1,3 +1,9 @@
+/**
+** ajax获取数据
+**
+**
+*/
+
 function autoAjax(url, fnSucc, fnFaild) {
     //1【创建】
     if (window.XMLHttpRequest) {

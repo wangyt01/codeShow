@@ -5,15 +5,15 @@ document.writeln("<meta http-equiv=\'X-UA-Compatible\' content=\'IE=Edge,chrome=
 document.writeln("    <!-- 图标 -->");
 document.writeln("    <link rel=\'shortcut icon\' href=\'/github/codeShow/common/images/favicon.ico\' type=\'image/x-icon\' />");
 document.writeln("    <link rel=\'stylesheet\' href=\'/github/codeShow/common/css/reset.css\'>");
-document.writeln("    <link rel=\'stylesheet\' href=\'/github/codeShow/common/bootstrap-3.3.6/dist/css/bootstrap.css\'>");
-document.writeln("    <link rel=\'stylesheet\' href=\'/github/codeShow/common/layui-2.1.4/css/layui.css\'>");
+document.writeln("    <link rel=\'stylesheet\' href=\'/github/codeShow/plug-in/bootstrap-3.3.6/dist/css/bootstrap.css\'>");
+document.writeln("    <link rel=\'stylesheet\' href=\'/github/codeShow/plug-in/layui-2.1.4/css/layui.css\'>");
 document.writeln("    <!-- 公共样式 -->");
 document.writeln("    <link rel=\'stylesheet\' href=\'/github/codeShow/common/css/common.css\'>");
 
 // 公共的引入js
-document.writeln("<script src=\'/github/codeShow/common/vue@2.5.6/vue.min.js\'></script>");
-document.writeln("<script src=\'/github/codeShow/common/JQuery-3.0.0/jquery-3.0.0.js\'></script>");
-document.writeln("<script src=\'/github/codeShow/common/layui-2.1.4/layui.js\'> </script>");
+document.writeln("<script src=\'/github/codeShow/plug-in/vue@2.5.6/vue.min.js\'></script>");
+document.writeln("<script src=\'/github/codeShow/plug-in/JQuery-3.0.0/jquery-3.0.0.js\'></script>");
+document.writeln("<script src=\'/github/codeShow/plug-in/layui-2.1.4/layui.js\'> </script>");
 document.writeln("<!-- 公共模板 -->");
 document.writeln("<script src=\'/github/codeShow/common/js/common-template.js\'></script>");
 document.writeln("<!-- 公共js -->");
