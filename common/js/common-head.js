@@ -9,25 +9,26 @@ var rootPath = getRootPath(); //项目路径
  * 动态加载CSS和JS文件
  */
 var dynamicLoading = {
-    meta : function(){
+    meta: function() {
         document.write('<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">');
         document.writeln("<meta http-equiv=\'X-UA-Compatible\' content=\'IE=Edge,chrome=1\'>");
         document.writeln("<!-- 图标 -->");
-		document.writeln("<link rel='shortcut icon' href='"+rootPath+"./common/images/favicon.ico' type='image/x-icon' />");
+        document.writeln("<link rel='shortcut icon' href='" + rootPath + "./common/images/favicon.ico' type='image/x-icon' />");
     },
-    css: function(path){
-        if(!path || path.length === 0){
+    css: function(path) {
+        if (!path || path.length === 0) {
             throw new Error('argument "path" is required!');
         }
         document.write('<link rel="stylesheet" type="text/css" href="' + path + '">');
     },
-    js: function(path, charset){
-        if(!path || path.length === 0){
+    js: function(path, charset) {
+        if (!path || path.length === 0) {
             throw new Error('argument "path" is required!');
         }
         document.write('<script charset="' + (charset ? charset : "utf-8") + '" src="' + path + '"></script>');
     }
 };
+
 
 /**
  * 取得项目路径
@@ -41,9 +42,15 @@ function getRootPath() {
     var post = path.indexOf(pathName);
     //取得主机地址
     var hostPath = path.substring(0, post);
+    console.log(hostPath)
     //取得项目名
     var name = pathName.substring(0, pathName.substr(1).indexOf("/") + 1);
-    return hostPath + name + "/";
+    if (hostPath == "file://") {
+        return name + "/github/codeShow/"
+    } else {
+        return hostPath + name + "/";
+    }
+
 }
 
 //动态生成meta
@@ -76,10 +83,3 @@ dynamicLoading.js(rootPath + "/common/js/common-template.js", "utf-8");
 //     $(".container").append('<div id="header"></div>');
 //     $("#header").load(getRootPath() + "header.html");
 // });
-
-
-
-
-
-
-
