@@ -1,11 +1,6 @@
 .DS_Store
-<<<<<<< HEAD
 node_modules/
 dist/
-=======
-/node_modules/
-#dist/
->>>>>>> 6ce5ba55030059d9c0d75ab535d4febe4020f756
 npm-debug.log
 yarn-error.log
 
@@ -15,8 +10,3 @@ yarn-error.log
 *.ntvs*
 *.njsproj
 *.sln
-<<<<<<< HEAD
-=======
-*.scss
-*.map
->>>>>>> 6ce5ba55030059d9c0d75ab535d4febe4020f756
