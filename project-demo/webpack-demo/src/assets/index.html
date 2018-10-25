@@ -3,8 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title><%= htmlWebpackPlugin.options.title %></title>
+	
 </head>
 <body>
-	<h3>这是关于页面</h3>
+	<%= require('html-loader!./header.html') %> 
+
 </body>
 </html>
