@@ -1,0 +1,203 @@
+/*! ************************************
+    文      件:
+    说      明:手机首页;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+
+$page-ratio: 0.5;
+$c-padding-left: 44px;
+
+body {
+	background: #EDF1F4;
+	overflow: hidden;
+	// height: 100vw;
+}
+
+.phone-show {
+	.head-top {
+		// position: fixed;
+
+		.top-title {
+			height: 72px* $page-ratio;
+			line-height: 72px* $page-ratio;
+			background: #fff;
+			margin-top: 30px* $page-ratio;
+
+			i {
+				color: #EC571C;
+				font-size: 30px* $page-ratio;
+				margin-left: $c-padding-left* $page-ratio;
+			}
+
+			span {
+				font-size: 26px* $page-ratio;
+				color: #555;
+				margin-left: 20px* $page-ratio;
+			}
+
+		}
+
+		.top-video {
+			// height: 404px* $page-ratio;
+			// background: url("../img/video-bg.jpg") no-repeat;
+			// background-size: 100% 100%;
+			position: relative;
+
+			.controll {
+				height: 92px* $page-ratio;
+				line-height: 92px* $page-ratio;
+				width: 100%;
+				background: rgba(0, 0, 0, 0.4);
+				position: absolute;
+				bottom: 0;
+
+				.c-left, .c-right {
+					font-size: 26px* $page-ratio;
+					color: #fff;
+				}
+
+				.c-left {
+					font-size: 26px* $page-ratio;
+					float: left;
+
+					span {
+						color: #fff;
+						margin-left: $c-padding-left* $page-ratio;
+						position: relative;
+						top: -10px* $page-ratio;
+					}
+
+					i {
+						font-size: 60px* $page-ratio;
+						color: #32EE1F;
+						margin-left: 20px* $page-ratio;
+					}
+
+				}
+
+				.c-right {
+					float: right;
+
+					span {
+						margin-right: $c-padding-left* $page-ratio;
+					}
+
+					i {
+						font-size: 32px* $page-ratio;
+						margin-right: 10px* $page-ratio;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.middle-content {
+		margin-top: 44px* $page-ratio;
+
+		.m-top {
+			height: 72px* $page-ratio;
+			line-height: 72px* $page-ratio;
+			background: #fff;
+
+			.m-t-title {
+				i {
+					color: #1296DB;
+					font-size: 30px* $page-ratio;
+					margin-left: $c-padding-left* $page-ratio;
+				}
+
+				span {
+					font-size: 26px* $page-ratio;
+					color: #555;
+					margin-left: 20px* $page-ratio;
+				}
+
+			}
+
+		}
+
+		.m-content {
+			// height: 40vh;
+			width:100%;
+			overflow-y: auto;
+			.m-content-bg {
+				height: inherit;
+				.b-title{
+					position:relative;
+					top:50px;
+					font-size:18px;
+					text-align:center;
+					// border:1px solid red;
+				}
+				.list-item {
+					width: 49%;
+					margin-top: 12px* $page-ratio;
+					float:left;
+					.l-top {
+						height: 202px* $page-ratio;
+						// background: url("../img/bottom-bg.png") no-repeat;
+						// background-size: 100% 100%;
+						position: relative;
+
+						span {
+							width: 100px* $page-ratio;
+							height: 40px* $page-ratio;
+							line-height: 40px* $page-ratio;
+							font-size: 26px* $page-ratio;
+							text-align: center;
+							background: #000;
+							color: #fff;
+							position: absolute;
+							bottom: 10px* $page-ratio;
+							right: 8px* $page-ratio;
+						}
+
+					}
+
+					.l-bottom {
+						height: 48px* $page-ratio;
+						line-height: 48px* $page-ratio;
+						background: #fff;
+
+						span {
+							font-size: 24px* $page-ratio;
+							color: #555;
+							margin-left: $c-padding-left* $page-ratio;
+						}
+
+					}
+
+					&:nth-child(odd) {
+						float: left;
+						margin-left:2%;
+					}
+
+					// &:nth-child(even) {
+					// 	float: right;
+					// }
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+@media screen and (min-width:800px) {
+	.phone-show {
+		width: 40%;
+		margin: 0 auto;
+	}
+
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>直播</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="plug-in/layui-2.1.4/css/layui.css">
+    <link rel="stylesheet" href="plug-in/iconfont/iconfont.css">
+    <!--the css for jquery.mCustomScrollbar-->
+    <link rel="stylesheet" href="plug-in/jQuery-emoji/lib/css/jquery.mCustomScrollbar.min.css">
+    <!--the css for this plugin-->
+    <link rel="stylesheet" href="plug-in/jQuery-emoji/dist/css/jquery.emoji.css">
+    <link rel="stylesheet" href="./plug-in/mui/css/mui.min.css">
+
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/phone-live.css">
+</head>
+<body>
+	 <!--下拉刷新容器-->
+              <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+             <div class="mui-scroll">
+    <!--数据列表-->
+    <div>
+        ssssssssssfff
+    </div>
+</div>
+</div>
+</body>
+<script src="plug-in/jquery-1.11.2.min.js"></script>
+<script src="plug-in/layui-2.1.4/layui.js"></script>
+<script src="plug-in/vue@2.5.6/vue.min.js"></script>
+<script src="./plug-in/TcPlayer-2.2.2.js"></script>
+<!-- <script src="plug-in/jQuery-emoji/lib/script/jquery.mousewheel-3.0.6.min.js"></script> -->
+<!-- <script src="plug-in/jQuery-emoji/lib/script/jquery.mCustomScrollbar.min.js"></script> -->
+<!-- <script src="plug-in/jQuery-emoji/dist/js/jquery.emoji.js"></script> -->
+<script src="./plug-in/mui/js/mui.min.js"></script>
+
+<script src="js/phone-live.js">
+</script>
+<script src="js/phone-live-emoji.js"></script>
+<script src="js/phone-live-scroll.js"></script>
+<script>
+			// 	mui.init({
+			// 	//关闭back按键监听
+		 //    	keyEventBind: {
+			// 		backbutton: true
+			// 	},
+		 //        pullRefresh: {
+		 //            container: '#pullrefresh',
+		 //         	//上拉加载
+		 //           up: {
+		 //                contentrefresh: '正在加载...',
+		 //                callback: pullupRefresh
+		 //            }
+		 //        }
+			// })
+			// mui.ready(function(){
+				
+			// });
+			// mui.plusReady(function(){
+			//  	// vm.query();
+			// });
+			// /**
+		 //     * 上拉加载下一页
+		 //     */
+		 //    function pullupRefresh() {
+		 //        setTimeout(function() {
+		 //        	vm.$data.page.pageNumber+=1;
+		        	
+			// 		var param = {
+			// 			pageSize:4,
+			// 			pageNumber: vm.page.pageNumber
+			// 		};
+		 //            //执行ajax查询分页查询下一页列表
+		 //            if (vm.page.pageNumber <= vm.page.pageCount) {
+		 //            	autoAjax("/etp/teacher/queryClient",param,function(json){//pageSize:2
+			// 			   	if(json.result){
+			// 				   vm.teachData = vm.teachData.concat(json.data.data);
+			// 				   vm.page = json.data.page;
+			// 				   mui('#pullrefresh').pullRefresh().endPullupToRefresh(false);//参数为true代表没有更多数据了。
+			// 				   if(vm.page.pageNumber == vm.page.pageCount){
+			// 				   	mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);//参数为true代表没有更多数据了。
+			// 				   }
+							
+			// 			   	}
+			// 			}); 
+						
+		 //            }else{
+		 //            	mui('#pullrefresh').pullRefresh().endPullupToRefresh(true);//参数为true代表没有更多数据了。
+		 //            }
+		 //        }, 1500);
+		 //    }
+			
+			// var vm = new Vue({
+			// 	el:"#pullrefresh",
+			// 	data:{
+			// 		data:[],
+			// 		page:{
+			// 			pageNumber:1
+			// 		}
+			// 	}
+			// })
+</script>
+</html>

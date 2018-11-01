@@ -1,13 +1,20 @@
 import _ from 'lodash';
-// import './common/reset.css';
-// import './css/style.css';
-// import './css/index.css';
-// import './sass/index.scss';
-import webImg from './images/web-img.jpg';
-import Data from './data/data.xml';
-// import printMe from './js/print.js';
-// import hotMe from './js/hot.js';
+import Vue from 'vue';
+import App from './assets-vue/app.vue';
+import "./common/reset.css";
 
+// const root = document.createElement('div');
+// document.body.appendChild(root);
+
+new Vue({
+  el: '#index',
+  render: h => h(App)
+})
+// new Vue({
+// 	el: "#app",
+// 	render: (h) => (App)
+// })
+// .$mount(root)
 
 // function component() {
 // 	let element = document.createElement('div');
@@ -25,7 +32,7 @@ import Data from './data/data.xml';
 
 // }
 
-document.writeln('<img src="'+webImg+'" alt="">');
+// document.writeln('<img src="'+webImg+'" alt="">');
 // console.log("xml数据:");
 // console.log(Data)
 // // console.log("print.js引入数据:");
@@ -39,4 +46,3 @@ document.writeln('<img src="'+webImg+'" alt="">');
 // 		hotMe();
 // 	})
 // }
-

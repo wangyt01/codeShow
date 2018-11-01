@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2018年影像医学专业研究生临床能力展示赛</title>
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="plug-in/layui-2.1.4/css/layui.css">
+    <link rel="stylesheet" href="plug-in/iconfont/iconfont.css">
+    <script src="plug-in/jquery-1.11.2.min.js"></script>
+    <script src="plug-in/layui-2.1.4/layui.js"></script>
+    <script src="plug-in/vue@2.5.6/vue.min.js"></script>
+    <script src="//imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.2.2.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/phone-show.css">
+    <!--weinre调试-->
+</head>
+<style>
+</style>
+
+<body>
+    <div class="phone-show" id="phoneShow">
+        <div class="head-top">
+            <div class="top-title">
+                <i class="iconfont icon-zhibo"></i><span>直播</span>
+            </div>
+            <div class="top-video">
+                <div id="id_test_video" style="width:100%; height:202px;"></div>
+            </div>
+        </div>
+        <div class="middle-content">
+            <div class="m-top">
+                <div class="m-t-title">
+                    <i class="iconfont icon-huifang"></i><span id="reVideo">回看</span>
+                </div>
+            </div>
+            <div class="m-content">
+                <!-- 回看 -->
+                <div class="m-content-bg">
+                    <div class="b-title">
+                        暂无回看视频!
+                    </div>
+                    <div class="list-item" v-for="el in data">
+                        <div class="l-top">
+                            <div :id="el.id" style="width:100%; height:101px;"></div>
+                            <span>{{el.time}}</span>
+                        </div>
+                        <div class="l-bottom">
+                            <span>{{el.meetName}}</span>
+                        </div>
+                    </div>
+                </div>
+              <!-- 手机直播 -->
+            <div class="footer" style="height:30px;line-height:30px;color:#000;text-align:center;width:100%;font-size:13px;background:#EDF1F4;">
+                <span>系统技术支持：济南中飞科技有限公司 </span>
+            </div>
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+<script>
+// 图片地址  imgUrl
+//视屏名字 videoUrl
+// 时间  time
+// 会议名字 meetName
+// 
+var vm = new Vue({
+    el: "#phoneShow",
+    data: {
+        data: [{
+            id: "video-1",
+            time: "12:32",
+            videoUrl: "./img/X-ray.mp4",
+            imgUrl: "./img/video-bg.jpg",
+            meetName: "开幕式1"
+        }, {
+            id: "video-2",
+            time: "12:32",
+            videoUrl: "./img/X-ray.mp4",
+            imgUrl: "./img/video-bg.jpg",
+            meetName: "闭幕式2"
+        }, {
+            id: "video-3",
+            time: "12:32",
+            videoUrl: "./img/X-ray.mp4",
+            imgUrl: "./img/video-bg.jpg",
+            meetName: "闭幕式3"
+        }, {
+            id: "video-4",
+            time: "12:32",
+            videoUrl: "./img/X-ray.mp4",
+            imgUrl: "./img/video-bg.jpg",
+            meetName: "闭幕式4"
+        }, {
+            id: "video-5",
+            time: "12:32",
+            videoUrl: "./img/X-ray.mp4",
+            imgUrl: "./img/video-bg.jpg",
+            meetName: "闭幕式5"
+        }, {
+            id: "video-6",
+            time: "12:32",
+            videoUrl: "./img/X-ray.mp4",
+            imgUrl: "./img/video-bg.jpg",
+            meetName: "闭幕式6"
+        }],
+        // data:[],
+        isShow: null
+    },
+    methods: {
+        playVideo: function(imgVideoName, meetName) {
+            window.location.href = "phone-show-video.html";
+            localStorage.setItem("imgVideoName", imgVideoName);
+            localStorage.setItem("meetName", meetName);
+
+        }
+    }
+})
+$(document).ready(function() {
+    autoPage();
+    // bgShow();
+    var len = vm.data.length;
+    // console.log(vm.data.length)
+    if (typeof len == "number" && len > 0) {
+        for (var i = 0; i < len; i++) {
+            var player = new TcPlayer(vm.data[i].id, {
+                //请替换成实际可用的播放地址
+                "mp4": vm.data[i].videoUrl,
+                "controls": "system",
+                "x5_player": true,
+                "autoplay": false, //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+                "width": '100%', //视频的显示宽度，请尽量使用视频分辨率宽度
+                "height": '100%', //视频的显示高度，请尽量使用视频分辨率高度
+                "coverpic": {
+                    "style": "stretch",
+                    "src": vm.data[i].imgUrl
+                },
+                listener: function(msg) {
+
+                }
+            });
+        }
+        bgShow(false);
+        $('.footer').css("margin-top","40px");
+    } else {
+       bgShow(true);
+        $('.footer').css("margin-top","-30px");
+
+    }
+
+})
+
+
+
+var player = new TcPlayer('id_test_video', {
+    "m3u8": "http://21111.liveplay.myqclo;ud.com/live/21111_df6592ccc45111e892905cb9018cf0d4_550.m3u8", //请替换成实际可用的播放地址
+    "controls": "system",
+    "x5_player": true,
+    "autoplay": false, //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+    "coverpic": {
+        "style": "stretch",
+        "src": "img/video-bg-2.jpg"
+    },
+    "width": '100%', //视频的显示宽度，请尽量使用视频分辨率宽度
+    "height": '100%', //视频的显示高度，请尽量使用视频分辨率高度
+    listener: function(msg) {
+        addClass();
+    }
+});
+
+function addClass() {
+    $('#id_test_video video').attr('x5-playsinline', "true");
+    // $('#id_test_video video').attr('x5-playsinline', "true");
+
+    return;
+}
+
+
+/***
+ ** 自适应页面
+ */
+function autoPage() {
+    var pageHeight = document.documentElement ? document.documentElement.clientHeight : document.body.clientHeight;
+    //背景图片高度
+    // var topHeight = pageHeight - ($('.top-title').height() + 15 + $('.top-video').height() + 22 + $('.m-top').height() + 60);
+    var topHeight = pageHeight - (36 + 15 + 202 + 22 + 36);
+    $(".phone-show").css("height", pageHeight + "px");
+
+    // $("#reVideo").click(function() {
+    //     player.play();
+    //     player.fullscreen(false)
+    // })
+
+}
+
+/**
+** 回看背景显示
+** @param{boolean} bool true显示背景 false 不显示
+**
+*/
+function bgShow(bool) {
+    var pageHeight = document.documentElement ? document.documentElement.clientHeight : document.body.clientHeight;
+    //背景图片高度
+    // var topHeight = pageHeight - ($('.top-title').height() + 15 + $('.top-video').height() + 22 + $('.m-top').height() + 60);
+    var topHeight = pageHeight - (36 + 15 + 202 + 22 + 36);
+    if (bool) {
+        $('.m-content').css({
+            "height": topHeight + "px",
+            "background": "url('./img/zwhk-bg.png')",
+            "background-size": "100% 100%"
+        });
+        $('.m-content-bg').css({
+            "height": "inherit",
+            "background": "url('./img/zwhk.png') no-repeat",
+            "background-size": "50% 50%",
+            "background-position": "center center"
+        });
+    } else {
+        $('.m-content').css({
+            "height": topHeight + "px",
+            "background": "#fff"
+        });
+        $('.m-content-bg').css({
+            "height": "inherit",
+            "background": "none",
+        });
+        $('.b-title').css("display","none")
+    }
+
+}
+</script>
+
+</html>

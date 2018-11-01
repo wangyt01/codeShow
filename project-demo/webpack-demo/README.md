@@ -17,3 +17,5 @@ npm install --save-dev clean-webpack-plugin
 npm install --save-dev webpack-dev-server
 
 npm install --save-dev express webpack-dev-middleware
+
+cnpm install node-sass@latest

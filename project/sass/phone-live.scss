@@ -1,0 +1,373 @@
+/*! ************************************
+    文      件:
+    说      明:手机首页;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+
+$page-ratio: 0.5;
+$c-padding-left: 44px;
+
+body {
+	background: #fff;
+	overflow: hidden;
+	// height: 100vw;
+}
+
+.phone-show {
+	.head-top {
+		.top-video {
+			// height: 404px* $page-ratio;
+			// background: url("../img/video-bg.jpg") no-repeat;
+			// background-size: 100% 100%;
+			position: relative;
+
+			.controll {
+				height: 92px* $page-ratio;
+				line-height: 92px* $page-ratio;
+				width: 100%;
+				background: rgba(0, 0, 0, 0.4);
+				position: absolute;
+				bottom: 0;
+
+				.c-left, .c-right {
+					font-size: 26px* $page-ratio;
+					color: #fff;
+				}
+
+				.c-left {
+					font-size: 26px* $page-ratio;
+					float: left;
+
+					span {
+						color: #fff;
+						margin-left: $c-padding-left* $page-ratio;
+						position: relative;
+						top: -10px* $page-ratio;
+					}
+
+					i {
+						font-size: 60px* $page-ratio;
+						color: #32EE1F;
+						margin-left: 20px* $page-ratio;
+					}
+
+				}
+
+				.c-right {
+					float: right;
+
+					span {
+						margin-right: $c-padding-left* $page-ratio;
+					}
+
+					i {
+						font-size: 32px* $page-ratio;
+						margin-right: 10px* $page-ratio;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	.middle-content {
+		.m-top {
+			height: 72px* $page-ratio;
+			line-height: 72px* $page-ratio;
+			background: #fff;
+			border-bottom: 1px solid #EEEEEE;
+
+			.m-t-title {
+				text-align: center;
+
+				span {
+					font-size: 30px* $page-ratio;
+					color: #555;
+					font-weight: bold;
+				}
+
+			}
+
+		}
+
+		.m-content {
+			// height: 40vh;
+			width: 100%;
+			// overflow-y: auto;
+
+			.c-content {
+				// padding-top: 30px * $page-ratio;
+				overflow: hidden;
+
+				.c-item {
+					margin-top: 44px * $page-ratio;
+
+					&:last-child {
+						margin-bottom: 44px * $page-ratio;
+					}
+
+					.item-left {
+						float: left;
+						height: 58px* $page-ratio;
+						width: 58px* $page-ratio;
+						margin: 0 30px* $page-ratio;
+
+						img {
+							border-radius: 45px;
+							width: 100%;
+							height: 100%;
+						}
+
+					}
+
+					.item-right {
+						width:calc(100% - 58px * #{$page-ratio} - 30px * #{$page-ratio}* 2);
+						float: left;
+
+						.i-r-top {
+							font-size: 20px* $page-ratio;
+
+							.username {
+								color: #888;
+							}
+
+							.time {
+								color: #c3c3c3;
+								margin-left: 22px* $page-ratio;
+							}
+
+						}
+
+						.i-r-comment {
+							width: 98%;
+							padding-top: 14px* $page-ratio;
+							font-size: 26px* $page-ratio;
+							word-wrap: break-word;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		.m-bottom-content {
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			background:#fff;
+			// z-index:10;
+			.b-content-top {
+				height: 178px * $page-ratio;
+
+				.b-top-c {
+					border-top: 1px solid #EEEEEE;
+					border-bottom: 1px solid #EEEEEE;
+					height: 80px* $page-ratio;
+					line-height: 80px* $page-ratio;
+					white-space:nowrap;
+					width:100%;
+					overflow-x:auto;
+					overflow-y:hidden;
+					span {
+						font-size: 24px* $page-ratio;
+						padding: 12px* $page-ratio 24px* $page-ratio;
+						background: #EEEEEE;
+						margin-left: 28px* $page-ratio;
+						border-radius: 45px;
+					}
+
+				}
+
+				.b-bottom-c {
+					height:calc(100% - 80px* #{$page-ratio});
+					line-height:calc(100% - 80px* #{$page-ratio});
+					$s-select-width: 100px;
+					$s-input-width: 200px;
+					$s-search-width: 30px;
+					$s-input-font-size: 15px;
+					$c-border-show: 0;
+					$c-btn-width: 202px;
+
+					.c-input-show {
+						width:calc(100% - 200px * #{$page-ratio});
+						float: left;
+
+						.c-input {
+							width: 80%;
+							// margin: 0 auto;
+							margin-left:28px * $page-ratio;
+							border: 1px solid #C9C9C9;
+							// margin-left: 10px;
+							border-radius: 45px;
+							margin-top: 5px;
+
+							input {
+								padding: 8px 0;
+								border: 0;
+								outline: none;
+								font-size: $s-input-font-size;
+								padding-left: 18px;
+								width: calc(100% - 60px);
+								border-radius: 45px;
+
+								::-webkit-input-placeholder {
+
+									/* WebKit, Blink, Edge */
+									color: #B0B0B0;
+									padding-left: 10px;
+								}
+
+								:-moz-placeholder {
+
+									/* Mozilla Firefox 4 to 18 */
+									color: #B0B0B0;
+									padding-left: 10px;
+								}
+
+								::-moz-placeholder {
+
+									/* Mozilla Firefox 19+ */
+									color: #B0B0B0;
+									padding-left: 10px;
+								}
+
+								:-ms-input-placeholder {
+
+									/* Internet Explorer 10-11 */
+									color: #B0B0B0;
+									padding-left: 10px;
+								}
+
+							}
+
+						}
+
+					}
+
+					.c-right {
+						float: left;
+						width: 200px* $page-ratio;
+						height: 96px * $page-ratio;
+						line-height: 96px * $page-ratio;
+
+						.r-send {
+							display: inline-block;
+							height: 60px* $page-ratio;
+							line-height: 60px* $page-ratio;
+							padding: 0 16px;
+							border-radius: 45px;
+							color: #fff;
+							font-size:11px;
+							background: #FF7F02;
+						}
+						
+						.r-num{
+							.icon-dianzan{
+							color:#B0B0B0;
+							font-size:18px;
+
+								}
+								.num{
+									color:#B0B0B0;
+									font-size:13px;
+								}
+						}
+						.r-num-active{
+						.icon-dianzan{
+							color:#FF7F02;
+								}
+								.num{
+									color:#FF7F02;
+								}
+						}
+
+					}
+
+					.icon-biaoqing {
+						color: #B0B0B0;
+						position: relative;
+						font-size: 16px;
+						left: 18px;
+						top: 2px;
+					}
+
+				}
+
+			}
+
+			.b-content-middle {
+				height: 414px * $page-ratio;
+				.b-m-top{
+				height:350px * $page-ratio;
+				background:#F8F8F8;
+				border-top:1px solid #EEEEEE;
+				border-bottom:1px solid #EEEEEE;
+				}
+				.b-m-bottom{
+		height:64px * $page-ratio;
+		line-height:64px * $page-ratio;
+		span{
+			width:80px * $page-ratio;
+			display:inline-block;
+			text-align:center;
+			i{
+				font-size:21px;
+				position:relative;
+				color:#84BDFE;
+				top:0px;
+				// left:26px;
+			}
+
+		}
+		.s-line{
+			width:1px;
+			border-right:1px solid #D2D2D2 ;
+			height:60%;
+			position:relative;
+			top:2px;
+		}
+		.zj-emoji{
+			margin-left:20px;
+
+		}
+		.zj-bg{
+			background:#F8F8F8;
+		}
+		.b-emoji-bg{
+			background:#F8F8F8;
+		}
+		.b-emoji{
+			
+			position:relative;
+			top:-3px;
+				img{
+					width:24px;
+			height:24px;
+				}
+		}
+				}
+			}
+
+		}
+
+	}
+
+}
+
+@media screen and (min-width:800px) {
+	.phone-show {
+		width: 40%;
+		margin: 0 auto;
+	}
+
+}

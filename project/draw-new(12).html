@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>抽签</title>
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="plug-in/layui-2.1.4/css/layui.css">
+    <link rel="stylesheet" href="plug-in/iconfont/iconfont.css">
+    <script src="plug-in/jquery-1.11.2.min.js"></script>
+    <script src="plug-in/layui-2.1.4/layui.js"></script>
+    <script src="plug-in/vue@2.5.6/vue.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/draw-new(12).css">
+</head>
+
+<body>
+    <div class="draw-container" id="draw">
+        <div class="top-title">
+            <div class="draw-title">
+                2018年影像医学专业研究生临床能力展示赛 | 抽签
+            </div>
+            <div class="draw-tech">
+                技术支持  &nbsp;&nbsp;济南中飞科技有限公司
+            </div>
+        </div>
+        <div class="middle-content">
+          
+            <div class="m-top-th">
+                <div class="item-th-name item-th">单位名称</div>
+                <div class="item-th-num item-th">序号</div>
+                <div class="item-th-name item-th">单位名称</div>
+                <div class="item-th-num item-th">序号</div>
+            </div>
+        <div class="clear"></div>
+			<div class="m-m-left">
+				 <div class="m-m-content" v-for="(el,index) in data" v-if="index <= 5">
+                <div class="item-td td-name">
+                    <div class="school-logo">
+                        <img :src="el.src" alt="">
+                    </div>
+                    <div class="school-name">
+                        {{el.name}}
+                    </div>
+                </div>
+                <div class="item-td td-num">
+                    {{el.num}}
+                </div>
+            </div>
+			</div>
+           <div class="m-m-right">
+           	 <div class="m-m-content" v-for="(el,index) in data" :key="index" v-if="index > 5">
+                <div class="item-td td-name">
+                    <div class="school-logo">
+                        <img :src="el.src" alt="">
+                    </div>
+                    <div class="school-name">
+                        {{el.name}}
+                    </div>
+                </div>
+                <div class="item-td td-num">
+                    {{el.num}}
+                </div>
+            </div>
+           </div>
+           
+        </div>
+        <div class="clear"></div>
+        <div class="bottom-content">
+         
+            <div class="m-btn">
+                <div class="btn-start">
+                	<div class="s-bg-1" v-if="isStart" @click="startClick"></div>
+                       <div v-if="!isStart" class="top-end" @click="startClick">结束</div>
+                </div>
+                <div class="btn-sort">
+                	<div class="s-bg-2" @click="drawClick('sort')"></div>
+                </div>
+                <div class="btn-confirm">
+                	<div class="s-bg-3" @click="drawClick('confirm')"></div>
+                </div>
+            </div>
+        </div>
+         <!-- 抽签 -->
+           <!--  <div class="footer" style="position:absolute;bottom:10px;left:0;height:40px;line-height:40px;color:#fff;text-align:center;width:100%;font-size:16px;background:#0A0726;">
+                <span>系统技术支持：济南中飞科技有限公司 </span>
+            </div> -->
+    </div>
+</body>
+<script>
+layui.use('layer', function(){
+  var layer = layui.layer;
+  
+});              
+      
+var vm = new Vue({
+    el: "#draw",
+    data: {
+        isStart:true,
+        data: [{
+            "id": "2018101715582347355160",
+            "name": "北京协和医学院",
+            "src":"./img/school-logo/bjxh.png",
+            "num": 1,
+            "cszt": 0,
+            "begin_time": "2018-10-18 15:50:15",
+            "end_time": "2018-10-18 15:59:19",
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716004950377040",
+            "name": "东南大学",
+            "src":"img/school-logo/dndx.png",
+            "num": 2,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716004950377040",
+            "name": "广西医科大学",
+            "src":"img/school-logo/gxyk.png",
+            "num": 2,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716003469774025",
+            "name": "广州医科大学",
+            "src":"img/school-logo/gzyk.png",
+            "num": 3,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715594249713635",
+            "name": "华南理工大学",
+            "src":"img/school-logo/hnlg.png",
+            "num": 4,
+            "cszt": 0,
+            "begin_time": "2018-10-19 09:06:51",
+            "end_time": "2018-10-19 09:13:45",
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715584352827594",
+            "name": "空军军医大学",
+            "src":"img/school-logo/kjjy.png",
+            "num": 5,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101713292557245945",
+            "name": "昆明医科大学",
+            "src":"img/school-logo/kmyk.png",
+            "num": 6,
+            "cszt": 0,
+            "begin_time": "2018-10-18 15:45:14",
+            "end_time": "2018-10-18 15:48:15",
+            "ll_score": 91.75,
+            "score": 91.75
+        }, {
+            "id": "2018101716000642640481",
+            "name": "南昌大学",
+            "src":"img/school-logo/ncdx.png",
+            "num": 7,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716002049440781",
+            "name": "南京医科大学",
+            "src":"img/school-logo/njyk.png",
+            "num": 8,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715593567346610",
+            "name": "天津医科大学",
+            "src":"img/school-logo/tjyk.png",
+            "num": 9,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715595162547069",
+            "name": "中国医科大学",
+            "src":"img/school-logo/zgyy.png",
+            "num": 10,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }]
+
+    },
+    methods:{
+    	drawClick:function(name){
+    			layer.msg(name);
+            
+    	},
+        startClick:function(){
+            if(this.isStart){
+                this.isStart = false;
+            }else{
+                this.isStart = true;
+            }
+        }
+    }
+})
+
+// $(function(){
+
+// })
+
+// function autoPage(){
+//     var pageHeight = window.innerHeight;
+//     var pageWidth = window.innerWidth;
+//         //m-m-content
+//     var mContentHeight = pageHeight - $('.top-title').height() - $('.draw-container .middle-content .m-top-th .item-th').height();
+//     $('.m-m-content').css("height")
+
+// }
+</script>
+
+</html>

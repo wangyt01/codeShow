@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>抽签</title>
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="plug-in/layui-2.1.4/css/layui.css">
+    <link rel="stylesheet" href="plug-in/iconfont/iconfont.css">
+    <script src="plug-in/jquery-1.11.2.min.js"></script>
+    <script src="plug-in/layui-2.1.4/layui.js"></script>
+    <script src="plug-in/vue@2.5.6/vue.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/draw.css">
+</head>
+
+<body>
+    <div class="draw-container" id="draw">
+        <div class="top-title">
+            2018年影像医学专业研究生临床能力展示赛 | 抽签
+        </div>
+        <div class="middle-content">
+          
+            <div class="m-top-th">
+                <div class="item-th-name item-th">单位名称</div>
+                <div class="item-th-num item-th">序号</div>
+                <div class="item-th-name item-th">单位名称</div>
+                <div class="item-th-num item-th">序号</div>
+            </div>
+        <div class="clear"></div>
+			<div class="m-m-left">
+				 <div class="m-m-content" v-for="(el,index) in data" v-if="index <= 11">
+                <div class="item-td td-name">
+                    {{el.name}}
+                </div>
+                <div class="item-td td-num">
+                    {{el.num}}
+                </div>
+            </div>
+			</div>
+           <div class="m-m-right">
+           	 <div class="m-m-content" v-for="(el,index) in data" :key="index" v-if="index > 11">
+                <div class="item-td td-name">
+                    {{el.name}}
+                </div>
+                <div class="item-td td-num">
+                    {{el.num}}
+                </div>
+            </div>
+           </div>
+           
+        </div>
+        <div class="clear"></div>
+        <div class="bottom-content">
+         
+            <div class="m-btn">
+                <div class="btn-start">
+                	<div class="s-bg-1" v-if="isStart" @click="startClick"></div>
+                       <div v-if="!isStart" class="top-end" @click="startClick">结束</div>
+                </div>
+                <div class="btn-sort">
+                	<div class="s-bg-2" @click="drawClick('sort')"></div>
+                </div>
+                <div class="btn-confirm">
+                	<div class="s-bg-3" @click="drawClick('confirm')"></div>
+                </div>
+            </div>
+        </div>
+         <!-- 抽签 -->
+            <div class="footer" style="position:absolute;bottom:10px;left:0;height:40px;line-height:40px;color:#fff;text-align:center;width:100%;font-size:16px;background:#0A0726;">
+                <span>系统技术支持：济南中飞科技有限公司 </span>
+            </div>
+    </div>
+</body>
+<script>
+layui.use('layer', function(){
+  var layer = layui.layer;
+  
+});              
+      
+var vm = new Vue({
+    el: "#draw",
+    data: {
+        isStart:true,
+        data: [{
+            "id": "2018101715582347355160",
+            "name": "泰山医学院",
+            "num": 1,
+            "cszt": 0,
+            "begin_time": "2018-10-18 15:50:15",
+            "end_time": "2018-10-18 15:59:19",
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716004950377040",
+            "name": "温州医科大学",
+            "num": 2,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716003469774025",
+            "name": "唐都医院",
+            "num": 3,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715594249713635",
+            "name": "上海交通大学附属第一人民医院",
+            "num": 4,
+            "cszt": 0,
+            "begin_time": "2018-10-19 09:06:51",
+            "end_time": "2018-10-19 09:13:45",
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715584352827594",
+            "name": "川北医学院",
+            "num": 5,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101713292557245945",
+            "name": "中国医科大学",
+            "num": 6,
+            "cszt": 0,
+            "begin_time": "2018-10-18 15:45:14",
+            "end_time": "2018-10-18 15:48:15",
+            "ll_score": 91.75,
+            "score": 91.75
+        }, {
+            "id": "2018101716000642640481",
+            "name": "广东省人民医院",
+            "num": 7,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716002049440781",
+            "name": "广西医科大学",
+            "num": 8,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715593567346610",
+            "name": "南方医科大学",
+            "num": 9,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715595162547069",
+            "name": "重庆医科大学",
+            "num": 10,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715591348942964",
+            "name": "大连医科大学附属第二医院",
+            "num": 11,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715583147558221",
+            "name": "昆明医科大学",
+            "num": 12,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715585221833745",
+            "name": "徐州医科大学",
+            "num": 13,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715594697249618",
+            "name": "北京协和医院",
+            "num": 14,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716000145736745",
+            "name": "华中科技大学武汉同济医院",
+            "num": 15,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715581826640090",
+            "name": "广州医科大学",
+            "num": 16,
+            "cszt": 0,
+            "begin_time": "2018-10-18 15:48:20",
+            "end_time": "2018-10-18 15:50:11",
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716004465560490",
+            "name": "南京医科大学",
+            "num": 17,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715595603444816",
+            "name": "浙江大学第二附属医院",
+            "num": 18,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715592949762872",
+            "name": "东南大学附属中大医院",
+            "num": 19,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101716003967323929",
+            "name": "南昌医科大学附一院",
+            "num": 20,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715583811123495",
+            "name": "湖北医药学院",
+            "num": 21,
+            "cszt": 0,
+            "begin_time": "2018-10-18 16:00:20",
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715592163236073",
+            "name": "天津医科大学",
+            "num": 22,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }, {
+            "id": "2018101715585807587299",
+            "name": "大连医科大学附属第一医院",
+            "num": 23,
+            "cszt": 0,
+            "ll_score": 0.00,
+            "score": 0.00
+        }]
+
+    },
+    methods:{
+    	drawClick:function(name){
+    			layer.msg(name);
+            
+    	},
+        startClick:function(){
+            if(this.isStart){
+                this.isStart = false;
+            }else{
+                this.isStart = true;
+            }
+        }
+    }
+})
+</script>
+
+</html>

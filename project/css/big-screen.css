@@ -1,0 +1,17 @@
+﻿/*! ************************************
+    文      件:
+    说      明:大屏显示;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************//*! ************************************
+    文      件:
+    说      明:公共引入变量;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/.big-container .page-bg{width:inherit;height:inherit}.big-container .page-bg .title-top{height:276px;line-height:276px;background:url("../img/dp-bg.png") no-repeat;background-size:100% 100%}.big-container .page-bg .title-top .title-bg{width:1308px;height:174px;margin:0 auto}.big-container .page-bg .title-top .title-bg img{width:100%;height:100%}.big-container .page-bg .middle-content{background:#00295A;height:calc(100% - 276px * 1)}.big-container .page-bg .middle-content .m-left,.big-container .page-bg .middle-content .m-line,.big-container .page-bg .middle-content .m-right{float:left}.big-container .page-bg .middle-content .m-left{width:38%}.big-container .page-bg .middle-content .m-left .l-title{height:276px;line-height:276px;font-size:48px;color:#fff;text-align:center}.big-container .page-bg .middle-content .m-left .l-b-bg{width:435px;height:352px;margin:0 auto;background:url("../img/dp-cj.png") no-repeat;background-size:100% 100%;text-align:center}.big-container .page-bg .middle-content .m-left .l-b-bg .score{font-size:36px;color:#00DEFF;padding-top:58px}.big-container .page-bg .middle-content .m-left .l-b-bg .score-num{margin-top:38px;font-size:72px;color:#FFAE00}.big-container .page-bg .middle-content .m-line{width:9px;height:601}.big-container .page-bg .middle-content .m-line img{width:100%;height:100%}.big-container .page-bg .middle-content .m-right{width:calc(100% - 38% - 9px* 1)}.big-container .page-bg .middle-content .m-right .table-item{width:90%;height:100px;line-height:100px;margin:0 auto;font-size:48px;color:#fff;background:#0976D3;border-radius:10px;margin-top:26px}.big-container .page-bg .middle-content .m-right .table-item:first-child{margin-top:0}.big-container .page-bg .middle-content .m-right .table-item .t-left{float:left;margin-left:85px}.big-container .page-bg .middle-content .m-right .table-item .t-right{float:right;margin-right:85px}

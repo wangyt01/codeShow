@@ -1,7 +1,13 @@
 import _ from 'lodash';
-// import './common/reset.scss';
-import './css/about.css';
+import Vue from 'vue';
+import App from './assets-vue/about.vue';
+import "./common/reset.css";
+
+new Vue({
+  el: '#about',
+  render: h => h(App)
+})
 
 
 
-document.writeln("<h2>这是关于页面2</h2>")
+

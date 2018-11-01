@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/*! ************************************
+    文      件: 
+    说      明:抽签页面12人;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+body {
+  background: #0A0726;
+}
+
+.draw-container {
+  color: #fff;
+  background: url("../img/cq_bg.png") no-repeat;
+  background-size: 100% 169px;
+}
+.draw-container .top-title {
+  height: 100px;
+}
+.draw-container .top-title .draw-title {
+  font-size: 36px;
+  text-align: center;
+  padding-top: 10px;
+}
+.draw-container .top-title .draw-tech {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+@media screen and (min-width: 1280px) {
+  .draw-container .top-title {
+    height: 100px;
+  }
+  .draw-container .top-title .draw-title {
+    font-size: 36px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  .draw-container .top-title .draw-tech {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+.draw-container .middle-content {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #01AFE5;
+}
+.draw-container .middle-content .m-top-th {
+  width: 100%;
+  text-align: center;
+}
+.draw-container .middle-content .m-top-th .item-th {
+  font-size: 24px;
+  border-right: 1px solid #01AFE5;
+  border-bottom: 1px solid #01AFE5;
+  height: 64px;
+  line-height: 64px;
+  float: left;
+}
+.draw-container .middle-content .m-top-th .item-th:last-child {
+  border-right: 0;
+}
+.draw-container .middle-content .m-top-th .item-th-name {
+  width: 40%;
+}
+.draw-container .middle-content .m-top-th .item-th-num {
+  width: calc(10% - 2px);
+}
+.draw-container .middle-content .m-m-content {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+.draw-container .middle-content .m-m-content .item-td {
+  font-size: 20px;
+  height: 84px;
+  line-height: 84px;
+  float: left;
+}
+.draw-container .middle-content .m-m-content .item-td .school-logo {
+  width: 35%;
+  float: left;
+}
+.draw-container .middle-content .m-m-content .item-td .school-logo img {
+  width: 64px;
+  height: 64px;
+}
+.draw-container .middle-content .m-m-content .item-td .school-name {
+  width: 65%;
+  float: left;
+  text-align: left;
+}
+@media screen and (min-width: 1280px) {
+  .draw-container .middle-content .m-m-content .item-td {
+    font-size: 20px;
+    height: 100px;
+    line-height: 100px;
+    float: left;
+  }
+  .draw-container .middle-content .m-m-content .item-td .school-logo {
+    width: 35%;
+    float: left;
+  }
+  .draw-container .middle-content .m-m-content .item-td .school-logo img {
+    width: 64px;
+    height: 64px;
+  }
+  .draw-container .middle-content .m-m-content .item-td .school-name {
+    width: 65%;
+    float: left;
+    text-align: left;
+  }
+}
+.draw-container .middle-content .m-m-content .td-name {
+  width: 80%;
+  border-right: 1px solid #01AFE5;
+}
+.draw-container .middle-content .m-m-content .td-num {
+  width: calc(20% - 2px);
+  border-right: 1px solid #01AFE5;
+}
+.draw-container .middle-content .m-m-content:nth-child(even) {
+  background: #01479D;
+}
+.draw-container .middle-content .m-m-left {
+  float: left;
+  width: 50%;
+}
+.draw-container .middle-content .m-m-right {
+  width: 50%;
+  float: left;
+}
+.draw-container .middle-content .m-m-right .td-num:last-child {
+  border-right: 0;
+}
+.draw-container .bottom-content {
+  color: #fff;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 26px;
+}
+.draw-container .bottom-content .m-btn .top-end {
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  background: #EB6100;
+  border-radius: 45px;
+  margin-left: 80px;
+  position: relative;
+  cursor: pointer;
+}
+.draw-container .bottom-content .m-btn .btn-start, .draw-container .bottom-content .m-btn .btn-sort, .draw-container .bottom-content .m-btn .btn-confirm {
+  width: 33%;
+  float: left;
+}
+.draw-container .bottom-content .m-btn .btn-start .s-bg-1, .draw-container .bottom-content .m-btn .btn-start .s-bg-2, .draw-container .bottom-content .m-btn .btn-start .s-bg-3, .draw-container .bottom-content .m-btn .btn-sort .s-bg-1, .draw-container .bottom-content .m-btn .btn-sort .s-bg-2, .draw-container .bottom-content .m-btn .btn-sort .s-bg-3, .draw-container .bottom-content .m-btn .btn-confirm .s-bg-1, .draw-container .bottom-content .m-btn .btn-confirm .s-bg-2, .draw-container .bottom-content .m-btn .btn-confirm .s-bg-3 {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+}
+.draw-container .bottom-content .m-btn .btn-start .s-bg-1, .draw-container .bottom-content .m-btn .btn-sort .s-bg-1, .draw-container .bottom-content .m-btn .btn-confirm .s-bg-1 {
+  background: url("../img/cq-btn_ks.png") no-repeat;
+  background-size: 100% 100%;
+  margin-left: 80px;
+}
+.draw-container .bottom-content .m-btn .btn-start .s-bg-2, .draw-container .bottom-content .m-btn .btn-sort .s-bg-2, .draw-container .bottom-content .m-btn .btn-confirm .s-bg-2 {
+  background: url("../img/cq-btn_px.png") no-repeat;
+  background-size: 100% 100%;
+  margin: 0 auto;
+}
+.draw-container .bottom-content .m-btn .btn-start .s-bg-3, .draw-container .bottom-content .m-btn .btn-sort .s-bg-3, .draw-container .bottom-content .m-btn .btn-confirm .s-bg-3 {
+  background: url("../img/cq-btn_qr.png") no-repeat;
+  background-size: 100% 100%;
+  margin-right: 80px;
+  float: right;
+}

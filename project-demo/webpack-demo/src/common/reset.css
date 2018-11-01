@@ -98,6 +98,14 @@ input, select {
     vertical-align: middle;
 }
 
+ol,ul,li{
+    list-style:none;
+}
+
+a{
+    text-decoration: none;
+}
+
 /* 公共线的引用 */
 .red {
     border: 1px solid red;

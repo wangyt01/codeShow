@@ -1,0 +1,361 @@
+/*! ************************************
+    文      件:
+    说      明:评分页面;
+    作      者:王勇坛;
+    时      间:2018;
+    修 改 人:;
+    修改时间:;
+    修改说明:添加删除什么样式;
+************************************/
+
+$page-ratio: 1;
+
+.pad-show {
+	.top-title {
+		.t-bg {
+			width: 100%;
+			height: 125px;
+			line-height: 125px;
+			background: url("../img/pf_top_bg.png") no-repeat;
+			background-size: 100% 100%;
+
+			.title {
+				color: #fff;
+				font-size: 58px;
+				text-align: center;
+			}
+
+		}
+
+	}
+
+	.middle-content {
+		background: url("../img/pf_psbg.png") no-repeat;
+		background-size: 100% 425px;
+
+		.m-c-top {
+			height: 120px;
+			line-height: 120px;
+			border-bottom: 1px solid #B5B5B5;
+			margin: 0 44px;
+
+			.t-title {
+				font-size: 40px;
+				text-align: center;
+			}
+
+		}
+
+		.m-c-bottom {
+			padding: 64px 44px;
+
+			.b-left {
+				width: 378px;
+				height: 788px;
+				background: url('../img/pf_bg.png');
+				border-radius: 6px;
+				float: left;
+
+				.l-bg {
+					.b-top {
+						position: relative;
+						height: 88px;
+						line-height: 88px;
+						z-index: 100;
+
+						.top-bg {
+							width: 378px;
+							height: 108px;
+							position: absolute;
+							top: -10px;
+							background: url("../img/pf_dq.png") no-repeat;
+							background-size: 100% 100%;
+
+							span {
+								font-size: 28px;
+								color: #003C7B;
+								position: relative;
+								top: 10px;
+								text-align: center;
+								display: block;
+							}
+
+						}
+
+					}
+
+					.b-middle {
+						width: 378px;
+						height: 188px;
+						line-height: 188px;
+						margin-top: 58px;
+						font-size: 42px;
+						text-align: center;
+						color: #fffc29;
+						background: url("../img/pf_dw.png") no-repeat;
+						background-size: 100% 100%;
+					}
+
+					.b-bottom {
+						height: 366px;
+						background: #F4F9FF;
+						margin-top: 56px;
+						border-radius: 6px;
+
+						.review {
+							height: 50%;
+							text-align: center;
+							line-height: 366px * 0.5;
+
+							i {
+								font-size: 45px;
+								color: #FE5104;
+							}
+
+							span {
+								font-size: 26px;
+								color: #333333;
+								margin-left: 30px;
+							}
+
+							.num {
+								font-size: 36px;
+								color: #FF5105;
+								margin-left: 18px;
+							}
+
+						}
+
+						.b-b-line {
+							border: 1px solid #BFBFBF;
+							margin: 0 20px;
+						}
+
+						.yet-review {
+							height: calc(50% - 1px);
+							text-align: center;
+							line-height: 366px * 0.5;
+
+							i {
+								font-size: 36px;
+								color: #09BB07;
+							}
+
+							span {
+								font-size: 26px;
+								color: #333333;
+								margin-left: 30px;
+							}
+
+							.num {
+								font-size: 36px;
+								color: #09BB07;
+								margin-left: 18px;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+			.b-right {
+				margin-left: 36px;
+				width: calc(100% - 378px - 44px);
+				//1498
+				float: left;
+
+				.b-right-top {
+					.b-table-left {
+						.t-left {
+							float: left;
+							width: 52%;
+
+							.t-l-top {
+								height: 132px;
+								line-height: 132px;
+								font-size: 32px;
+								color: #fff;
+								text-align: center;
+								background: #1E7DF0;
+							}
+
+							.t-l-middle {
+								border: 1px solid #CDCDCD;
+
+								.l-item {
+									font-size: 24px;
+									height: 102px;
+									border-bottom: 1px solid #CDCDCD;
+									line-height: 102px;
+
+									.left {
+										float: left;
+										width: 90%;
+										height: inherit;
+										// padding: 0 26px;
+										border-right: 1px solid #CDCDCD;
+
+										span {
+											width: 90%;
+											margin: 0 auto;
+											display: block;
+										}
+
+									}
+
+									.right {
+										width: calc(10% - 1px);
+										float: left;
+										text-align: center;
+										line-height: 102px;
+										background:#E8F2FE;
+									}
+
+									&:nth-child(2) {
+										line-height: 40px;
+
+										span {
+											margin-top: 10px;
+										}
+
+									}
+
+									&:nth-child(3) {
+										line-height: 40px;
+
+										span {
+											margin-top: 10px;
+										}
+
+									}
+
+								}
+
+							}
+
+						}
+
+						.t-right {
+							float: left;
+							width: 28%;
+
+							.t-r-top {
+								.top-1 {
+									height: 66px;
+									line-height: 66px;
+									text-align: center;
+									color: #fff;
+									background: #1E7DF0;
+									font-size: 28px;
+								}
+
+								.top-2 {
+									height: 66px;
+									line-height: 66px;
+									text-align: center;
+
+									.score {
+										float: left;
+										width: 25%;
+										font-size: 24px;
+										color: #fff;
+									}
+
+									.s-1 {
+										background: #F05F1D;
+									}
+
+									.s-2 {
+										background: #F1AE21;
+									}
+
+									.s-3 {
+										background: #60BE18;
+									}
+
+									.s-4 {
+										background: #A02DFE;
+									}
+
+								}
+
+							}
+
+							.t-r-bottom {
+
+								ul {
+									li {
+										width:calc(25% - 1px);
+										float:left;
+										height: 102px;
+										line-height:102px;
+										text-align:center;
+										font-size:24px;
+										border-bottom:1px solid #CDCDCD;
+										border-right:1px solid #CDCDCD;
+									}
+
+								}
+
+							}
+
+						}
+
+					}
+
+					.b-table-right {
+
+						float:right;
+						.top-bg {
+							width:175px;
+							height:122px;
+							line-height:100px;
+							text-align:center;
+							background:url("../img/dp-cj.png") no-repeat;
+							background-size:100% 100%;
+							margin-top:12px;
+							color: #F16320;
+							font-size:32px;
+						}
+
+						.middle-input {
+							input {
+								display:block;
+								width:188px;
+								height:90px;
+								border:1px solid #F36E25;
+								margin-top:10px;
+								font-size:24px;
+								text-align:center;
+							}
+
+						}
+
+					}
+
+				}
+
+				.b-right-bottom {
+					margin-top:30px;
+					span {
+						width:100%;
+						display:block;
+						background:#53C503;
+						text-align:center;
+						font-size:30px;
+						color:#fff;
+						padding:36px 0;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
