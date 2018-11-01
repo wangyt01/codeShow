@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/js/another-module.js"],"names":[],"mappings":";;;;;;;;;;;;;AAAA;;AAEA;AACA;AACA,E","file":"js/another.bundle.js","sourcesContent":["import _ from 'lodash';\r\n\r\nconsole.log(\r\n  _.join(['Another', 'module', 'loaded!'], ' ')\r\n);"],"sourceRoot":""}

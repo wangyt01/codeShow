@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/js/global.js"],"names":[],"mappings":";;;;;;;;;AAAA;AACA;AACA,oBAAoB,+BAA+B,EAAE;AACrD,qBAAqB,gCAAgC;AACrD,C","file":"js/global.bundle.js","sourcesContent":["var file = 'blah.txt';\r\nvar helpers = {\r\n  test: function() { console.log('test something'); },\r\n  parse: function() { console.log('parse something'); }\r\n}"],"sourceRoot":""}

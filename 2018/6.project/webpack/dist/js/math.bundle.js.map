@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/js/math.js"],"names":[],"mappings":";;;;;;;;;;;;;AAAA;AACA;AACA;;AAEA;AACA;AACA,C","file":"js/math.bundle.js","sourcesContent":["export function square(x) {\r\n  return x * x;\r\n}\r\n\r\nexport function cube(x) {\r\n  return x * x * x;\r\n}"],"sourceRoot":""}
