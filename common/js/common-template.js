@@ -25,6 +25,9 @@ Vue.component("common-header", {
 			}, {
 				url: "web前端/1.index(样式美化).html",
 				name: "web前端"
+			}, {
+				url: "web前端/3.index(project).html",
+				name: "项目地址"
 			}]
 		}
 	},
@@ -48,12 +51,12 @@ Vue.component("common-header", {
         </header> \
 	',
 	methods: {
-		openUrl:function(Index){
+		openUrl: function(Index) {
 			// var tempwindow=window.open('_blank'); // 先打开页面
 			// tempwindow.location=this.data[Index].url; // 后更改页面地址
-			window.location.href = rootPath +  this.data[Index].url;
+			window.location.href = rootPath + this.data[Index].url;
 		},
-		openIndex:function(){
+		openIndex: function() {
 			window.location.href = rootPath + "index.html";
 		}
 	}

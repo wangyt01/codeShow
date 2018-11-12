@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目地址</title>
+	<script src="../common/js/common-head.js"></script>
+	 <!-- 页面样式 -->
+    <link rel="stylesheet" href="../common/css/index-2016.css">
+</head>
+<body>
+	<div id="list" class="all-container">
+        <!-- S 公共头部 -->
+        <common-header></common-header>
+        <!-- E 公共头部-->
+        <div class="middle-container">
+            <div class="list" v-for="item in data">
+                <h4>{{item.name}}</h4>
+                <ul>
+                    <li v-for="el in item.list" class=""><a target="_blank" v-bind:href="el.url">{{el.name}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- S 公共底部 -->
+        <common-footer></common-footer>
+        <!-- E 公共底部 -->
+    </div>
+</body>
+<script>
+	layui.use('layer', function() {
+    var layer = layui.layer;
+});
+
+var header = new Vue({
+    el: "#header",
+    data: {
+        data: []
+    }
+})
+var footer = new Vue({
+    el: "#footer",
+    data: {
+        data: []
+    }
+})
+var vm = new Vue({
+	el:"#list",
+	data:{
+		data:[{
+			name:"PC",
+			list:[{
+				name:"解剖数字标本学习与考试系统",
+				url:"#"
+			},{
+				name:"专业技术交流平台",
+				url:"#"
+			},{
+				name:"企业培训平台",
+				url:"#"
+			}]
+		},{
+			name:"H5(Layabox)",
+			list:[{
+				name:"核黄素的含量(B2)",
+				url:"http://web.51-x.cn/demo/pb/"
+			},{
+				name:"Pb试验",
+				url:"https://mail.jnzftech.com/PB/"
+			},{
+				name:"CT拆解",
+				url:"https://mail.jnzftech.com/ctchaijie/index_start.html"
+			},{
+				name:"x线管",
+				url:"https://mail.jnzftech.com/x/"
+			},{
+				name:"反射弧分析",
+				url:"https://mail.jnzftech.com/fsh/"
+			}]
+		}]
+	}
+})
+</script>
+</html>
