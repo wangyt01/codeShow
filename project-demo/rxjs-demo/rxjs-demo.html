@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .demo{
+        width:1000px;
+        margin:auto;
+        border:1px solid #ddd;
+        margin-top:10px;
+        padding:20px 0;
+    }
+    .round{
+        width:100px;
+        height:100px;
+        border:1px solid #202020;
+        border-radius:50%;
+        margin-left:50px;
+    }
+    .outBox-red{
+        box-shadow: 0 0 10px #f00; 
+    }
+    .outBox-green{
+        box-shadow: 0 0 10px green; 
+    }
+</style>
+
+<body>
+    <div class="demo">
+        控制流动：<input type="text" id="demo1">
+    </div>
+    <div class="demo">
+        产生值：<input type="text" id="demo2">
+    </div>
+    <div class="demo">
+        <button id="btn1">创建应用</button>
+        <span id="count"></span>
+    </div>
+    <div class="demo">
+        输入：<input type="text" id="demo3">
+        <button id="btn2">增加</button>
+        <button id="btn3">减少</button>
+        <span id="hello"></span>
+    </div>
+    <div class="demo">
+        <span>流动性(flow)-按钮每隔一秒才能点击一次</span>
+        <button id="flow">流动性</button>
+    </div>
+    <div class="demo">
+        <span>值(value)-累加每次点击的鼠标 x 坐标</span>
+        <button id="valueBtn">值</button>
+    </div>
+    <div class="demo">
+        <div class="round"></div>
+    </div>
+    <div class="demo">
+            <input id="input1" type="text">
+    </div>
+</body>
+<!-- <script src="https://cdn.bootcss.com/rxjs/6.3.3/rxjs.umd.js"></script>
+ -->
+<script src="https://unpkg.com/@reactivex/rxjs@5.0.0-beta.12/dist/global/Rx.js"></script>
+<script src="index1.js"></script>
+<script>
+
+const node = document.querySelector('#input1');
+const input$ = Rx.Observable.fromEvent(node,'input');
+
+input$.subscribe({
+    next: (event) => console.log(`你刚刚输入了 ${event.target.value}!`),
+    error:(err) => console.log(`Oops... ${err}`),
+    complete: () => console.log(`完成！`)
+})
+
+
+</script>
+
+</html>
