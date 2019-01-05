@@ -1,0 +1,31 @@
+<p>id:{{heros.id}}</p>
+<p>name:{{heros.name | uppercase}}</p>
+<div class="heroes">
+  <label for="">
+    内容:
+    <input type="text" [(ngModel)]="heros.content" placeholder="请输入名字">
+  </label>
+  <p>内容：{{heros.content}}</p>
+  <div class="hero-name">
+    <label>Hero name:
+      <input #heroName />
+    </label>
+    <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div>
+
+  <div class="heroes-container">
+    <ul >
+      <li *ngFor="let heros of heroes" [class.selected]="heros === selectedHero" (click)="onSelect(heros)">
+        <a routerLink="/detail/{{heros.id}}">
+          <span class="badge">{{heros.id}}</span> {{heros.name}}
+        </a>
+        <button class="delete" title="delete heros" (click)="delete(heros)">x</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- <div>----------这是Output-------------</div> -->
+  <!-- <app-hero-detail (checked) ="checkedBack($event)" [hero]="selectedHero"></app-hero-detail> -->
+</div>

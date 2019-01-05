@@ -1,0 +1,113 @@
+.setting-container{
+    input{
+        margin-left:10px;
+    }
+    .top-btn{
+        height:40px;
+        button{
+
+        }
+    }
+    .unit{
+        height:40px;
+        span{
+
+        }
+        select{
+            width:120px;
+            option{
+
+            }
+        }
+    }
+    .basic-setting{
+        .title{
+            height:40px;
+            line-height: 40px;
+            background-color:#F0F0F0; 
+        }
+        .sys-date{
+            padding:20px 0;
+            span{
+
+            }
+            input{
+
+            }
+        }
+    }
+    .bank-setting{
+        .title{
+            height:40px;
+            line-height: 40px;
+            background-color:#F0F0F0; 
+        }
+        .b-top{
+            height: 40px;
+            line-height: 40px;
+            .b-left{
+                float:left;
+                span{
+
+                }
+            }
+            .b-right{
+                float:left;
+                margin-left:30px;
+                select{
+                    option{
+
+                    }
+                }
+            }
+
+        }
+        .b-sublime{
+
+        }
+    }
+    .bank-canuse{
+        .title{
+            height:40px;
+            line-height: 40px;
+            background-color:#F0F0F0; 
+        }
+        .bank-check{
+            .income{
+                float:left;
+                padding:20px 0;
+                span{
+
+                }
+            }
+            .spending{
+                float:left;
+                margin-left: 30px;
+                padding:20px 0;
+                span{
+
+                }
+            }
+            .formula{
+                span{
+
+                }
+                input{
+                    margin-left:10px;
+                    width:400px;
+                }
+            }
+        }
+    }
+}
+.clear{
+    clear:both;
+}
+
+.red{
+    border:1px solid red;
+
+}
+.blue{
+    border:1px solid blue;
+}

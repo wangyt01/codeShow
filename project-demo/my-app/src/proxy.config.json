@@ -1,0 +1,15 @@
+{
+    "/api": {
+        "target": "http://localhost:3000",
+        "secure": false,
+        "json 说明": "代理到后端服务器",
+        "pathRewrite": {
+            "^/api": ""
+        },
+        "pathRewrite 说明": "重写RUL路径",
+        "changeOrigin": true,
+        "changeOrigin 说明": "你要访问的后端不在 localhost 上，为true",
+        "logLevel": "debug",
+        "logLevel 说明": "想了解你的代理是否在如预期般工作，可以设置 logLevel 选项"
+    }
+}

@@ -1,0 +1,7 @@
+<div>
+      <label for="">Name</label>
+        <input type="text" [formControl]="name">
+        <p>value:{{name.value}}</p>
+        <button (click)='updataName()'>updata</button>
+        <app-profile-editor></app-profile-editor>
+</div>

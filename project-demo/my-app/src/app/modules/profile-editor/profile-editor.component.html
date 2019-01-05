@@ -1,0 +1,72 @@
+<form action="" [formGroup]='profileForm' (ngSubmit)='onSubmit()'>
+  <label for="">First Name:</label>
+  <input type="text" formControlName='firstName'> <br>
+  <label for="">Last Name:</label>
+  <input type="text" formControlName='lastName'> <br>
+  <div formGroupName="address">
+    <h3>address</h3>
+    <label for="">
+      Street:
+      <input type="text" formControlName='street'>
+    </label>
+    <label for="">
+      City:
+      <input type="text" formControlName='city'>
+    </label>
+    <label for="">
+      State:
+      <input type="text" formControlName='state'>
+    </label>
+    <label for="">
+      Zip Code:
+      <input type="text" formControlName='zip'>
+    </label>
+  </div>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  <button (click)='updatePrifile()'>更新部分</button>
+</form>
+
+<form action="" [formGroup]='profileForm1' (ngSubmit)='onSubmit1()'>
+  <label for="">First Name:</label>
+  <input type="text" formControlName='firstName' required> <br>
+  <label for="">Last Name:</label>
+  <input type="text" formControlName='lastName'> <br>
+  <div formGroupName="address">
+    <h3>address</h3>
+    <label for="">
+      Street:
+      <input type="text" formControlName='street'>
+    </label>
+    <label for="">
+      City:
+      <input type="text" formControlName='city'>
+    </label>
+    <label for="">
+      State:
+      <input type="text" formControlName='state'>
+    </label>
+    <label for="">
+      Zip Code:
+      <input type="text" formControlName='zip'>
+    </label>
+  </div>
+  <div formArrayName='aliases'>
+    <h3>Aliases</h3>
+    <button (click)='addAlias()'>add Alias</button>
+    <div *ngFor='let address of aliases.controls;let i=index'>
+      <!-- The repeated alias template -->
+      <label for="">
+        Alias:
+        <input type="text" [formControlName]='i'>
+      </label>
+    </div>
+  </div>
+  <button type="submit" [disabled]="!profileForm1.valid">Submit</button> <br>
+  <p>
+    formValue:{{profileForm1.value | json}}
+  </p>
+  <p>
+    formStatus:{{profileForm1.status}}
+  </p>
+  <button (click)='updatePrifile1()'>更新部分</button>
+</form>

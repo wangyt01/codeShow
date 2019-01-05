@@ -1,0 +1,20 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let hero of heroes" class="col-1-4" routerLink="/detail/{{hero.id}}">
+    <!-- <div class="module hero"> -->
+      <!-- <h4>{{hero.name}}</h4> -->
+      {{hero.name}}
+    <!-- </div> -->
+  </a>
+</div>
+<div>
+  <h4>日期管道</h4>
+  <p>{{today}}</p>
+  <p>{{today | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+  <p>{{time}}</p>
+  <h4>数据映射管道</h4>
+  <div>{{ sex | i18nPlural: sexMapping }}</div>
+
+</div>
+
+<app-hero-search></app-hero-search>

@@ -1,0 +1,17 @@
+/* DashboardComponent's private CSS styles */
+.grid-pad a{
+  display:inline-block;
+  width:20%;
+  text-align: center;
+  color: #eee;
+  max-height: 120px;
+  min-width: 120px;
+  line-height: 80px;
+  background-color: #607d8b;
+  border-radius: 2px;
+  text-decoration: none;
+  margin-left:10px;
+  &:hover{
+    background-color: #4e6774;
+  }
+}

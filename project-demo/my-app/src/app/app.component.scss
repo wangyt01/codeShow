@@ -1,0 +1,30 @@
+.app-header {
+    width: 80%;
+    margin: 0 auto;
+    nav {
+        height: 40px;
+        line-height: 40px;
+        margin:0 auto;
+        a {
+            display: block;
+            float: left;
+            margin-left: 2px;
+            margin-top: 10px;
+            background: #ddd;
+            padding: 0 10px;
+            font-size: 13px;
+            text-decoration: none;
+            &:hover {
+                background: #477FB8;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.middle-content {
+    width: 80%;
+    margin: 0 auto; // border:1px solid red;
+    overflow-y: auto;
+    margin-bottom: 40px;
+}

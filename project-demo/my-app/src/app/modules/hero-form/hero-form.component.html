@@ -1,0 +1,99 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" 
+        class="form-control" 
+        id="name" required 
+        [(ngModel)]="model.name" 
+        name="name" 
+        #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Alter Ego</label>
+        <input type="text" 
+        class="form-control" 
+        id="alterEgo" 
+        [(ngModel)]="model.alterEgo" 
+        name="alterEgo">
+      </div>
+
+      <div class="form-group">
+        <label for="power">Hero Power</label>
+        <select class="form-control" id="power" 
+        required [(ngModel)]="model.power" 
+        name="power" #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div 
+        [hidden]="power.valid || power.pristine" 
+        class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="sex">性别：</label>
+          <input type="radio" value="男" name="sex" [(ngModel)]="model.sex"> 男
+          <input type="radio" value="女" name="sex" [(ngModel)]="model.sex"> 女
+          <div [hidden]="model.sex" class="alert alert-danger">
+              Sex is required
+            </div>
+      </div>
+      <div class="form-group">
+        <label for="myFood">喜爱的食物：</label> <br>
+        <ng-container *ngFor="let item of model.myFood">
+            {{item.name}}:
+          <input type="checkbox" name="selected" [(ngModel)]="item.value"> <br>
+        </ng-container>
+        <div [hidden]='model.myFood[0].value || model.myFood[1].value' class='alert alert-danger'>
+          Food is required
+        </div>
+        <!-- <input type="checkbox" name="鸡" [(ngModel)]=> 鸡 -->
+        <!-- <input type="checkbox" name="鱼" [(ngModel)]=> 鱼
+        <input type="checkbox" name="肉" [(ngModel)]=> 肉
+        <input type="checkbox" name="蛋" ngModel> 蛋 -->
+      </div>
+      <button type="submit" class="btn btn-success" 
+      [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" 
+      (click)="newHero(); heroForm.reset()">New Hero</button>
+    </form>
+    
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name:</div>
+      <div class="col-xs-9  pull-left">{{ model.name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Alter Ego:</div>
+      <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Power"</div>
+      <div class="col-xs-9 pull-left">{{ model.power }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Sex:</div>
+        <div class="col-xs-9 pull-left">{{ model.sex }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">My Food:</div>
+        <div class="col-xs-9 pull-left" >
+            <ng-container *ngFor='let item of model.myFood'>
+                <span *ngIf="item.value">{{item.name}}</span>
+            </ng-container>
+         </div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>

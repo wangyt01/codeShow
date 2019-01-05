@@ -1,0 +1,92 @@
+<div class="setting-container">
+  <form action="" #sysConfigForm="ngForm">
+    <div class="top-btn">
+      <button (click)="save()">保存</button>
+      <button (click)="cancel">取消</button>
+    </div>
+    <div class="unit">
+      <span>单位</span>
+      <select name="unitPower" id="unitPower">
+        <option *ngFor="let name of model.unitArray;index as i" [value]="i">{{name}}</option>
+        <!-- <option value="0">请输入</option>
+        <option value="1">中移动</option>
+        <option value="2">中联通</option>
+        <option value="3">中工商</option> -->
+      </select>
+    </div>
+    <div class="basic-setting">
+      <div class="title">基础设置</div>
+      <div class="sys-date">
+        <span>系统启用日期</span>
+        <input type="text"  id="sysTextDate" class="sys-text-date" 
+        ([ngModel])="model.startDate"
+        [value] = "model.startDate | date:'yyyy-MM-dd'"
+        disabled>
+      </div>
+    </div>
+    <div class="bank-setting">
+      <div class="title">银行账户余额检查位置及控制方式设置</div>
+      <div class="b-top  b-sublime">
+        <div class="b-left">
+          <input type="checkbox" name="sublimeBox" id="sublimeBox"
+          ([ngModel])="model.sublimeBox"
+          (change)="sublimeChange(model.sublimeBox)"> 
+          <span>提交阶段</span>
+        </div>
+        <div class="b-right">
+          <span>提交阶段余额不足控制方式</span>
+          <select name="" id="" [disabled] = "!model.sublimeBox">
+            <option value="1">提示</option>
+            <option value="2">禁止</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="clear"></div>
+      <div class="b-top b-check">
+        <div class="b-left">
+          <input type="checkbox"
+          ([ngModel])="model.checkBox"
+          (change)="checkChange(model.checkBox)"> <span>复核阶段</span>
+        </div>
+        <div class="b-right">
+          <span>复核阶段余额不足控制方式</span>
+          <select name="" id="" [disabled] = "!model.checkBox">
+            <option value="1">提示</option>
+            <option value="2">禁止</option>
+          </select>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="clear"></div>
+
+    <div class="bank-canuse">
+      <div class="title">银行账户可用余额设置</div>
+      <div class="bank-check">
+        <div class="income">
+          <input type="checkbox" 
+          id="" name="" 
+          ([ngModel])="model.incomeBox" 
+          (change)="incomeChange(model.incomeBox)">
+          <span>包含在途收入</span>
+        </div>
+        <div class="spending">
+          <input type="checkbox" 
+          ([ngModel])="model.spendingBox" 
+          (change)="spendingChange(model.spendingBox)">
+          <span>包含在途支出</span>
+        </div>
+        <div class="clear"></div>
+        <div class="formula">
+          <span>可用余额计算公式</span>
+          <input type="text" id="sumShow" class="sumShow" 
+          disabled 
+          [value]="model.sumShow" 
+          ([ngModel])="model.sumShow"> 
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
