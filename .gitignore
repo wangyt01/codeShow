@@ -4,3 +4,6 @@
 # 排除所有文件夹
 
 /.idea/
+
+# 排除文件
+package-lock.json
