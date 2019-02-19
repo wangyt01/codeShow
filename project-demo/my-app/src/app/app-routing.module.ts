@@ -12,6 +12,14 @@ import { ZorroComponent } from './modules/zorro/zorro.component';
 import { RxjsDemoComponent } from './modules/rxjs-demo/rxjs-demo.component';
 import { ConfigComponent } from './modules/config/config.component';
 import { ParameterSettingComponent } from './modules/parameter-setting/parameter-setting.component';
+import { AddressFormDemoComponent } from './modules/material-demo/address-form-demo/address-form-demo.component';
+import { DashboardDemoComponent } from './modules/material-demo/dashboard-demo/dashboard-demo.component';
+import { DragDropDemoComponent } from './modules/material-demo/drag-drop-demo/drag-drop-demo.component';
+import { NavDemoComponent } from './modules/material-demo/nav-demo/nav-demo.component';
+import { TableDemoComponent } from './modules/material-demo/table-demo/table-demo.component';
+import { TreeDemoComponent } from './modules/material-demo/tree-demo/tree-demo.component';
+import { MaterialDemoComponent } from './modules/material-demo/material-demo.component';
+
 
 
 const routes: Routes = [
@@ -27,6 +35,14 @@ const routes: Routes = [
   { path: 'rxjx-demo', component: RxjsDemoComponent },
   { path: 'config', component: ConfigComponent },
   { path: 'parameter-setting', component: ParameterSettingComponent },
+  { path: 'material-demo', component: MaterialDemoComponent },
+  { path: 'address-form-demo', component: AddressFormDemoComponent },
+  { path: 'dashboard-demo', component: DashboardDemoComponent },
+  { path: 'drag-drop-demo', component: DragDropDemoComponent },
+  { path: 'nav-demo', component: NavDemoComponent },
+  { path: 'table-demo', component: TableDemoComponent },
+  { path: 'tree-demo', component: TreeDemoComponent },
+
 ];
 
 @NgModule({
