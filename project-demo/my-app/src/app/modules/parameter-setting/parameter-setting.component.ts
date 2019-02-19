@@ -17,7 +17,7 @@ export class ParameterSettingComponent implements OnInit {
     false,
     '当前余额 + 透支额度 - 冻结金额 ',
     Date.now()
-  )
+  );
   constructor() { }
 
   ngOnInit() {
@@ -62,11 +62,11 @@ export class ParameterSettingComponent implements OnInit {
     }
   }
   // 保存
-  save(){
-    console.log()
+  save() {
+    console.log();
   }
   // 取消
-  cancel(){
+  cancel() {
 
   }
 }

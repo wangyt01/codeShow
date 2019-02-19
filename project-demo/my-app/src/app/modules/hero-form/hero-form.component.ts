@@ -33,5 +33,4 @@ export class HeroFormComponent implements OnInit {
 
   ngOnInit() {
   }
-  
 }
