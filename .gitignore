@@ -1,2 +1,6 @@
 .sass-cache/
 *.css.map
+
+# 排除所有文件夹
+
+*/.idea/
