@@ -1,0 +1,38 @@
+
+银行账户
+{"/bankaccountlistform":"bankaccountlistform.module#./src/app/modules/bankaccountlistform/bankaccountlistform.module.js#BankAccountListFormModule"}
+
+webpack --env.filePath=app/modules/bankaccountlistform/bankaccountlistform.module.ts
+
+账户余额查询
+{"/frmbalanceofbankaccountqry":"frmbalanceofbankaccountqry.module#./src/app/modules/frmbalanceofbankaccountqry/frmbalanceofbankaccountqry.module.js#FrmBalanceOfBankAccountQryModule"}
+
+webpack --env.filePath=app/modules/frmbalanceofbankaccountqry/frmbalanceofbankaccountqry.module.ts
+
+日记账查询
+{"/frmunitjournalqry":"frmunitjournalqry.module#./src/app/modules/frmunitjournalqry/frmunitjournalqry.module.js#FrmUnitJournalQryModule"}
+
+webpack --env.filePath=app/modules/frmunitjournalqry/frmunitjournalqry.module.ts
+
+
+系统初始
+{"/frmparametersetting":"frmparametersetting.module#./src/app/modules/frmparametersetting/frmparametersetting.module.js#FrmParameterSettingModule"}
+
+webpack --env.filePath=app/modules/frmparametersetting/frmparametersetting.module.ts
+
+付款申请
+
+{"/paymentsettlementrequestlist":"paymentsettlementrequestlist.module#./src/app/modules/paymentsettlementrequestlist/paymentsettlementrequestlist.module.js#PaymentSettlementRequestListModule"}
+
+webpack --env.filePath=app/modules/paymentsettlementrequestlist/paymentsettlementrequestlist.module.ts
+
+余额初始
+{"/frm_balanceofbainitialized":"frm_balanceofbainitialized.module#./src/app/modules/frm_balanceofbainitialized/frm_balanceofbainitialized.module.js#Frm_BalanceOfBAInitializedModule"}
+webpack --env.filePath=app/modules/frm_balanceofbainitialized/frm_balanceofbainitialized.module.ts
+
+
+
+
+
+
+

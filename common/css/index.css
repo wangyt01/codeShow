@@ -18,29 +18,6 @@
   margin: 0 auto;
   font-size: 16px;
 }
-.all-container .a-container .a-nav {
-  width: 100%;
-  margin-top: 10px;
-}
-.all-container .a-container .a-nav .a-n-container ul li {
-  width: 12%;
-  float: left;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  border: 1px solid #c9c9c9;
-}
-.all-container .a-container .a-nav .a-n-container ul li:hover {
-  background: #999;
-}
-.all-container .a-container .a-nav .a-n-container ul li a {
-  text-decoration: none;
-  display: inline-block;
-  width: 100%;
-}
-.all-container .a-container .a-nav .a-n-container ul li a:hover {
-  color: #fff;
-}
 .all-container .a-container .a-list {
   font-size: 14px;
   border: 1px solid #c9c9c9;

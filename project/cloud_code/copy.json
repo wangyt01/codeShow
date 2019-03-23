@@ -1,0 +1,4 @@
+#e盘modeles 复制到 farris-dev
+
+xcopy E:\GSP_Cloud\Build_BF_20190309\platform\dev\main\web\webidedebug\src\app\modules E:\GSP_Cloud\Build_BF_20190309\platform\dev\main\web\webidedebug1\src\app\modules/S
+

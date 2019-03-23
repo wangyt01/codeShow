@@ -23,7 +23,7 @@ Vue.component("common-header", {
 				url: "2018/2.index-2018-vue.html",
 				name: "2018"
 			}, {
-				url: "web前端/1.index(样式美化).html",
+				url: "web前端/index-web.html",
 				name: "web前端"
 			}, {
 				url: "web前端/3.index(project).html",
@@ -61,6 +61,16 @@ Vue.component("common-header", {
 		}
 	}
 })
+/**
+ * 切换导航背景颜色添加
+ * @param {number} i 第几个导航
+ * 0 2016
+ * 1 2017
+ */
+function changeNavAddBg(i){
+	var navLi = document.querySelector('.c-n-container').getElementsByTagName('ul')[0].getElementsByTagName('li');
+	navLi[i].classList.add('c-nav-li-add-bg');
+}
 
 //公共底部
 Vue.component("common-footer", {
