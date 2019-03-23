@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>web前端</title>
+    <!-- 公共的link -->
+    <script src="../common/js/common-head.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="../common/css/index-2016.css">
+</head>
+
+<body>
+    <div id="list" class="all-container">
+        <!-- S 公共头部 -->
+        <common-header></common-header>
+        <!-- E 公共头部-->
+        <div class="c-container middle-container">
+            <div class="list" v-for="item in data">
+                <h4 v-if="item.name">{{item.name}}</h4>
+                <ul>
+                    <li v-for="el in item.list" v-if="el.name"><a v-bind:href="el.url" target="_blank">{{el.name}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- S 公共底部 -->
+        <common-footer></common-footer>
+        <!-- E 公共底部 -->
+    </div>
+</body>
+<script src="index-web.js"></script>
+<script>
+var vm = new Vue({
+    el: "#list",
+    data: {
+        data: listArr
+    }
+})
+$(document).ready(function() {
+    waterFlow();
+    // 导航背景切换
+    changeNavAddBg(3);
+})
+//https://www.cnblogs.com/dyx-wx/p/4642637.html
+function waterFlow() {
+    var listChild = $('.middle-container').children();
+    var len = $('.middle-container').children().length;
+    //创建数组, 用来盛放每一行的高度
+    var onlyOneColsArr = [];
+    for (i = 1; i < len + 1; i++) {
+        if (i < 5) {
+            var listHeight = $('.middle-container .list:nth-child(' + i + ')').height();
+            onlyOneColsArr.push(listHeight);
+        } else {
+            //当大于每行存放的图片个数时进入该方法, Math.min.apply这个方法是为了得到数组中的最小值
+            var minHeightOfCols = Math.min.apply(null, onlyOneColsArr);
+            //此方法的目的是为了得到最小高度图片的下表, 也就是在每行的第几张, 具体方法见下面
+            var minHeightOfindex = getminIndex(onlyOneColsArr, minHeightOfCols);
+            var x = Number(minHeightOfindex) + 1;
+            //定义向左的偏移量
+            var leftNum = $('.middle-container .list:nth-child(' + x + ')').position().left;
+            //定义布局方式为绝对布局
+            $('.list:nth-child(' + i + ')').css({
+                "position": "absolute",
+                "top": minHeightOfCols + "px",
+                "left": leftNum + "px"
+            });
+            //将两张图片高度相加得到一个新的高度用来进行下一次的计算
+            onlyOneColsArr[minHeightOfindex] += $('.list:nth-child(' + i + ')').height();
+
+        }
+    }
+}
+
+
+//此方法是为了进行最小高度下标的确定
+function getminIndex(onlyOneColsArr, min) {
+    //遍历传进来的高度数组
+    for (var i in onlyOneColsArr) {
+        //如果高度等于最小高度, 返回i即为该图片下标
+        if (onlyOneColsArr[i] == min) {
+            return i;
+        }
+    }
+}
+</script>
+
+</html>

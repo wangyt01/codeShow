@@ -56,6 +56,12 @@ header .c-header .c-h-nav .c-n-container ul li a {
 header .c-header .c-h-nav .c-n-container ul li a:hover {
   color: #fff;
 }
+header .c-header .c-h-nav .c-n-container ul .c-nav-li-add-bg {
+  background: #ccc;
+}
+header .c-header .c-h-nav .c-n-container ul .c-nav-li-add-bg a {
+  color: #393D49;
+}
 
 footer .c-footer {
   height: 40px;

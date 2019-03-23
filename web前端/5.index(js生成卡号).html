@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生成卡号，身份证号，姓名</title>
+    <!-- 公共样式和js -->
+    <script src="../common/js/common-head.js"></script>
+    <link rel="stylesheet" href="css/5.index.css">
+    <script src="javascript/5.index.js"></script>
+</head>
+
+<body>
+    <div class="container-js">
+        <form action="" class="layui-form">
+            <div id="bankInfo" class="layui-form-item">
+                <label class="layui-form-label">选择银行:</label>
+                <div class="layui-input-inline">
+                    <select name="bank_no" lay-verify="required">
+                        <option value="104">中国银行</option>
+                        <option value="103">农业银行</option>
+                        <option value="102">工商银行</option>
+                        <option value="105">建设银行</option>
+                        <option value="301">交通银行</option>
+                        <option value="100">中国邮政储蓄银行</option>
+                        <option value="308">招商银行</option>
+                        <option value="310">浦发银行</option>
+                        <option value="309">兴业银行</option>
+                        <option value="303">光大银行</option>
+                        <option value="306">广发银行</option>
+                        <option value="304">华夏银行</option>
+                        <option value="305">民生银行</option>
+                        <option value="302">中信银行</option>
+                    </select>
+                </div>
+                <div class="layui-input-inline">
+                    <input id="bankcard" class="layui-input" type="text" placeholder="银行卡号">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">身份证号码:</label>
+                <div class="layui-input-inline">
+                    <input id="identity" type="text" class="layui-input" placeholder="随机身份证号码..">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">名字:</label>
+                <div class="layui-input-inline">
+                    <input id="name" type="text" class="layui-input" placeholder="随机姓名..">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <input id="generateBankcard" class="layui-btn" type="button" value="生成卡号">
+                    <input id="generateIdentity" class="layui-btn" type="button" value="生成身份证号码">
+                    <input id="generateName" class="layui-btn" type="button" value="生成名字">
+                    <div id="getAll" class="layui-btn layui-btn-normal">一键生成</div>
+                </div>
+            </div>
+        </form>
+        <div class="bankaccount-text-show"></div>
+    </div>
+
+</body>
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+    });
+</script>
+
+</html>

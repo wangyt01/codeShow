@@ -1,0 +1,28 @@
+.sample-tutorial {
+     position: relative;
+     height: 100%;
+     overflow: hidden;
+}
+
+.sample-spreadsheets {
+    width: calc(100% - 280px);
+    height: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.options-container {
+    float: right;
+    width: 280px;
+    padding: 12px;
+    height: 100%;
+    box-sizing: border-box;
+    background: #fbfbfb;
+    overflow: auto;
+}
+
+.option-row {
+    font-size: 14px;
+    padding: 5px;
+    margin-top: 10px;
+}
