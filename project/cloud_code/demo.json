@@ -1,0 +1,66 @@
+{
+                            "id": "form_dateBegin",
+                            "type": "DateBox",
+                            "title": "申请日期",
+                            "appearance": {
+                                "class": "col-sm-12 col-md-6 col-lg-4 col-xl-3"
+                            },
+                            "border": null,
+                            "font": null,
+                            "margin": null,
+                            "padding": null,
+                            "size": null,
+                            "binding": {
+                                "type": "Variable",
+                                "path": "RequestDate",
+                                "field": "31788dee-edc4-4589-95d2-7428f2a29410"
+                            },
+                            "readonly": false,
+                            "require": false,
+                            "disable": false,
+                            "placeHolder": "",
+                            "format": "'yyyy-MM-dd'",
+                            "validation": null,
+                            "defaultValue": null,
+                            "value": null,
+                            "maxValue": null,
+                            "minValue": 0,
+                            "spin": null,
+                            "step": 1,
+                            "valueChange": null,
+                            "linkedLabelEnabled": false,
+                            "linkedLabelClick": null
+                        },
+                        {
+                            "id": "form_dateEnd",
+                            "type": "DateBox",
+                            "title": "至",
+                            "appearance": {
+                                "class": "col-sm-12 col-md-6 col-lg-4 col-xl-3"
+                            },
+                            "border": null,
+                            "font": null,
+                            "margin": null,
+                            "padding": null,
+                            "size": null,
+                            "binding": {
+                                "type": "Variable",
+                                "path": "EndDate",
+                                "field": "daf3618e-bff2-4813-aec0-dd963d683cb8"
+                            },
+                            "readonly": false,
+                            "require": false,
+                            "disable": false,
+                            "placeHolder": "",
+                            "format": "'yyyy-MM-dd'",
+                            "validation": null,
+                            "defaultValue": null,
+                            "value": null,
+                            "maxValue": null,
+                            "minValue": 0,
+                            "spin": null,
+                            "step": 1,
+                            "valueChange": null,
+                            "linkedLabelEnabled": false,
+                            "linkedLabelClick": null
+                        },

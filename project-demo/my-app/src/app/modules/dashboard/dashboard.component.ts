@@ -9,6 +9,19 @@ import { toDate } from '@angular/common/src/i18n/format_date';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  pipeDate = [{
+    "name": "日期管道1",
+    "content": "<!-- Default format: output 'Jun 15, 2015'-->"
+  }, {
+    "name": "日期管道2",
+    "content": "<!-- fullDate format: output 'Monday, June 15, 2015'-->"
+  }, {
+    "name": "日期管道3",
+    "content": "<!--format: output 'yyyy-MM-dd HH:mm:ss'-->"
+  }, {
+    "name": "数据映射管道",
+    "content": "{ [k: string]: string } = { '=1': '男', '=2': '女', 'other': '其他' }"
+  }];
   heroes: Hero[] = [];
   today: number = Date.now();
   sex = '2';
@@ -44,13 +57,13 @@ export class DashboardComponent implements OnInit {
     c.forEach((v, i, a) => a[i] = v + 1);
     console.log(c); // [7, 4, 2, 3, 5]
     // 数组求平方且不修改原数组
-    let d = c.map(x => x * x);
+    const d = c.map(x => x * x);
     console.log(d); // [49, 16, 4, 9, 25]
     // 过滤元素小于3的元素
-    let e: any = c.filter(x => x < 3);
+    const e: any = c.filter(x => x < 3);
     console.log(e); // [2]
     // 过滤键值除以2等于0的元素
-    let f = c.filter((x, i) => i % 2 === 0);
+    const f = c.filter((x, i) => i % 2 === 0);
     console.log(f); // [7, 2, 5]
 
   }

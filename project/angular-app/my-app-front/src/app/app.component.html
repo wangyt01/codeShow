@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h5>
+    <!-- Welcome to {{ title }}! -->
+  </h5>
+</div>
+<div class="container">
+  <nav class="nav">
+    <a class="nav-link" routerLink="/">首页</a>
+    <a class="nav-link" routerLink="order-list">订单列表</a>
+    <a class="nav-link" routerLink="order-detail">订单详细</a>
+    <a class="nav-link" routerLink="product-list">产品列表</a>
+    <a class="nav-link" routerLink="product-detail">产品详细</a>
+    <a class="nav-link" routerLink="k-ui-button">按钮</a>
+    <a class="nav-link" routerLink="k-ui-charts">图表</a>
+    <a class="nav-link" routerLink="k-ui-dialogs">对话框</a>
+    <a class="nav-link" routerLink="k-ui-dialogs-window">对话框-window</a>
+    <a class="nav-link" routerLink="k-ui-gauges">仪表盘</a>
+    <a class="nav-link" routerLink="k-ui-tooltip">工具提示</a>
+    <a class="nav-link" routerLink="k-ui-treeview">树状视图</a>
+    <a class="nav-link" routerLink="k-ui-ripple">涟漪</a>
+    <a class="nav-link" routerLink=""></a>
+    <a class="nav-link" routerLink=""></a>
+    <a class="nav-link" routerLink=""></a>
+
+    <kendo-dropdownbutton 
+      [data]="DropDownButtonData" 
+      [icon]="icon" 
+      (itemClick)="onSplitButtonItemClick($event)">
+      对话框
+    </kendo-dropdownbutton>
+
+  </nav>
+</div>
+
+
+<router-outlet></router-outlet>

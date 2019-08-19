@@ -1,20 +1,3 @@
-// var chatIp='192.168.1.110';//设置聊天iP;
-// avalon.filters.scorePass = function(str){	
-// 	var pass = parseFloat(str);
-// 	if(pass >=0){
-// 		return "通过";
-// 	}
-// 	else{
-// 		return "不通过";
-// 	}
-// }  
-// avalon.filters.n2br = function(str){	
-// 	 if(str){
-// 		 str = str.replace(/\n/g,"</p><p  class='info space'>");
-// 		 str="<p class='info space'>"+str+"</p>";
-// 	 }
-// 	 return str;
-// }  
 /**
  * 字符串转化为Date对象
  * @param str

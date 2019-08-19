@@ -6,12 +6,10 @@ layui.use('form', function() {
 	form.on('submit(regForm)', function(data) {
 		// layer.msg(JSON.stringify(data.field));
 		//数据结果
-		// console.log(data.field)
 		var data = {
 			name: data.field.username,
 			psw: data.field.password
 		}
-		// console.log(data)
 		$.ajax({
 			url: '/registered',
 			type: 'post',

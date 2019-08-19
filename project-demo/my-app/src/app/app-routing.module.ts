@@ -19,6 +19,7 @@ import { NavDemoComponent } from './modules/material-demo/nav-demo/nav-demo.comp
 import { TableDemoComponent } from './modules/material-demo/table-demo/table-demo.component';
 import { TreeDemoComponent } from './modules/material-demo/tree-demo/tree-demo.component';
 import { MaterialDemoComponent } from './modules/material-demo/material-demo.component';
+import { ThreeDemoComponent } from './modules/three-demo/three-demo.component';
 
 
 
@@ -42,6 +43,8 @@ const routes: Routes = [
   { path: 'nav-demo', component: NavDemoComponent },
   { path: 'table-demo', component: TableDemoComponent },
   { path: 'tree-demo', component: TreeDemoComponent },
+  { path: 'three-demo', component: ThreeDemoComponent },
+
 
 ];
 

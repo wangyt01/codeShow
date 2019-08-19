@@ -1,49 +1,35 @@
 // 账户余额查询
 
-
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RootComponent } from './components/root-component/rootcomponent';
-
-import { FrameworkComponent } from './components/framework/framework.component';
-
+import { RootComponent as FrmBalanceOfBankAccountQryRootComponent } from './FrmBalanceOfBankAccountQry/components/root-component/rootcomponent';
+import { FrameworkComponent } from './FrmBalanceOfBankAccountQry/components/framework/framework.component';
 const routes: Routes = [
-  { path: '', component: RootComponent },
+  { path: '', component: FrmBalanceOfBankAccountQryRootComponent },
   { path: 'qdpview', component: FrameworkComponent }
 ];
-
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
 })
-export class FrmBalanceOfBankAccountQryRoutingModule {}
+export class AppRoutingModule { }
 
 
 // 日记账查询
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RootComponent } from './components/root-component/rootcomponent';
-import { FrameworkComponent } from './components/framework/framework.component';
+import { RootComponent as FrmUnitJournalQryRootComponent } from './FrmUnitJournalQry/components/root-component/rootcomponent';
+import { FrameworkComponent } from './FrmUnitJournalQry/components/framework/framework.component';
 const routes: Routes = [
-  { path: '', component: RootComponent },
+{path: '',component:FrmUnitJournalQryRootComponent},
   { path: 'qdpview', component: FrameworkComponent }
 ];
-
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
-})
-export class FrmUnitJournalQryRoutingModule { }
-
+            imports: [RouterModule.forRoot(routes, { useHash: true })],
+            exports: [RouterModule]
+          })
+          export class AppRoutingModule { }
 
 
 

@@ -1,0 +1,16 @@
+{
+  "name": "threedemo",
+  "version": "1.0.0",
+  "description": "threejs项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter list",
+    "run": "mocha --reporter list"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "three": "^0.106.2"
+  }
+}

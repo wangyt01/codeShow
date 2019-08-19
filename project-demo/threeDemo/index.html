@@ -1,0 +1,86 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-06 19:10:12
+ * @LastEditTime: 2019-08-14 18:00:07
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>My first three.js app</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%
+        }
+
+        #info {
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="js/three.js"></script>
+    <script src="js/WebGL.js"></script>
+    <script>
+        // if (WEBGL.isWebGLAvailable()) {
+        //     // Initiate function or other initializations here
+        //     animate();
+        // } else {
+        //     var warning = WEBGL.getWebGLErrorMessage();
+        //     document.getElementById('container').appendChild(warning);
+        // }
+    </script>
+    <script>
+        // Our Javascript will go here.
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
+        camera.position.set(0, 0, 100);
+        camera.lookAt(0, 0, 0);
+
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight - 20);
+        document.body.appendChild(renderer.domElement);
+
+        var geometryBox = new THREE.Geometry();
+        var geometryLine = new THREE.BoxGeometry(1, 1, 1);
+        // 材质
+        var materialBox = new THREE.MeshBasicMaterial({ color: 0x808080 });
+        var materialLine = new THREE.LineBasicMaterial({ color: 0x0000ff });
+        geometryLine.vertices.push(new THREE.Vector4(1, 1, 1, 1));
+        // geometryLine.vertices.push(new THREE.Vector4(0, 1, 0, 0));
+        // geometryLine.vertices.push(new THREE.Vector4(0, 0, 1, 0));
+        // geometryLine.vertices.push(new THREE.Vector4(0, 0, 0, 1));
+
+        var cube = new THREE.Mesh(geometryBox, materialBox);
+        var line = new THREE.Line(geometryLine, materialLine);
+        scene.add(cube);
+        scene.add(line);
+
+        camera.position.z = 5;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+<div id="info">Description</div>
+
+</html>

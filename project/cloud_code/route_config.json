@@ -9,10 +9,16 @@ webpack --env.filePath=app/modules/bankaccountlistform/bankaccountlistform.modul
 
 webpack --env.filePath=app/modules/frmbalanceofbankaccountqry/frmbalanceofbankaccountqry.module.ts
 
+http://localhost:5001/platform/common/web/debug/index.html?url=/apps/TM/cm/web/bo-cmquerybalanceofbankaccountqry/#/
+
 日记账查询
 {"/frmunitjournalqry":"frmunitjournalqry.module#./src/app/modules/frmunitjournalqry/frmunitjournalqry.module.js#FrmUnitJournalQryModule"}
 
 webpack --env.filePath=app/modules/frmunitjournalqry/frmunitjournalqry.module.ts
+
+?url=/apps/TM/cm/web/bo-cmqueryunitjournalqry/#/
+
+http://localhost:5001/platform/common/web/debug/index.html?url=/apps/TM/cm/web/bo-cmqueryunitjournalqry/#/
 
 
 系统初始
@@ -30,9 +36,74 @@ webpack --env.filePath=app/modules/paymentsettlementrequestlist/paymentsettlemen
 {"/frm_balanceofbainitialized":"frm_balanceofbainitialized.module#./src/app/modules/frm_balanceofbainitialized/frm_balanceofbainitialized.module.js#Frm_BalanceOfBAInitializedModule"}
 webpack --env.filePath=app/modules/frm_balanceofbainitialized/frm_balanceofbainitialized.module.ts
 
+资金到账通知单
+
+{"/capitalaccountnoticelist":"capitalaccountnoticelist.module#./src/app/modules/capitalaccountnoticelist/capitalaccountnoticelist.module.js#CapitalAccountNoticeListModule"}
+
+webpack --env.filePath=app/modules/capitalaccountnoticelist/capitalaccountnoticelist.module.ts
+
+业务收款通知单
+
+{"/bizreceivingnoticelist":"bizreceivingnoticelist.module#./src/app/modules/bizreceivingnoticelist/bizreceivingnoticelist.module.js#BizReceivingNoticeListModule"}
+
+webpack --env.filePath=app/modules/bizreceivingnoticelist/bizreceivingnoticelist.module.ts
+
+
+/apps/tm/cc/web/bizreceivingnoticelist.module#./src/app/modules/bizreceivingnoticelist/bizreceivingnoticelist.module.js#BizReceivingNoticeListModule
+
+
+
+认领结果-双列表
+{"/receivingclaimresult":"receivingclaimresult.module#./src/app/modules/receivingclaimresult/receivingclaimresult.module.js#ReceivingClaimResultModule"}
+
+webpack --env.filePath=app/modules/receivingclaimresult/receivingclaimresult.module.ts
+
+/apps/tm/cc/web/receivingclaimresult.module#./src/app/modules/receivingclaimresult/receivingclaimresult.module.js#ReceivingClaimResultModule
+
+银行账户授权-自定义帮助
+{"/bankaccountauthorizedcardform":"bankaccountauthorizedcardform.module#./src/app/modules/bankaccountauthorizedcardform/bankaccountauthorizedcardform.module.js#BankAccountAuthorizedCardFormModule"}
+
+webpack --env.filePath=app/modules/bankaccountauthorizedcardform/bankaccountauthorizedcardform.module.ts 
+
+
+银行账户-卡片
+{"/bankaccountcardform":"bankaccountcardform.module#./src/app/modules/bankaccountcardform/bankaccountcardform.module.js#BankAccountCardFormModule"}
+
+webpack --env.filePath=app/modules/bankaccountcardform/bankaccountcardform.module.ts
+
+银行账户-池外划拨设置
+
+
+{"/bankaccountoutset":"bankaccountoutset.module#./src/app/modules/bankaccountoutset/bankaccountoutset.module.js#BankAccountOutSetModule"}
+
+webpack --env.filePath=app/modules/bankaccountoutset/bankaccountoutset.module.ts
+
+银行账户-列表
+{"/bankaccountlistform":"bankaccountlistform.module#./src/app/modules/bankaccountlistform/bankaccountlistform.module.js#BankAccountListFormModule"}
+
+webpack --env.filePath=app/modules/bankaccountlistform/bankaccountlistform.module.ts
+
+
+tab页
+
+{"/tabpage":"tabpage.module#./src/app/modules/tabpage/tabpage.module.js#TabPageModule"}
+
+webpack --env.filePath=app/modules/tabpage/tabpage.module.ts
+
+
+
+ContentContainer
+
+
+ng build -c=production
+
+
+jit --projectName=bo-paymentsettlementtop-front --projectRoute=bo-paymentsettlementtop-front.route.json --linkedNodeModules=E:/projects/node_modules --mp=E:/projects/TM/cm/PaymentSettlement/bo-paymentsettlementtop-front/src/webdev --pp=E:/projects/TM/cm/PaymentSettlement/bo-paymentsettlementtop-front/src/app --uilib=kendo --ngVersion=ng7
 
 
 
 
 
 
+
+E:\GSP_Cloud\Build20190726\runtime\libs>jit --projectName=bo-paymentsettlementtop-front --projectRoute=bo-paymentsettlementtop-front.route.json --linkedNodeModules=F:/projects/node_modules --mp=F:/projects/TM/cm/PaymentSettlement/bo-paymentsettlementtop-front/src/webdev --pp=F:/projects/TM/cm/PaymentSettlement/bo-paymentsettlementtop-front/src/app --uilib=kendo --ngVersion=ng7

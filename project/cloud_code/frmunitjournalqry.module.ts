@@ -11,17 +11,17 @@ import { IntlModule } from '@progress/kendo-angular-intl';
 import '@progress/kendo-angular-intl/locales/zh/all';
 import { FARRIS_DEVKIT_APP_PROVIDERS } from '@farris/devkit';
 import { KendoBindingModule } from '@farris/kendo-binding';
-import { FlexLayoutMoudle, LoadingModule, MessagerModule, NotifyModule, LookupModule, TreeTableModule, FieldGroupModule, InputModeModule, FResponseToolbarModule } from '@farris/ui';
+import { FlexLayoutMoudle, LoadingModule, MessagerModule, NotifyModule, LookupModule, TreeTableModule, FieldGroupModule, InputModeModule, FResponseToolbarModule, FormMessageModule } from '@farris/ui';
 import { BE_SERVER_URI_TOKEN, FrameworkSessionService } from '@farris/bef';
 import { LangPipe } from './lang/lang-pipe';
 import { FrmUnitJournalQryRoutingModule } from './routing';
 import { UnitJournalQryRepository } from './models/unitjournalqryrepository';
+import { EchartsModule } from '@qdp/ui';
 import { RootComponent } from './components/root-component/rootcomponent';
 import { BasicFormComponent } from './components/basic-form-component/basicformcomponent';
 
 import { FrameworkComponent } from './components/framework/framework.component';
 import { QueryFrameworkModule, SpreadModule, Server_Host, Load_Data_Uri } from '@qdp/ui';
-
 @NgModule({
   declarations: [
     LangPipe,
@@ -50,7 +50,9 @@ import { QueryFrameworkModule, SpreadModule, Server_Host, Load_Data_Uri } from '
     FieldGroupModule,
     InputModeModule,
     FResponseToolbarModule,
+    FormMessageModule,
     FrmUnitJournalQryRoutingModule,
+    EchartsModule,
     // 导入查询结果页模块QueryFrameworkModule SpreadModule
     QueryFrameworkModule,
     SpreadModule.forRoot()
@@ -65,7 +67,7 @@ import { QueryFrameworkModule, SpreadModule, Server_Host, Load_Data_Uri } from '
     },
     {
       provide: Server_Host,
-      useFactory: function() { return `${window.location.protocol}//${window.location.hostname}:5000`; }
+      useFactory: function() { return `${window.location.protocol}//${window.location.hostname}:${window.location.port}`; }
     },
     {
       provide: Load_Data_Uri,

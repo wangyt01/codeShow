@@ -32,28 +32,33 @@ app.use(logger('dev'));
 //++change login app.use
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-	extended: false
+  extended: false
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //++session数据存储时长
-app.use(session({ 
-	secret: 'secret',
-	cookie:{ 
-		maxAge: 1000*60*30
-	}
+app.use(session({
+  secret: 'secret',
+  cookie: {
+    maxAge: 1000 * 60 * 30
+  }
 }));
 //++当登录错误是打印文档，session数据清除
-app.use(function(req,res,next){ 
-	res.locals.user = req.session.user;
-	var err = req.session.error;
-	delete req.session.error;
-	res.locals.message = "";
-	// if(err){ 
-	// 	res.locals.message = '<div class="alert alert-danger" style="margin-bottom:20px;color:red;">'+err+'</div>';
-	// }
-	next();
+app.use(function (err, req, res, next) {
+  // res.locals.user = req.session.user;
+  // var err = req.session.error;
+  // delete req.session.error;
+  // res.locals.message = "";
+  // return res.status(err.status || 500).send({
+  //   message: err.message,
+  //   error: {},
+  //   title: 'error'
+  // });
+  // if(err){ 
+  // 	res.locals.message = '<div class="alert alert-danger" style="margin-bottom:20px;color:red;">'+err+'</div>';
+  // }
+  // next();
 });
 
 
@@ -76,8 +81,6 @@ app.use('/', indexRouter);
 
 // 	// render the error page
 // 	res.status(err.status || 500);
-// 	console.log("---------79----")
-// 	console.log(err.status)
 // 	res.render('error');
 // 	// res.render('index');
 
@@ -85,18 +88,18 @@ app.use('/', indexRouter);
 
 //++
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// app.use(function (req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 // error handlers
 
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -107,7 +110,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,

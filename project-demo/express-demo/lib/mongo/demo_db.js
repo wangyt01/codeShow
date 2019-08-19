@@ -11,22 +11,22 @@ mongoose.connect('mongodb://localhost/test');
 // 实例化连接对象
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', function () {
   // we're connected!
   console.log("连接成功!");
 });
 
 var kittySchema = mongoose.Schema({
-	name: String,
-	// 用户名: 字符串
-    username: String,
-    // 密码: 字符串
-    password: String,
-    //时间
-    time: { type: Date, default: Date.now }
+  name: String,
+  // 用户名: 字符串
+  username: String,
+  // 密码: 字符串
+  password: String,
+  //时间
+  time: { type: Date, default: Date.now }
 }
-//这个代码添加,防止表在moogoose查循中表的名字自动添加 s 
-,{collection: 'demos' }
+  //这个代码添加,防止表在moogoose查循中表的名字自动添加 s 
+  , { collection: 'demos' }
 );
 
 
@@ -35,9 +35,9 @@ var kittySchema = mongoose.Schema({
 //表abcs
 var abcModel = mongoose.model('abcs', kittySchema);
 //表demos
-var demoModel = mongoose.model('demos',kittySchema);
+var demoModel = mongoose.model('demos', kittySchema);
 //第三个参数添加之后不会让表自动添加s
-var demo = mongoose.model('demo',kittySchema,'demo');
+var demo = mongoose.model('demo', kittySchema, 'demo');
 // var doc = ({
 // 	name: 'test'
 // })

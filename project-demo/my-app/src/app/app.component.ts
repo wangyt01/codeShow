@@ -9,7 +9,7 @@ import { environment } from './../environments/environment';
 })
 export class AppComponent {
   constructor() {
-    console.log(environment.production);  // false
+    // console.log(environment.production);  // false
   }
   title = 'this is angular demo';
   middleContent = '这是中间内容';

@@ -1,0 +1,49 @@
+{
+  "_from": "@farris/farris-theme-default@latest",
+  "_id": "@farris/farris-theme-default@0.0.22",
+  "_inBundle": false,
+  "_integrity": "sha512-cmjYCikYusC4cm6uAG7dUrgYhGX+kMepOmBZVhmLerbc0CoAxPfwLYwdtmxE1exuZhpJP3UBv9JzndXlI6CxoQ==",
+  "_location": "/@farris/farris-theme-default",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@farris/farris-theme-default@latest",
+    "name": "@farris/farris-theme-default",
+    "escapedName": "@farris%2ffarris-theme-default",
+    "scope": "@farris",
+    "rawSpec": "latest",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@farris/farris-theme-default/-/farris-theme-default-0.0.22.tgz",
+  "_shasum": "1aff1ef7d9a35f84a76690d4d36588b9286f5afc",
+  "_spec": "@farris/farris-theme-default@latest",
+  "_where": "D:\\GSPCloud\\201904242\\platform\\dev\\main\\web\\webidedebug",
+  "author": {
+    "name": "ximena"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "farris 主题 ",
+  "devDependencies": {},
+  "license": "MIT",
+  "main": "farris-all.css",
+  "name": "@farris/farris-theme-default",
+  "peerDependencies": {
+    "material-design-icons": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.22"
+}

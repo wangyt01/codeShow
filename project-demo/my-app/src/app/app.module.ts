@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 // css动画模块引入
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-/** 配置 angular i18n **/
+// 配置 angular i18n
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 // 响应式表单
@@ -53,9 +53,11 @@ import { MaterialDemoComponent } from './modules/material-demo/material-demo.com
 import { InMemoryDataService } from './service/in-memory-data.service';
 
 import { LayoutModule } from '@angular/cdk/layout';
+import { ThreeDemoComponent } from './modules/three-demo/three-demo.component';
 registerLocaleData(zh);
 
 @NgModule({
+  // declarations（可声明对象表） —— 那些属于本 NgModule 的组件、指令、管道。
   declarations: [
     AppComponent,
     HeroesComponent,
@@ -81,7 +83,9 @@ registerLocaleData(zh);
     TreeDemoComponent,
     DragDropDemoComponent,
     MaterialDemoComponent,
+    ThreeDemoComponent,
   ],
+  // imports（导入表） —— 那些导出了本模块中的组件模板所需的类的其它模块。
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
