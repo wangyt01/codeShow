@@ -39,7 +39,7 @@ if(current.DOCSTATUS != 1 && current.DOCSTATUS != -3){
 }
 var id = current.ID;
 var action = "submitrecheck";
-var url = `/api/ich/cps/entrustpaymentsupply/v1.0/EPaySupply/${id}?action=${action}`;
+var url = `/api/ihc/cps/entrustpayment/v1.0/entrustpayment/submitrecheck/${id}`;
 idp.service.fetch(url, null, true, "PUT")
 	.then(function(result) {
 			idp.tips("提交成功");
@@ -153,7 +153,31 @@ function amountValid(){
 		return false;
 	}
 }
-
+// 超链跳转-查看
+function(rowdata,column){
+    var url = "/apps/fastdweb/views/runtime/page/card/cardpreview.html?dataid="+rowdata.ID+"&status=view&styleid=80ec6a4a-9144-611a-4d90-5e15ec547a96&&formState="
+    idp.utils.openurl("","付款单卡片",url);
+}
+// 新增跳转
+var url = "/apps/fastdweb/views/runtime/page/card/cardpreview.html?styleid=80ec6a4a-9144-611a-4d90-5e15ec547a96&dataid=&status=add&&formState=";
+idp.utils.openurl("","付款补录详情",url);
+// 列表按钮
+//baritem_close  关闭
+idp.func.close();
+return true;
+// baritem_cancelSubmit 撤回
+return idp.func.cancelSubmit();
+// baritem_image 电子影像
+return idp.func.viewImage();
+// baritem_export 导出
+return idp.func.export();
+// baritem_view 查看
+idp.func.viewCard();
+return true;
+// 卡片按钮
+// baritem_close 关闭 
+return idp.uiview.close();
+return true;
 
 // var id = current.ID;
 // var action = "savevalid";

@@ -51,6 +51,12 @@ SELECT * FROM bfbankaccounts WHERE accountstatus
 SELECT * FROM bfadminorganization
 
 SELECT * FROM bfbank
+-- 银行账户排序
+SELECT bfbankaccounts.id,bfbankaccounts.accountstatus,bfbankaccounts.corporationunit,bfmasterorganization.name_chs,innerorouter,bfbankaccounts.bank,bfbank.name_chs,bfbankaccounts.accountno FROM bfbankaccounts 
+LEFT JOIN bfmasterorganization ON bfmasterorganization.id = bfbankaccounts.corporationunit AND bfmasterorganization.islegalperson = '0'
+LEFT JOIN bfbank ON bfbank.id = bfbankaccounts.bank
+WHERE bfbankaccounts.accountstatus = 2 OR bfbankaccounts.accountstatus = 1 
+ORDER BY accountstatus,innerorouter,bfmasterorganization.name_chs,bfbank.name_chs,accountno;
 
 
 BF_BANKACCOUNTCARD

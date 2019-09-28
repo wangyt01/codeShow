@@ -16,20 +16,28 @@ SELECT * FROM tmreceivingclaimresult;
 -- 认领结果明细
 SELECT * FROM tmreceivingclaimresultitem;
 
-SELECT receivingunit,receivingunitname,receivingaccount,receivingaccountname,receivingaccountno,currency,payunit,payunitname,payaccount,settleway FROM tmcapitalaccountnotice;
+SELECT id,receivingunit,receivingunitname,receivingaccount,receivingaccountname,receivingaccountno,currency,payunit,payunitname,payaccount,settleway FROM tmcapitalaccountnotice;
 
-UPDATE tmcapitalaccountnotice SET receivingunit = '',receivingunitname = '',receivingaccount = '' ,receivingaccountname = '',receivingaccountno = '',currency = '' ,payunit = '',payunitname = '' ,payaccount = '' ,settleway = ''  WHERE id = ''
-
-SELECT receivingunit,receivingunitname,receivingaccount,receivingaccountname,receivingaccountno,currency,payunit,payunitname,payaccount,settleway FROM tmcapitalaccountnotice;
+UPDATE tmbizreceivingnotice SET receivingunit = '',receivingunitname = '',receivingaccount = '' ,receivingaccountname = '',receivingaccountno = '',currency = '' ,payunit = '',payunitname = '' ,payaccount = '' ,settleway = ''  WHERE id = '100'
 
 
-UPDATE tmbizreceivingnotice SET receivingunit = '',receivingunitname = '',receivingaccount = '' ,receivingaccountname = '',receivingaccountno = '',currency = '' ,payunit = '',payunitname = '' ,payaccount = '' ,settleway = ''  WHERE id = ''
+UPDATE tmcapitalaccountnotice SET receivingunit = '',receivingunitname = '',receivingaccount = '' ,receivingaccountname = '',receivingaccountno = '',currency = '' ,payunit = '',payunitname = '' ,payaccount = '' ,settleway = ''  WHERE id = '200'
+
+SELECT id,receivingunit,receivingunitname,receivingaccount,receivingaccountname,receivingaccountno,currency,payunit,payunitname,payaccount,settleway FROM tmbizreceivingnotice;
 
 
+
+-- 根据账户查找所需数据
 SELECT bfbankaccounts.corporationunit as receivingunit,bfmasterorganization.name_chs as receivingunitname,bfbankaccounts.id as receivingaccount,bfbankaccounts.accountname as receivingaccountname,bfbankaccounts.accountno as receivingaccountno,bfbankaccounts.defaultcurrency as currency
 FROM bfbankaccounts 
 LEFT JOIN bfmasterorganization ON bfbankaccounts.corporationunit = bfmasterorganization.id
 WHERE bfbankaccounts.id = 'eb2e7d6f-e37f-4f88-afe6-1d2f4c3929d4'
+-- 付款单位 payunit
+SELECT id as payunit,name_chs as payunitname FROM bfpartner;
+-- payaccount
+SELECT id as payaccount,accountname_chs FROM bfpartnerbankaccounts;
+-- settleway
+SELECT id as settleway,name_chs FROM bfsettlementway;
 
 UPDATE tmcapitalaccountnotice SET "alreadyclaimedamount" = 0.00000000, "availableclaimingamount" = 100000.00000000, "receivingamount" = 100000.00000000 WHERE id = '100';
 UPDATE tmbizreceivingnotice SET "alreadyclaimedamount" = 0.00000000, "availableclaimingamount" = 120000.00000000, "receivingamount" = 120000.00000000 WHERE id = '100';
@@ -83,7 +91,7 @@ INSERT INTO "bfbankaccounts"("id", "accountname", "accountno", "accountproperty"
 INSERT INTO "tmbizreceivingnotice"("id", "alreadyclaimedamount", "availableclaimingamount", "claimstatus", "currency", "description", "docno", "docsrc", "expectreceivingdate", "payaccount", "payaccountname", "payaccountno", "payunit", "payunitname", "receivingaccount", "receivingaccountname", "receivingaccountno", "receivingamount", "receivingdept", "receivingdeptname", "receivingunit", "receivingunitname", "settleway", "srcdocid", "srcdocno", "summary", "timestamp_createdby", "timestamp_createdon", "timestamp_lastchangedby", "timestamp_lastchangedon") VALUES ('100', 0.00000000, 600.00000000, 1, '24d94537-fef9-4458-9872-426f070a4498', NULL, '1111111111', 11111, '2019-04-22', NULL, NULL, NULL, '4febefe1-01b5-4ed0-a63e-411c28bccad7', '齐鲁医院', '1', '北京银行账户1', NULL, 600.00000000, NULL, NULL, '004', '人力资源部', '11c647a2-88bf-4ea2-9454-59262cebb90b', '11', '12312', '业务收款通知单', 'wyt', '2019-04-22 19:16:38', 'wyt', '2019-06-11 15:38:12.645767');
 
 -- 资金到账通知单
-INSERT INTO "tmcapitalaccountnotice"("id", "alreadyclaimedamount", "arrivaldate", "availableclaimingamount", "claimstatus", "currency", "description", "docno", "docsrc", "internalaccount", "internalaccountno", "isvouchergenerated", "payaccount", "payaccountname", "payaccountno", "payunit", "payunitname", "receivingaccount", "receivingaccountname", "receivingaccountno", "receivingamount", "receivingdept", "receivingdeptname", "receivingunit", "receivingunitname", "receivingvirtualsubaccount", "settleway", "srcdocid", "srcdocno", "summary", "timestamps_createdby", "timestamps_createdon", "timestamps_lastchangedby", "timestamps_lastchangedon") VALUES ('200', 0.00000000, '2019-06-25', 600.00000000, 1, '24d94537-fef9-4458-9872-426f070a4498', NULL, '1111111111', 1, NULL, NULL, NULL, '', '', '', '4febefe1-01b5-4ed0-a63e-411c28bccad7', '齐鲁医院', '96709d7c-a119-414f-9e05-4b76af2306f1', '浪潮集团户2', '932601920293039130', 600.00000000, NULL, NULL, '004', '人力资源部', '222', '11c647a2-88bf-4ea2-9454-59262cebb90b', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "tmcapitalaccountnotice"("id", "alreadyclaimedamount", "arrivaldate", "availableclaimingamount", "claimstatus", "currency", "description", "docno", "docsrc", "internalaccount", "internalaccountno", "isvouchergenerated", "payaccount", "payaccountname", "payaccountno", "payunit", "payunitname", "receivingaccount", "receivingaccountname", "receivingaccountno", "receivingamount", "receivingdept", "receivingdeptname", "receivingunit", "receivingunitname", "receivingvirtualsubaccount", "settleway", "srcdocid", "srcdocno", "summary", "timestamps_createdby", "timestamps_createdon", "timestamps_lastchangedby", "timestamps_lastchangedon") VALUES ('200', 0.00000000, '2019-06-25', 600.00000000, 1, '24d94537-fef9-4458-9872-426f070a4498', NULL, '1111111111', 1, NULL, NULL, NULL, '', '', '', '4febefe1-01b5-4ed0-a63e-411c28bccad7', '齐鲁医院', '96709d7c-a119-414f-9e05-4b76af2306f1', '浪潮集团户2', '932601920293039130', 600.00000000, NULL, NULL, '004', '人力资源部', '', '11c647a2-88bf-4ea2-9454-59262cebb90b', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 
